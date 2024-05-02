@@ -13,5 +13,30 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Models">
+      <UniqueIdentifier>{7276e19e-1555-43fa-bfc2-2918149d1255}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Repository">
+      <UniqueIdentifier>{3d3838c5-52ce-431e-b66e-89dbfae8f0e8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Repository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
+    <ClCompile Include="FacilityTypeRepository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
+    <ClCompile Include="PostalFacilityRepository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Table.h">
+      <Filter>Models</Filter>
+    </ClInclude>
+    <ClInclude Include="Repository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
