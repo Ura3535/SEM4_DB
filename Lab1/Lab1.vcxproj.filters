@@ -24,6 +24,12 @@
     <ClCompile Include="Repository.cpp">
       <Filter>Repository</Filter>
     </ClCompile>
+    <ClCompile Include="FacilityTypeRepository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
+    <ClCompile Include="PostalFacilityRepository.cpp">
+      <Filter>Repository</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Table.h">

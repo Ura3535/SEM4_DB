@@ -8,18 +8,8 @@
 namespace repository
 {
 	struct ServiceData {
-		ServiceData()
-			: data_num(0)
-			, auto_inc_key(0)
-			, ind_is_correct(false)
-		{}
-		ServiceData(std::fstream& file) {
-			file.seekg(0, std::ios::beg);
-
-			file.read(reinterpret_cast<char*>(&data_num), sizeof(data_num));
-			file.read(reinterpret_cast<char*>(&auto_inc_key), sizeof(auto_inc_key));
-			file.read(reinterpret_cast<char*>(&ind_is_correct), sizeof(ind_is_correct));
-		}
+		ServiceData();
+		ServiceData(std::fstream& file);
 
 		long data_num;
 		long auto_inc_key;

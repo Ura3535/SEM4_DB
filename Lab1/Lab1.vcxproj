@@ -117,6 +117,8 @@
     <ClInclude Include="Table.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="FacilityTypeRepository.cpp" />
+    <ClCompile Include="PostalFacilityRepository.cpp" />
     <ClCompile Include="Repository.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
