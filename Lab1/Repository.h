@@ -1,12 +1,18 @@
 #pragma once
 
 #include "Table.h"
+#include <fstream>
 #include <vector>
 #include <unordered_map>
 
 namespace repository
 {
 	struct ServiceData {
+		ServiceData()
+			: data_num(0)
+			, auto_inc_key(0)
+			, ind_is_correct(false)
+		{}
 		ServiceData(std::fstream& file) {
 			file.seekg(0, std::ios::beg);
 
@@ -26,13 +32,14 @@ namespace repository
 	};
 
 	class FacilityTypeRepository {
-		void CreateTable();
+		void CreateTable(const std::string& connection_string);
+		void Write(const FacilityType& data, long pos);
 
 		std::fstream file;
 		long auto_inc_key;
-		std::unordered_map<std::string, long> ind;
+		std::unordered_map<long, long> ind;
 	public:
-		FacilityTypeRepository(std::string connection_string);
+		FacilityTypeRepository(const std::string& connection_string);
 
 		FacilityType Get(long Id);
 		void Delete(long Id);
@@ -42,18 +49,20 @@ namespace repository
 	};
 
 	class PostalFacilityRepository {
-		void CreateTable();
+		void CreateTable(const std::string& connection_string);
+		void Write(const PostalFacility& data, long pos);
 
 		std::fstream file;
 		long auto_inc_key;
+		std::unordered_map<long, long> ind;
 	public:
-		PostalFacilityRepository();
+		PostalFacilityRepository(const std::string& connection_string);
 
 		PostalFacility Get(long Id);
 		void Delete(long Id);
 		void Update(const PostalFacility& data);
 		void Insert(const PostalFacility& data);
-		std::vector<PostalFacility> GetByTypeId(long TypeId);
 		std::vector<PostalFacility> GetAll();
+		std::vector<PostalFacility> GetByTypeId(long TypeId);
 	};
 };
