@@ -21,9 +21,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Table.cpp">
-      <Filter>Models</Filter>
-    </ClCompile>
     <ClCompile Include="Repository.cpp">
       <Filter>Repository</Filter>
     </ClCompile>
