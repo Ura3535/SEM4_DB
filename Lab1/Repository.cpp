@@ -2,7 +2,7 @@
 
 using namespace repository;
 
-ServiceData::ServiceData(long data_num, long auto_inc_key, bool ind_is_correct)
+ServiceData::ServiceData(size_t data_num, long auto_inc_key, bool ind_is_correct)
 	: data_num(data_num)
 	, auto_inc_key(auto_inc_key)
 	, ind_is_correct(ind_is_correct)

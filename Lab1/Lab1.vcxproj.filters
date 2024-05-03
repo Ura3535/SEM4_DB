@@ -19,6 +19,9 @@
     <Filter Include="Repository">
       <UniqueIdentifier>{3d3838c5-52ce-431e-b66e-89dbfae8f0e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="DataBase">
+      <UniqueIdentifier>{721db019-cc87-4e45-bdd6-db5d2e893060}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Repository.cpp">
