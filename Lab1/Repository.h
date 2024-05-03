@@ -8,11 +8,11 @@
 namespace repository
 {
 	struct ServiceData {
-		ServiceData(long data_num = 0, long auto_inc_key = 0, bool ind_is_correct = false);
+		ServiceData(size_t data_num = 0, long auto_inc_key = 0, bool ind_is_correct = false);
 		void load(std::fstream& file);
 		void save(std::fstream& file) const;
 
-		long data_num;
+		size_t data_num;
 		long auto_inc_key;
 		bool ind_is_correct;
 
@@ -30,7 +30,7 @@ namespace repository
 		long auto_inc_key;
 		std::unordered_map<long, long> ind;
 	public:
-		FacilityTypeRepository(const std::string& connection_string);
+		FacilityTypeRepository(const std::string& connection_string = "DataBase\\FacilityType.fl");
 		~FacilityTypeRepository();
 
 		FacilityType Get(long Id);
@@ -48,7 +48,7 @@ namespace repository
 		long auto_inc_key;
 		std::unordered_map<long, long> ind;
 	public:
-		PostalFacilityRepository(const std::string& connection_string);
+		PostalFacilityRepository(const std::string& connection_string = "DataBase\\PostalFacility.fl");
 		~PostalFacilityRepository();
 
 		PostalFacility Get(long Id);

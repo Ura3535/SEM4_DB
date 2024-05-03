@@ -5,11 +5,9 @@ using namespace repository;
 
 void FacilityTypeRepository::CreateTable(const std::string& connection_string)
 {
-	std::ofstream new_table(connection_string, std::ios::binary);
+	std::fstream new_table(connection_string, std::ios::out | std::ios::binary);
 	ServiceData default_serv_data;
-	new_table.write(reinterpret_cast<const char*>(&default_serv_data.data_num), sizeof(default_serv_data.data_num));
-	new_table.write(reinterpret_cast<const char*>(&default_serv_data.auto_inc_key), sizeof(default_serv_data.auto_inc_key));
-	new_table.write(reinterpret_cast<const char*>(&default_serv_data.ind_is_correct), sizeof(default_serv_data.ind_is_correct));
+	default_serv_data.save(new_table);
 }
 
 void FacilityTypeRepository::Write(const FacilityType& data, long pos)
@@ -19,7 +17,7 @@ void FacilityTypeRepository::Write(const FacilityType& data, long pos)
 	file.write(data.Type, sizeof(data.Type));
 }
 
-FacilityTypeRepository::FacilityTypeRepository(const std::string& connection_string = "..\\DataBase\\FacilityType.fl")
+FacilityTypeRepository::FacilityTypeRepository(const std::string& connection_string)
 {
 	if (!std::filesystem::exists(connection_string))
 		CreateTable(connection_string);
@@ -27,8 +25,10 @@ FacilityTypeRepository::FacilityTypeRepository(const std::string& connection_str
 	ServiceData serv_data;
 	serv_data.load(file);
 
+	auto_inc_key = serv_data.auto_inc_key;
+
 	if (serv_data.ind_is_correct) {
-		std::ifstream index_table("..\\DataBase\\FacilityType.ind");
+		std::ifstream index_table("DataBase\\FacilityType.ind");
 		long key, val;
 
 		for (int i = 0; i != serv_data.data_num; ++i) {
@@ -47,10 +47,10 @@ FacilityTypeRepository::FacilityTypeRepository(const std::string& connection_str
 
 FacilityTypeRepository::~FacilityTypeRepository()
 {
-	std::ofstream index_table("..\\DataBase\\FacilityType.ind", std::ios::in | std::ios::trunc);
+	std::ofstream index_table("DataBase\\FacilityType.ind", std::ios::in | std::ios::trunc);
 
 	for (const auto& x : ind)
-		index_table << x.first << x.second;
+		index_table << x.first << ' ' <<  x.second << '\n';
 
 	ServiceData serv_data{ ind.size(), auto_inc_key, true };
 	serv_data.save(file);
@@ -102,7 +102,7 @@ std::vector<FacilityType> FacilityTypeRepository::GetAll()
 	file.seekg(ServiceData::service_data_size, std::ios::beg);
 	int i = 0;
 	for (const auto& x : ind) {
-		vector[i++] = Get(x.second);
+		vector[i++] = Get(x.first);
 	}
 
 	return vector;
