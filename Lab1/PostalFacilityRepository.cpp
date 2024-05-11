@@ -108,9 +108,9 @@ void PostalFacilityRepository::Insert(const PostalFacility& data)
 	PostalFacility data_with_Id(data);
 	data_with_Id.Id = auto_inc_key++;
 
-	Write(data_with_Id, ind.size());
+	Write(data_with_Id, (long)ind.size());
 
-	ind[data_with_Id.Id] = ind.size();
+	ind[data_with_Id.Id] = (long)ind.size();
 }
 
 std::vector<PostalFacility> repository::PostalFacilityRepository::GetAll()

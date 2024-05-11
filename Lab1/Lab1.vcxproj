@@ -118,7 +118,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="FacilityTypeRepository.cpp" />
-    <ClCompile Include="main.cpp" />
     <ClCompile Include="PostalFacilityRepository.cpp" />
     <ClCompile Include="Repository.cpp" />
   </ItemGroup>

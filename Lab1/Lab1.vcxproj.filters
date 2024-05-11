@@ -33,9 +33,6 @@
     <ClCompile Include="PostalFacilityRepository.cpp">
       <Filter>Repository</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Table.h">

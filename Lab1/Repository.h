@@ -25,28 +25,6 @@ namespace repository
 		static constexpr size_t ind_is_correct_pos = sizeof(data_num) + sizeof(auto_inc_key);
 	};
 
-	class FacilityTypeRepository {
-		void CreateTable(const fs::path& FileFL);
-		void Write(const FacilityType& data, long pos);
-
-		fs::path DBFolder;
-		std::fstream file;
-		long auto_inc_key;
-		std::unordered_map<long, long> ind;
-
-		friend class Repository;
-		PostalFacilityRepository* postalFacilityRep;
-	public:
-		FacilityTypeRepository(const fs::path& DBFolder);
-		~FacilityTypeRepository();
-
-		FacilityType Get(long Id);
-		void Delete(long Id);
-		void Update(const FacilityType& data);
-		void Insert(const FacilityType& data);
-		std::vector<FacilityType> GetAll();
-	};
-
 	class PostalFacilityRepository {
 		void CreateTable(const fs::path& FileFL);
 		void Write(const PostalFacility& data, long pos);
@@ -56,7 +34,7 @@ namespace repository
 		long auto_inc_key;
 		std::unordered_map<long, long> ind;
 
-		friend class Repository;
+		friend struct Repository;
 	public:
 		PostalFacilityRepository(const fs::path& DBFolder);
 		~PostalFacilityRepository();
@@ -67,6 +45,28 @@ namespace repository
 		void Insert(const PostalFacility& data);
 		std::vector<PostalFacility> GetAll();
 		std::vector<PostalFacility> GetByTypeId(long FacilityTypeId);
+	};
+
+	class FacilityTypeRepository {
+		void CreateTable(const fs::path& FileFL);
+		void Write(const FacilityType& data, long pos);
+
+		fs::path DBFolder;
+		std::fstream file;
+		long auto_inc_key;
+		std::unordered_map<long, long> ind;
+
+		friend struct Repository;
+		PostalFacilityRepository* postalFacilityRep;
+	public:
+		FacilityTypeRepository(const fs::path& DBFolder);
+		~FacilityTypeRepository();
+
+		FacilityType Get(long Id);
+		void Delete(long Id);
+		void Update(const FacilityType& data);
+		void Insert(const FacilityType& data);
+		std::vector<FacilityType> GetAll();
 	};
 
 	struct Repository

@@ -102,9 +102,9 @@ void FacilityTypeRepository::Insert(const FacilityType& data)
 	FacilityType data_with_Id(data);
 	data_with_Id.Id = auto_inc_key++;
 
-	Write(data_with_Id, ind.size());
+	Write(data_with_Id, (long)ind.size());
 
-	ind[data_with_Id.Id] = ind.size();
+	ind[data_with_Id.Id] = (long)ind.size();
 }
 
 std::vector<FacilityType> FacilityTypeRepository::GetAll()
