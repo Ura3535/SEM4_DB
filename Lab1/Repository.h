@@ -4,6 +4,9 @@
 #include <fstream>
 #include <vector>
 #include <unordered_map>
+#include <filesystem>
+
+namespace fs = std::filesystem;
 
 namespace repository
 {
@@ -23,14 +26,18 @@ namespace repository
 	};
 
 	class FacilityTypeRepository {
-		void CreateTable(const std::string& connection_string);
+		void CreateTable(const fs::path& FileFL);
 		void Write(const FacilityType& data, long pos);
 
+		fs::path DBFolder;
 		std::fstream file;
 		long auto_inc_key;
 		std::unordered_map<long, long> ind;
+
+		friend class Repository;
+		PostalFacilityRepository* postalFacilityRep;
 	public:
-		FacilityTypeRepository(const std::string& connection_string = "DataBase\\FacilityType.fl");
+		FacilityTypeRepository(const fs::path& DBFolder);
 		~FacilityTypeRepository();
 
 		FacilityType Get(long Id);
@@ -41,14 +48,17 @@ namespace repository
 	};
 
 	class PostalFacilityRepository {
-		void CreateTable(const std::string& connection_string);
+		void CreateTable(const fs::path& FileFL);
 		void Write(const PostalFacility& data, long pos);
 
+		fs::path DBFolder;
 		std::fstream file;
 		long auto_inc_key;
 		std::unordered_map<long, long> ind;
+
+		friend class Repository;
 	public:
-		PostalFacilityRepository(const std::string& connection_string = "DataBase\\PostalFacility.fl");
+		PostalFacilityRepository(const fs::path& DBFolder);
 		~PostalFacilityRepository();
 
 		PostalFacility Get(long Id);
@@ -56,6 +66,14 @@ namespace repository
 		void Update(const PostalFacility& data);
 		void Insert(const PostalFacility& data);
 		std::vector<PostalFacility> GetAll();
-		std::vector<PostalFacility> GetByTypeId(long TypeId);
+		std::vector<PostalFacility> GetByTypeId(long FacilityTypeId);
+	};
+
+	struct Repository
+	{
+		Repository(const fs::path& DBFolder = "DataBase");
+
+		FacilityTypeRepository facilityType;
+		PostalFacilityRepository postalFacility;
 	};
 };
