@@ -1,7 +1,9 @@
 #pragma once
 
-namespace Lab1 {
+#include "Repository.h"
 
+namespace Lab1 {
+	namespace rep = repository;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -18,9 +20,8 @@ namespace Lab1 {
 		MyForm(void)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			UpdFT_DataGridView();
+			UpdFT_ComboBoxId();
 		}
 
 	protected:
@@ -78,6 +79,7 @@ namespace Lab1 {
 			this->FT_PanelList = (gcnew System::Windows::Forms::Panel());
 			this->FT_DataGridView = (gcnew System::Windows::Forms::DataGridView());
 			this->FT_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->FT_ListType = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->FT_LabelList = (gcnew System::Windows::Forms::Label());
 			this->FT_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
 			this->FT_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
@@ -94,7 +96,6 @@ namespace Lab1 {
 			this->FT_LableAddType = (gcnew System::Windows::Forms::Label());
 			this->FT_LableAdd = (gcnew System::Windows::Forms::Label());
 			this->PF_Page = (gcnew System::Windows::Forms::TabPage());
-			this->FT_ListType = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->tabControl1->SuspendLayout();
 			this->FT_Page->SuspendLayout();
 			this->FT_PanelList->SuspendLayout();
@@ -157,6 +158,12 @@ namespace Lab1 {
 			this->FT_ListId->Name = L"FT_ListId";
 			this->FT_ListId->ReadOnly = true;
 			// 
+			// FT_ListType
+			// 
+			this->FT_ListType->HeaderText = L"Тип відділення";
+			this->FT_ListType->Name = L"FT_ListType";
+			this->FT_ListType->ReadOnly = true;
+			// 
 			// FT_LabelList
 			// 
 			this->FT_LabelList->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -193,6 +200,7 @@ namespace Lab1 {
 			this->FT_ButtonUPDELDelete->TabIndex = 8;
 			this->FT_ButtonUPDELDelete->Text = L"Видалити";
 			this->FT_ButtonUPDELDelete->UseVisualStyleBackColor = true;
+			this->FT_ButtonUPDELDelete->Click += gcnew System::EventHandler(this, &MyForm::FT_ButtonUPDELDelete_Click);
 			// 
 			// FT_ButtonUPDELRollBack
 			// 
@@ -202,6 +210,7 @@ namespace Lab1 {
 			this->FT_ButtonUPDELRollBack->TabIndex = 7;
 			this->FT_ButtonUPDELRollBack->Text = L"Відмінити";
 			this->FT_ButtonUPDELRollBack->UseVisualStyleBackColor = true;
+			this->FT_ButtonUPDELRollBack->Click += gcnew System::EventHandler(this, &MyForm::FT_ButtonUPDELRollBack_Click);
 			// 
 			// FT_ButtonUPDELSave
 			// 
@@ -211,6 +220,7 @@ namespace Lab1 {
 			this->FT_ButtonUPDELSave->TabIndex = 6;
 			this->FT_ButtonUPDELSave->Text = L"Зберегти";
 			this->FT_ButtonUPDELSave->UseVisualStyleBackColor = true;
+			this->FT_ButtonUPDELSave->Click += gcnew System::EventHandler(this, &MyForm::FT_ButtonUPDELSave_Click);
 			// 
 			// FT_TextBoxUPDELType
 			// 
@@ -221,11 +231,13 @@ namespace Lab1 {
 			// 
 			// FT_ComboBoxUPDELId
 			// 
+			this->FT_ComboBoxUPDELId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->FT_ComboBoxUPDELId->FormattingEnabled = true;
 			this->FT_ComboBoxUPDELId->Location = System::Drawing::Point(10, 63);
 			this->FT_ComboBoxUPDELId->Name = L"FT_ComboBoxUPDELId";
 			this->FT_ComboBoxUPDELId->Size = System::Drawing::Size(50, 24);
 			this->FT_ComboBoxUPDELId->TabIndex = 4;
+			this->FT_ComboBoxUPDELId->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::FT_ComboBoxUPDELId_SelectedIndexChanged);
 			// 
 			// FT_LableUPDELType
 			// 
@@ -277,6 +289,7 @@ namespace Lab1 {
 			this->FT_ButtonAdd->TabIndex = 3;
 			this->FT_ButtonAdd->Text = L"Додати";
 			this->FT_ButtonAdd->UseVisualStyleBackColor = true;
+			this->FT_ButtonAdd->Click += gcnew System::EventHandler(this, &MyForm::FT_ButtonAdd_Click);
 			// 
 			// FT_TextBoxAddType
 			// 
@@ -315,12 +328,6 @@ namespace Lab1 {
 			this->PF_Page->Text = L"PostalFacility";
 			this->PF_Page->UseVisualStyleBackColor = true;
 			// 
-			// FT_ListType
-			// 
-			this->FT_ListType->HeaderText = L"Тип відділення";
-			this->FT_ListType->Name = L"FT_ListType";
-			this->FT_ListType->ReadOnly = true;
-			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -341,5 +348,12 @@ namespace Lab1 {
 
 		}
 #pragma endregion
-	};
+	private: void UpdFT_DataGridView();
+	private: void UpdFT_ComboBoxId();
+	private: Void FT_ButtonAdd_Click(System::Object^ sender, System::EventArgs^ e);
+	private: Void FT_ButtonUPDELSave_Click(System::Object^ sender, System::EventArgs^ e);
+	private: Void FT_ButtonUPDELRollBack_Click(System::Object^ sender, System::EventArgs^ e);
+	private: Void FT_ButtonUPDELDelete_Click(System::Object^ sender, System::EventArgs^ e);
+	private: Void FT_ComboBoxUPDELId_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
+};
 }

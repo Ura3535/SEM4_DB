@@ -1,7 +1,5 @@
 #include "MyForm.h"
 
-using namespace System;
-using namespace System::Windows::Forms;
 using namespace Lab1;
 
 [STAThreadAttribute]
