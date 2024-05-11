@@ -23,3 +23,10 @@ void repository::ServiceData::save(std::fstream& file) const
 	file.write(reinterpret_cast<const char*>(&auto_inc_key), sizeof(auto_inc_key));
 	file.write(reinterpret_cast<const char*>(&ind_is_correct), sizeof(ind_is_correct));
 }
+
+repository::Repository::Repository(const fs::path& DBFolder)
+	: facilityType(DBFolder)
+	, postalFacility(DBFolder)
+{
+	facilityType.postalFacilityRep = &postalFacility;
+}
