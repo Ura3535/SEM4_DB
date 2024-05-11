@@ -3,9 +3,9 @@
 
 using namespace repository;
 
-void PostalFacilityRepository::CreateTable(const std::string& connection_string)
+void PostalFacilityRepository::CreateTable(const fs::path& FileFL)
 {
-	std::fstream new_table(connection_string, std::ios::out | std::ios::binary);
+	std::fstream new_table(FileFL, std::ios::out | std::ios::binary);
 	ServiceData default_serv_data;
 	default_serv_data.save(new_table);
 }
@@ -21,27 +21,36 @@ void PostalFacilityRepository::Write(const PostalFacility& data, long pos)
 	file.write(reinterpret_cast<const char*>(&data.WeightRestrictions), sizeof(data.WeightRestrictions));
 }
 
-PostalFacilityRepository::PostalFacilityRepository(const std::string& connection_string)
+PostalFacilityRepository::PostalFacilityRepository(const fs::path& DBFolder)
+	: DBFolder(DBFolder)
 {
-	if (!std::filesystem::exists(connection_string))
-		CreateTable(connection_string);
-	file.open(connection_string, std::ios::in | std::ios::out | std::ios::binary);
+	fs::path FileFL = DBFolder / "PostalFacility.fl";
+	fs::path FileIND = DBFolder / "PostalFacility.ind";
+
+	if (!std::filesystem::exists(FileFL))
+		CreateTable(FileFL);
+	file.open(FileFL, std::ios::in | std::ios::out | std::ios::binary);
+
 	ServiceData serv_data;
 	serv_data.load(file);
-
 	auto_inc_key = serv_data.auto_inc_key;
 
 	if (serv_data.ind_is_correct) {
-		std::ifstream index_table("DataBase\\PostalFacility.ind");
+		std::ifstream index(FileIND);
 		long key, val;
 
 		for (int i = 0; i != serv_data.data_num; ++i) {
-			index_table >> key >> val;
+			index >> key >> val;
 			ind[key] = val;
 		}
 	}
 	else {
-		//TODO: if index table file is corrupted
+		long Id;
+		for (int i = 0; i != serv_data.data_num; ++i) {
+			file.seekg(ServiceData::service_data_size + i * PostalFacility::size, std::ios::beg);
+			file.read(reinterpret_cast<char*>(&Id), sizeof(Id));
+			ind[Id] = i;
+		}
 	}
 
 	bool make_ind_bad = false;
@@ -51,7 +60,7 @@ PostalFacilityRepository::PostalFacilityRepository(const std::string& connection
 
 repository::PostalFacilityRepository::~PostalFacilityRepository()
 {
-	std::ofstream index_table("DataBase\\PostalFacility.ind", std::ios::in | std::ios::trunc);
+	std::ofstream index_table(DBFolder / "PostalFacility.ind", std::ios::out | std::ios::trunc);
 
 	for (const auto& x : ind)
 		index_table << x.first << ' ' << x.second << '\n';
@@ -99,9 +108,9 @@ void PostalFacilityRepository::Insert(const PostalFacility& data)
 	PostalFacility data_with_Id(data);
 	data_with_Id.Id = auto_inc_key++;
 
-	Write(data_with_Id, ind.size());
+	Write(data_with_Id, (long)ind.size());
 
-	ind[data_with_Id.Id] = ind.size();
+	ind[data_with_Id.Id] = (long)ind.size();
 }
 
 std::vector<PostalFacility> repository::PostalFacilityRepository::GetAll()
@@ -111,6 +120,21 @@ std::vector<PostalFacility> repository::PostalFacilityRepository::GetAll()
 	int i = 0;
 	for (const auto& x : ind) {
 		vector[i++] = Get(x.first);
+	}
+
+	return vector;
+}
+
+std::vector<PostalFacility> repository::PostalFacilityRepository::GetByTypeId(long FacilityTypeId)
+{
+	std::vector<PostalFacility> vector;
+	PostalFacility tmp;
+	file.seekg(ServiceData::service_data_size, std::ios::beg);
+	int i = 0;
+	for (const auto& x : ind) {
+		tmp = Get(x.first);
+		if (tmp.FacilityTypeId = FacilityTypeId)
+			vector.push_back(tmp);
 	}
 
 	return vector;

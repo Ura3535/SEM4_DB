@@ -10,5 +10,4 @@ int main(array<String^>^ args) {
 	Application::EnableVisualStyles();
 	MyForm form;
 	Application::Run(% form);
-
 }
