@@ -76,6 +76,4 @@ namespace repository
 		FacilityTypeRepository facilityType;
 		PostalFacilityRepository postalFacility;
 	};
-
-	static Repository rep;
 };

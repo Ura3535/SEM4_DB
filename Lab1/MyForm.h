@@ -3,7 +3,6 @@
 #include "Repository.h"
 
 namespace Lab1 {
-	namespace rep = repository;
 	using namespace System;
 	using namespace System::ComponentModel;
 	using namespace System::Collections;
@@ -17,7 +16,8 @@ namespace Lab1 {
 	public ref class MyForm : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm(void)
+		MyForm(repository::Repository* rep)
+			: rep(rep)
 		{
 			InitializeComponent();
 			FT_UPDDataGridView();
@@ -38,6 +38,7 @@ namespace Lab1 {
 				delete components;
 			}
 		}
+	private: repository::Repository* rep;
 	private: System::Windows::Forms::TabControl^ tabControl1;
 	protected:
 	private: System::Windows::Forms::TabPage^ FT_Page;
