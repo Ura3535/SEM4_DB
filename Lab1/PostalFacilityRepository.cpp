@@ -96,6 +96,11 @@ void PostalFacilityRepository::Delete(long Id)
 
 	ind[tmp.Id] = ind[Id];
 	ind.erase(Id);
+
+
+	size_t data_num = ind.size();
+	file.seekp(ServiceData::data_num_pos, std::ios::beg);
+	file.write(reinterpret_cast<const char*>(&data_num), sizeof(data_num));
 }
 
 void PostalFacilityRepository::Update(const PostalFacility& data)
@@ -111,9 +116,15 @@ void PostalFacilityRepository::Insert(const PostalFacility& data)
 	Write(data_with_Id, (long)ind.size());
 
 	ind[data_with_Id.Id] = (long)ind.size();
+
+	size_t data_num = ind.size();
+	file.seekp(ServiceData::data_num_pos, std::ios::beg);
+	file.write(reinterpret_cast<const char*>(&data_num), sizeof(data_num));
+	file.seekp(ServiceData::auto_inc_key_pos, std::ios::beg);
+	file.write(reinterpret_cast<const char*>(&auto_inc_key), sizeof(auto_inc_key));
 }
 
-std::vector<PostalFacility> repository::PostalFacilityRepository::GetAll()
+std::vector<PostalFacility> PostalFacilityRepository::GetAll()
 {
 	std::vector<PostalFacility> vector(ind.size());
 	file.seekg(ServiceData::service_data_size, std::ios::beg);
@@ -125,7 +136,7 @@ std::vector<PostalFacility> repository::PostalFacilityRepository::GetAll()
 	return vector;
 }
 
-std::vector<PostalFacility> repository::PostalFacilityRepository::GetByTypeId(long FacilityTypeId)
+std::vector<PostalFacility> PostalFacilityRepository::GetByTypeId(long FacilityTypeId)
 {
 	std::vector<PostalFacility> vector;
 	PostalFacility tmp;
@@ -133,7 +144,7 @@ std::vector<PostalFacility> repository::PostalFacilityRepository::GetByTypeId(lo
 	int i = 0;
 	for (const auto& x : ind) {
 		tmp = Get(x.first);
-		if (tmp.FacilityTypeId = FacilityTypeId)
+		if (tmp.FacilityTypeId == FacilityTypeId)
 			vector.push_back(tmp);
 	}
 

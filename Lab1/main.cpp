@@ -1,13 +1,13 @@
 #include "MyForm.h"
 
-using namespace System;
-using namespace System::Windows::Forms;
 using namespace Lab1;
 
 [STAThreadAttribute]
 int main(array<String^>^ args) {
 	Application::SetCompatibleTextRenderingDefault(false);
 	Application::EnableVisualStyles();
-	MyForm form;
+	repository::Repository* rep = new repository::Repository();
+	MyForm form(rep);
 	Application::Run(% form);
+	delete rep;
 }

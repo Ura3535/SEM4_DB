@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Lab1/DataBase/FacilityType.fl
+/Lab1/DataBase/FacilityType.ind
+/Lab1/DataBase/PostalFacility.fl
+/Lab1/DataBase/PostalFacility.ind

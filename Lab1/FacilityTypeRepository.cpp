@@ -90,6 +90,10 @@ void FacilityTypeRepository::Delete(long Id)
 
 	ind[tmp.Id] = ind[Id];
 	ind.erase(Id);
+
+	size_t data_num = ind.size();
+	file.seekp(ServiceData::data_num_pos, std::ios::beg);
+	file.write(reinterpret_cast<const char*>(&data_num), sizeof(data_num));
 }
 
 void FacilityTypeRepository::Update(const FacilityType& data)
@@ -105,6 +109,13 @@ void FacilityTypeRepository::Insert(const FacilityType& data)
 	Write(data_with_Id, (long)ind.size());
 
 	ind[data_with_Id.Id] = (long)ind.size();
+
+
+	size_t data_num = ind.size();
+	file.seekp(ServiceData::data_num_pos, std::ios::beg);
+	file.write(reinterpret_cast<const char*>(&data_num), sizeof(data_num));
+	file.seekp(ServiceData::auto_inc_key_pos, std::ios::beg);
+	file.write(reinterpret_cast<const char*>(&auto_inc_key), sizeof(auto_inc_key));
 }
 
 std::vector<FacilityType> FacilityTypeRepository::GetAll()
