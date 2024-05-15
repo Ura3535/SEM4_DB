@@ -616,12 +616,12 @@ namespace Lab1 {
 			// 
 			// PF_ComboBoxUPDELFTId
 			// 
+			this->PF_ComboBoxUPDELFTId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->PF_ComboBoxUPDELFTId->FormattingEnabled = true;
 			this->PF_ComboBoxUPDELFTId->Location = System::Drawing::Point(172, 63);
 			this->PF_ComboBoxUPDELFTId->Name = L"PF_ComboBoxUPDELFTId";
 			this->PF_ComboBoxUPDELFTId->Size = System::Drawing::Size(120, 24);
 			this->PF_ComboBoxUPDELFTId->TabIndex = 5;
-			this->PF_ComboBoxUPDELFTId->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::PF_ComboBoxUPDELFTId_SelectedIndexChanged);
 			// 
 			// PF_LableUPDELFTId
 			// 
@@ -729,12 +729,12 @@ namespace Lab1 {
 			// 
 			// PF_ComboBoxAddFTId
 			// 
+			this->PF_ComboBoxAddFTId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
 			this->PF_ComboBoxAddFTId->FormattingEnabled = true;
 			this->PF_ComboBoxAddFTId->Location = System::Drawing::Point(116, 63);
 			this->PF_ComboBoxAddFTId->Name = L"PF_ComboBoxAddFTId";
 			this->PF_ComboBoxAddFTId->Size = System::Drawing::Size(120, 24);
 			this->PF_ComboBoxAddFTId->TabIndex = 5;
-			this->PF_ComboBoxAddFTId->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::PF_ComboBoxAddFTId_SelectedIndexChanged);
 			// 
 			// PF_LableAddFTId
 			// 
@@ -787,8 +787,9 @@ namespace Lab1 {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(784, 561);
 			this->Controls->Add(this->tabControl1);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Text = L"Бази Даних. Лабораторна робота №1";
 			this->tabControl1->ResumeLayout(false);
 			this->FT_Page->ResumeLayout(false);
 			this->FT_PanelList->ResumeLayout(false);
@@ -808,6 +809,8 @@ namespace Lab1 {
 
 		}
 #pragma endregion
+	private: long GetFTId();
+	private: long GetPFId();
 	private: void FT_UPDDataGridView();
 	private: void FT_UPDComboBoxId();
 	private: void PF_UPDDataGridView();
@@ -822,8 +825,6 @@ namespace Lab1 {
 	private: Void PF_ButtonUPDELSave_Click(System::Object^ sender, System::EventArgs^ e);
 	private: Void PF_ButtonUPDELRollBack_Click(System::Object^ sender, System::EventArgs^ e);
 	private: Void PF_ButtonUPDELDelete_Click(System::Object^ sender, System::EventArgs^ e);
-	private: Void PF_ComboBoxAddFTId_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
 	private: Void PF_ComboBoxUPDELId_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
-	private: Void PF_ComboBoxUPDELFTId_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e);
 	};
 }
