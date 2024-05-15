@@ -20,9 +20,9 @@ namespace Repository
 	{
 #pragma region CRUD
 		long Add(Table table, Entity^ obj);
-		Entity Get(Table table, long Id);
+		Entity^ Get(Table table, long Id);
 		void Update(Table table, Entity^ obj);
-		void Delete(Table table, Entity^ obj);
+		void Delete(Table table, long Id);
 #pragma endregion
 	};
 
@@ -33,9 +33,9 @@ namespace Repository
 		
 #pragma region CRUD
 		virtual long Add(Table table, Entity^ obj);
-		virtual Entity Get(Table table, long Id);
+		virtual Entity^ Get(Table table, long Id);
 		virtual void Update(Table table, Entity^ obj);
-		virtual void Delete(Table table, Entity^ obj);
+		virtual void Delete(Table table, long Id);
 #pragma endregion
 	private:
 		void AddCommandParameters(Table table, Entity^ obj);
@@ -44,6 +44,7 @@ namespace Repository
 		SqlConnection^ connection;
 		String^ text;
 		SqlCommand^ command;
+		SqlDataReader^ reader;
 	};
 
 }

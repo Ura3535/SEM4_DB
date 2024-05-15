@@ -7,6 +7,7 @@ namespace Models
 	ref struct Entity
 	{
 		long Id;
+		static const long DEFAULT_ID = -1;
 	};
 
 	ref struct Client : Entity
