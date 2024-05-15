@@ -152,6 +152,67 @@ Entity^ SQLRepository::Get(Table table, long Id)
     }
 }
 
+void Repository::SQLRepository::Update(Table table, Entity^ obj)
+{
+
+    switch (table)
+    {
+    case Table::Clients:
+        text = "UPDATE dbo.Clients SET "
+            + "Name = '@Name', "
+            + "ContactNumber = '@ContactNumber', "
+            + "Email = '@Email' "
+            + "WHERE Id = @Id";
+        break;
+    case Table::Couriers:
+        text = "UPDATE dbo.Couriers SET "
+            + "Name = '@Name', "
+            + "City = '@City', "
+            + "ParcelId = '@ParcelId' "
+            + "WHERE Id = @Id";
+        break;
+    case Table::FacilityTypes:
+        text = "UPDATE dbo.FacilityTypes SET "
+            + "Type = '@Type' "
+            + "WHERE Id = @Id";
+        break;
+    case Table::Parcels:
+        text = "UPDATE dbo.Parcels SET "
+            + "Info = '@Info', "
+            + "Weight = '@Weight', "
+            + "SenderId = '@SenderId', "
+            + "ReciverId = '@ReciverId', "
+            + "DeparturePointsId = '@DeparturePointsId', "
+            + "DeliveryPointsId = '@DeliveryPointsId', "
+            + "Price = '@Price', "
+            + "StatusId = '@StatusId', "
+            + "CurrentLocationId = '@CurrentLocationId', "
+            + "DeliveryAddress = '@DeliveryAddress' "
+            + "WHERE Id = @Id";
+        break;
+    case Table::ParcelStatuses:
+        text = "UPDATE dbo.ParcelStatuses SET "
+            + "Status = '@Status' "
+            + "WHERE Id = @Id";
+        break;
+    case Table::PostalFacilitys:
+        text = "UPDATE dbo.Parcels SET "
+            + "Name = '@Name', "
+            + "FacilityTypeId = '@FacilityTypeId', "
+            + "Address = '@Address', "
+            + "WorkSchedule = '@WorkSchedule', "
+            + "WeightRestrictions = '@WeightRestrictions' "
+            + "WHERE Id = @Id";
+        break;
+    default: break;
+    }
+    command = gcnew SqlCommand(text, connection);
+    command->Parameters->AddWithValue("@Id", obj->Id);
+    connection->Open();
+    command->ExecuteNonQuery();
+    connection->Close();
+}
+
 void Repository::SQLRepository::Delete(Table table, long Id)
 {
 
