@@ -12,7 +12,7 @@ SQLRepository::SQLRepository()
     connection = gcnew SqlConnection(Convert::ToString(builder));
 }
 
-long Repository::SQLRepository::Add(Table table, Entity^ obj)
+long SQLRepository::Add(Table table, Entity^ obj)
 {
     switch (table)
     {
@@ -152,7 +152,7 @@ Entity^ SQLRepository::Get(Table table, long Id)
     }
 }
 
-void Repository::SQLRepository::Update(Table table, Entity^ obj)
+void SQLRepository::Update(Table table, Entity^ obj)
 {
 
     switch (table)
@@ -207,13 +207,14 @@ void Repository::SQLRepository::Update(Table table, Entity^ obj)
     default: break;
     }
     command = gcnew SqlCommand(text, connection);
+    AddCommandParameters(table, obj);
     command->Parameters->AddWithValue("@Id", obj->Id);
     connection->Open();
     command->ExecuteNonQuery();
     connection->Close();
 }
 
-void Repository::SQLRepository::Delete(Table table, long Id)
+void SQLRepository::Delete(Table table, long Id)
 {
 
     switch (table)
@@ -243,6 +244,34 @@ void Repository::SQLRepository::Delete(Table table, long Id)
     connection->Open();
     command->ExecuteNonQuery();
     connection->Close();
+}
+
+SqlDataAdapter^ SQLRepository::GetTableAdapter(Table table)
+{
+    switch (table)
+    {
+    case Table::Clients:
+        text = "SELECT * FROM dbo.Clients";
+        break;
+    case Table::Couriers:
+        text = "SELECT * FROM dbo.Couriers";
+        break;
+    case Table::FacilityTypes:
+        text = "SELECT * FROM dbo.FacilityTypes";
+        break;
+    case Table::Parcels:
+        text = "SELECT * FROM dbo.Parcels";
+        break;
+    case Table::ParcelStatuses:
+        text = "SELECT * FROM dbo.ParcelStatuses";
+        break;
+    case Table::PostalFacilitys:
+        text = "SELECT * FROM dbo.PostalFacilitys";
+        break;
+    default: break;
+    }
+
+    return gcnew SqlDataAdapter(text, connection);
 }
 
 void SQLRepository::AddCommandParameters(Table table, Entity^ obj) {

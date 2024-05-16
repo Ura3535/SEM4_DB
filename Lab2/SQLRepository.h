@@ -22,6 +22,7 @@ namespace Repository
 		Entity^ Get(Table table, long Id);
 		void Update(Table table, Entity^ obj);
 		void Delete(Table table, long Id);
+		SqlDataAdapter^ GetTableAdapter(Table table);
 	};
 
 	ref class SQLRepository : IRepository
@@ -33,6 +34,7 @@ namespace Repository
 		virtual Entity^ Get(Table table, long Id);
 		virtual void Update(Table table, Entity^ obj);
 		virtual void Delete(Table table, long Id);
+		virtual SqlDataAdapter^ GetTableAdapter(Table table);
 	private:
 		void AddCommandParameters(Table table, Entity^ obj);
 
