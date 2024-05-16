@@ -267,6 +267,124 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListId;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListName;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListContactNumber;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListEmail;
+private: System::Windows::Forms::TabPage^ Pa_Page;
+private: System::Windows::Forms::Panel^ Pa_PanelList;
+private: System::Windows::Forms::DataGridView^ Pa_DataGridView;
+
+
+
+
+private: System::Windows::Forms::Label^ Pa_LabelList;
+
+private: System::Windows::Forms::Panel^ Pa_PanelUPDEL;
+private: System::Windows::Forms::Button^ Pa_ButtonUPDELDelete;
+
+private: System::Windows::Forms::Button^ Pa_ButtonUPDELRollBack;
+
+private: System::Windows::Forms::Button^ Pa_ButtonUPDELSave;
+
+
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELId;
+
+
+private: System::Windows::Forms::Label^ Pa_LableUPDELId;
+
+private: System::Windows::Forms::Label^ Pa_LabelUPDEL;
+
+private: System::Windows::Forms::Panel^ Pa_PanelAdd;
+private: System::Windows::Forms::Button^ Pa_ButtonAdd;
+private: System::Windows::Forms::TextBox^ Pa_TextBoxAddInfo;
+
+
+private: System::Windows::Forms::Label^ Pa_LableAddInfo;
+
+private: System::Windows::Forms::Label^ Pa_LabelAdd;
+
+
+
+
+
+
+
+
+
+
+
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddCenId;
+private: System::Windows::Forms::TextBox^ Pa_TextBoxAddWeight;
+
+
+private: System::Windows::Forms::Label^ Pa_LableAddWeight;
+private: System::Windows::Forms::Label^ Pa_LableAddCenId;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListId;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListInfo;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListWeight;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListSenId;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListRecId;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListDepId;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListDelId;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListPrice;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListPSId;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListCurId;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListDeliveryAddress;
+private: System::Windows::Forms::Label^ Pa_LableAddDepId;
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddDepId;
+private: System::Windows::Forms::Label^ Pa_LableAddRecId;
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddRecId;
+private: System::Windows::Forms::TextBox^ Pa_TextBoxAddPrice;
+
+private: System::Windows::Forms::Label^ Pa_LableAddPrice;
+private: System::Windows::Forms::Label^ Pa_LableAddDelId;
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddDelId;
+private: System::Windows::Forms::Label^ Pa_LableAddPSId;
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddPSId;
+private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELDeliveryAddress;
+
+private: System::Windows::Forms::Label^ Pa_LableUPDELDeliveryAddress;
+
+private: System::Windows::Forms::Label^ Pa_LableUPDELCurId;
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELCurId;
+
+
+private: System::Windows::Forms::Label^ Pa_LableUPDELPSId;
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELPSId;
+
+
+private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELPrice;
+
+private: System::Windows::Forms::Label^ Pa_LableUPDELPrice;
+
+private: System::Windows::Forms::Label^ Pa_LableUPDELDelId;
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELDelId;
+
+
+private: System::Windows::Forms::Label^ Pa_LableUPDELDepId;
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELDepId;
+
+
+private: System::Windows::Forms::Label^ Pa_LableUPDELRecId;
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELRecId;
+
+
+private: System::Windows::Forms::Label^ Pa_LableUPDELCenId;
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELCenId;
+
+
+private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELWeight;
+
+private: System::Windows::Forms::Label^ Pa_LableUPDELWeight;
+private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELInfo;
+
+
+private: System::Windows::Forms::Label^ Pa_LableUPDELInfo;
+
+private: System::Windows::Forms::TextBox^ Pa_TextBoxAddDeliveryAddress;
+private: System::Windows::Forms::Label^ Pa_LableAddDeliveryAddress;
+private: System::Windows::Forms::Label^ Pa_LableAddCurId;
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddCurId;
+
+
+
 
 
 
@@ -435,6 +553,71 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListEmail;
 			this->Cl_ListName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Cl_ListContactNumber = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Cl_ListEmail = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Pa_Page = (gcnew System::Windows::Forms::TabPage());
+			this->Pa_PanelList = (gcnew System::Windows::Forms::Panel());
+			this->Pa_DataGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->Pa_LabelList = (gcnew System::Windows::Forms::Label());
+			this->Pa_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
+			this->Pa_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
+			this->Pa_ButtonUPDELRollBack = (gcnew System::Windows::Forms::Button());
+			this->Pa_ButtonUPDELSave = (gcnew System::Windows::Forms::Button());
+			this->Pa_ComboBoxUPDELId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableUPDELId = (gcnew System::Windows::Forms::Label());
+			this->Pa_LabelUPDEL = (gcnew System::Windows::Forms::Label());
+			this->Pa_PanelAdd = (gcnew System::Windows::Forms::Panel());
+			this->Pa_ButtonAdd = (gcnew System::Windows::Forms::Button());
+			this->Pa_TextBoxAddInfo = (gcnew System::Windows::Forms::TextBox());
+			this->Pa_LableAddInfo = (gcnew System::Windows::Forms::Label());
+			this->Pa_LabelAdd = (gcnew System::Windows::Forms::Label());
+			this->Pa_TextBoxAddWeight = (gcnew System::Windows::Forms::TextBox());
+			this->Pa_LableAddWeight = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxAddCenId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableAddCenId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Pa_ListInfo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Pa_ListWeight = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Pa_ListSenId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Pa_ListRecId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Pa_ListDepId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Pa_ListDelId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Pa_ListPrice = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Pa_ListPSId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Pa_ListCurId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Pa_ListDeliveryAddress = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Pa_LableAddRecId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxAddRecId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableAddDepId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxAddDepId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableAddDelId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxAddDelId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_TextBoxAddPrice = (gcnew System::Windows::Forms::TextBox());
+			this->Pa_LableAddPrice = (gcnew System::Windows::Forms::Label());
+			this->Pa_LableAddPSId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxAddPSId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableAddCurId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxAddCurId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_TextBoxAddDeliveryAddress = (gcnew System::Windows::Forms::TextBox());
+			this->Pa_LableAddDeliveryAddress = (gcnew System::Windows::Forms::Label());
+			this->Pa_TextBoxUPDELDeliveryAddress = (gcnew System::Windows::Forms::TextBox());
+			this->Pa_LableUPDELDeliveryAddress = (gcnew System::Windows::Forms::Label());
+			this->Pa_LableUPDELCurId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxUPDELCurId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableUPDELPSId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxUPDELPSId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_TextBoxUPDELPrice = (gcnew System::Windows::Forms::TextBox());
+			this->Pa_LableUPDELPrice = (gcnew System::Windows::Forms::Label());
+			this->Pa_LableUPDELDelId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxUPDELDelId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableUPDELDepId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxUPDELDepId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableUPDELRecId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxUPDELRecId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableUPDELCenId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxUPDELCenId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_TextBoxUPDELWeight = (gcnew System::Windows::Forms::TextBox());
+			this->Pa_LableUPDELWeight = (gcnew System::Windows::Forms::Label());
+			this->Pa_TextBoxUPDELInfo = (gcnew System::Windows::Forms::TextBox());
+			this->Pa_LableUPDELInfo = (gcnew System::Windows::Forms::Label());
 			this->MainTabControl->SuspendLayout();
 			this->TablePage->SuspendLayout();
 			this->TableTabControl->SuspendLayout();
@@ -463,6 +646,11 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListEmail;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Cl_DataGridView))->BeginInit();
 			this->Cl_PanelUPDEL->SuspendLayout();
 			this->Cl_PanelAdd->SuspendLayout();
+			this->Pa_Page->SuspendLayout();
+			this->Pa_PanelList->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Pa_DataGridView))->BeginInit();
+			this->Pa_PanelUPDEL->SuspendLayout();
+			this->Pa_PanelAdd->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// MainTabControl
@@ -525,6 +713,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListEmail;
 			this->TableTabControl->Controls->Add(this->PS_Page);
 			this->TableTabControl->Controls->Add(this->Co_Page);
 			this->TableTabControl->Controls->Add(this->Cl_Page);
+			this->TableTabControl->Controls->Add(this->Pa_Page);
 			this->TableTabControl->Location = System::Drawing::Point(6, 6);
 			this->TableTabControl->Name = L"TableTabControl";
 			this->TableTabControl->SelectedIndex = 0;
@@ -1866,6 +2055,628 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListEmail;
 			this->Cl_ListEmail->Name = L"Cl_ListEmail";
 			this->Cl_ListEmail->ReadOnly = true;
 			// 
+			// Pa_Page
+			// 
+			this->Pa_Page->BackColor = System::Drawing::Color::LightGray;
+			this->Pa_Page->Controls->Add(this->Pa_PanelList);
+			this->Pa_Page->Controls->Add(this->Pa_PanelUPDEL);
+			this->Pa_Page->Controls->Add(this->Pa_PanelAdd);
+			this->Pa_Page->Location = System::Drawing::Point(4, 22);
+			this->Pa_Page->Name = L"Pa_Page";
+			this->Pa_Page->Padding = System::Windows::Forms::Padding(3);
+			this->Pa_Page->Size = System::Drawing::Size(1132, 673);
+			this->Pa_Page->TabIndex = 5;
+			this->Pa_Page->Text = L"Parcels";
+			// 
+			// Pa_PanelList
+			// 
+			this->Pa_PanelList->BackColor = System::Drawing::Color::Silver;
+			this->Pa_PanelList->Controls->Add(this->Pa_DataGridView);
+			this->Pa_PanelList->Controls->Add(this->Pa_LabelList);
+			this->Pa_PanelList->Location = System::Drawing::Point(6, 288);
+			this->Pa_PanelList->Name = L"Pa_PanelList";
+			this->Pa_PanelList->Size = System::Drawing::Size(1120, 379);
+			this->Pa_PanelList->TabIndex = 5;
+			// 
+			// Pa_DataGridView
+			// 
+			this->Pa_DataGridView->AllowUserToAddRows = false;
+			this->Pa_DataGridView->AllowUserToDeleteRows = false;
+			this->Pa_DataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->Pa_DataGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(11) {
+				this->Pa_ListId,
+					this->Pa_ListInfo, this->Pa_ListWeight, this->Pa_ListSenId, this->Pa_ListRecId, this->Pa_ListDepId, this->Pa_ListDelId, this->Pa_ListPrice,
+					this->Pa_ListPSId, this->Pa_ListCurId, this->Pa_ListDeliveryAddress
+			});
+			this->Pa_DataGridView->Location = System::Drawing::Point(4, 44);
+			this->Pa_DataGridView->Name = L"Pa_DataGridView";
+			this->Pa_DataGridView->ReadOnly = true;
+			this->Pa_DataGridView->Size = System::Drawing::Size(1113, 332);
+			this->Pa_DataGridView->TabIndex = 3;
+			// 
+			// Pa_LabelList
+			// 
+			this->Pa_LabelList->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Pa_LabelList->Location = System::Drawing::Point(10, 10);
+			this->Pa_LabelList->Name = L"Pa_LabelList";
+			this->Pa_LabelList->Size = System::Drawing::Size(1107, 30);
+			this->Pa_LabelList->TabIndex = 2;
+			this->Pa_LabelList->Text = L"Усі посилки";
+			// 
+			// Pa_PanelUPDEL
+			// 
+			this->Pa_PanelUPDEL->BackColor = System::Drawing::Color::Silver;
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_TextBoxUPDELDeliveryAddress);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELDeliveryAddress);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELCurId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELCurId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELPSId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELPSId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_TextBoxUPDELPrice);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELPrice);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELDelId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELDelId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELDepId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELDepId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELRecId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELRecId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELCenId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELCenId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_TextBoxUPDELWeight);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELWeight);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_TextBoxUPDELInfo);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELInfo);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ButtonUPDELDelete);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ButtonUPDELRollBack);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ButtonUPDELSave);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LabelUPDEL);
+			this->Pa_PanelUPDEL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Pa_PanelUPDEL->Location = System::Drawing::Point(6, 147);
+			this->Pa_PanelUPDEL->Name = L"Pa_PanelUPDEL";
+			this->Pa_PanelUPDEL->Size = System::Drawing::Size(1120, 135);
+			this->Pa_PanelUPDEL->TabIndex = 4;
+			// 
+			// Pa_ButtonUPDELDelete
+			// 
+			this->Pa_ButtonUPDELDelete->Location = System::Drawing::Point(224, 95);
+			this->Pa_ButtonUPDELDelete->Name = L"Pa_ButtonUPDELDelete";
+			this->Pa_ButtonUPDELDelete->Size = System::Drawing::Size(100, 25);
+			this->Pa_ButtonUPDELDelete->TabIndex = 8;
+			this->Pa_ButtonUPDELDelete->Text = L"Видалити";
+			this->Pa_ButtonUPDELDelete->UseVisualStyleBackColor = true;
+			// 
+			// Pa_ButtonUPDELRollBack
+			// 
+			this->Pa_ButtonUPDELRollBack->Location = System::Drawing::Point(117, 95);
+			this->Pa_ButtonUPDELRollBack->Name = L"Pa_ButtonUPDELRollBack";
+			this->Pa_ButtonUPDELRollBack->Size = System::Drawing::Size(100, 25);
+			this->Pa_ButtonUPDELRollBack->TabIndex = 7;
+			this->Pa_ButtonUPDELRollBack->Text = L"Відмінити";
+			this->Pa_ButtonUPDELRollBack->UseVisualStyleBackColor = true;
+			// 
+			// Pa_ButtonUPDELSave
+			// 
+			this->Pa_ButtonUPDELSave->Location = System::Drawing::Point(10, 95);
+			this->Pa_ButtonUPDELSave->Name = L"Pa_ButtonUPDELSave";
+			this->Pa_ButtonUPDELSave->Size = System::Drawing::Size(100, 25);
+			this->Pa_ButtonUPDELSave->TabIndex = 6;
+			this->Pa_ButtonUPDELSave->Text = L"Зберегти";
+			this->Pa_ButtonUPDELSave->UseVisualStyleBackColor = true;
+			// 
+			// Pa_ComboBoxUPDELId
+			// 
+			this->Pa_ComboBoxUPDELId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxUPDELId->FormattingEnabled = true;
+			this->Pa_ComboBoxUPDELId->Location = System::Drawing::Point(10, 62);
+			this->Pa_ComboBoxUPDELId->Name = L"Pa_ComboBoxUPDELId";
+			this->Pa_ComboBoxUPDELId->Size = System::Drawing::Size(50, 24);
+			this->Pa_ComboBoxUPDELId->TabIndex = 4;
+			// 
+			// Pa_LableUPDELId
+			// 
+			this->Pa_LableUPDELId->Location = System::Drawing::Point(10, 40);
+			this->Pa_LableUPDELId->Name = L"Pa_LableUPDELId";
+			this->Pa_LableUPDELId->Size = System::Drawing::Size(50, 20);
+			this->Pa_LableUPDELId->TabIndex = 2;
+			this->Pa_LableUPDELId->Text = L"Id";
+			// 
+			// Pa_LabelUPDEL
+			// 
+			this->Pa_LabelUPDEL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Pa_LabelUPDEL->Location = System::Drawing::Point(10, 10);
+			this->Pa_LabelUPDEL->Name = L"Pa_LabelUPDEL";
+			this->Pa_LabelUPDEL->Size = System::Drawing::Size(1107, 30);
+			this->Pa_LabelUPDEL->TabIndex = 1;
+			this->Pa_LabelUPDEL->Text = L"Редагувати/видалити посилку";
+			// 
+			// Pa_PanelAdd
+			// 
+			this->Pa_PanelAdd->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->Pa_PanelAdd->BackColor = System::Drawing::Color::Silver;
+			this->Pa_PanelAdd->Controls->Add(this->Pa_TextBoxAddDeliveryAddress);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddDeliveryAddress);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddCurId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddCurId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddPSId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddPSId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_TextBoxAddPrice);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddPrice);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddDelId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddDelId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddDepId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddDepId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddRecId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddRecId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddCenId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddCenId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_TextBoxAddWeight);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddWeight);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ButtonAdd);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_TextBoxAddInfo);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddInfo);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LabelAdd);
+			this->Pa_PanelAdd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Pa_PanelAdd->Location = System::Drawing::Point(6, 6);
+			this->Pa_PanelAdd->Name = L"Pa_PanelAdd";
+			this->Pa_PanelAdd->Size = System::Drawing::Size(1120, 135);
+			this->Pa_PanelAdd->TabIndex = 3;
+			// 
+			// Pa_ButtonAdd
+			// 
+			this->Pa_ButtonAdd->Location = System::Drawing::Point(10, 100);
+			this->Pa_ButtonAdd->Name = L"Pa_ButtonAdd";
+			this->Pa_ButtonAdd->Size = System::Drawing::Size(100, 25);
+			this->Pa_ButtonAdd->TabIndex = 3;
+			this->Pa_ButtonAdd->Text = L"Додати";
+			this->Pa_ButtonAdd->UseVisualStyleBackColor = true;
+			// 
+			// Pa_TextBoxAddInfo
+			// 
+			this->Pa_TextBoxAddInfo->Location = System::Drawing::Point(10, 63);
+			this->Pa_TextBoxAddInfo->Name = L"Pa_TextBoxAddInfo";
+			this->Pa_TextBoxAddInfo->Size = System::Drawing::Size(90, 22);
+			this->Pa_TextBoxAddInfo->TabIndex = 2;
+			// 
+			// Pa_LableAddInfo
+			// 
+			this->Pa_LableAddInfo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Pa_LableAddInfo->Location = System::Drawing::Point(10, 40);
+			this->Pa_LableAddInfo->Name = L"Pa_LableAddInfo";
+			this->Pa_LableAddInfo->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddInfo->TabIndex = 1;
+			this->Pa_LableAddInfo->Text = L"Інфо";
+			// 
+			// Pa_LabelAdd
+			// 
+			this->Pa_LabelAdd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Pa_LabelAdd->Location = System::Drawing::Point(10, 10);
+			this->Pa_LabelAdd->Name = L"Pa_LabelAdd";
+			this->Pa_LabelAdd->Size = System::Drawing::Size(1107, 30);
+			this->Pa_LabelAdd->TabIndex = 0;
+			this->Pa_LabelAdd->Text = L"Додати нову посилку";
+			// 
+			// Pa_TextBoxAddWeight
+			// 
+			this->Pa_TextBoxAddWeight->Location = System::Drawing::Point(106, 63);
+			this->Pa_TextBoxAddWeight->Name = L"Pa_TextBoxAddWeight";
+			this->Pa_TextBoxAddWeight->Size = System::Drawing::Size(90, 22);
+			this->Pa_TextBoxAddWeight->TabIndex = 5;
+			// 
+			// Pa_LableAddWeight
+			// 
+			this->Pa_LableAddWeight->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddWeight->Location = System::Drawing::Point(106, 40);
+			this->Pa_LableAddWeight->Name = L"Pa_LableAddWeight";
+			this->Pa_LableAddWeight->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddWeight->TabIndex = 4;
+			this->Pa_LableAddWeight->Text = L"Вага";
+			// 
+			// Pa_ComboBoxAddCenId
+			// 
+			this->Pa_ComboBoxAddCenId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxAddCenId->FormattingEnabled = true;
+			this->Pa_ComboBoxAddCenId->Location = System::Drawing::Point(202, 62);
+			this->Pa_ComboBoxAddCenId->Name = L"Pa_ComboBoxAddCenId";
+			this->Pa_ComboBoxAddCenId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxAddCenId->TabIndex = 6;
+			// 
+			// Pa_LableAddCenId
+			// 
+			this->Pa_LableAddCenId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddCenId->Location = System::Drawing::Point(202, 40);
+			this->Pa_LableAddCenId->Name = L"Pa_LableAddCenId";
+			this->Pa_LableAddCenId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddCenId->TabIndex = 7;
+			this->Pa_LableAddCenId->Text = L"Відправник";
+			// 
+			// Pa_ListId
+			// 
+			this->Pa_ListId->HeaderText = L"Id";
+			this->Pa_ListId->Name = L"Pa_ListId";
+			this->Pa_ListId->ReadOnly = true;
+			// 
+			// Pa_ListInfo
+			// 
+			this->Pa_ListInfo->HeaderText = L"Інфо";
+			this->Pa_ListInfo->Name = L"Pa_ListInfo";
+			this->Pa_ListInfo->ReadOnly = true;
+			// 
+			// Pa_ListWeight
+			// 
+			this->Pa_ListWeight->HeaderText = L"Вага";
+			this->Pa_ListWeight->Name = L"Pa_ListWeight";
+			this->Pa_ListWeight->ReadOnly = true;
+			// 
+			// Pa_ListSenId
+			// 
+			this->Pa_ListSenId->HeaderText = L"Відправник";
+			this->Pa_ListSenId->Name = L"Pa_ListSenId";
+			this->Pa_ListSenId->ReadOnly = true;
+			// 
+			// Pa_ListRecId
+			// 
+			this->Pa_ListRecId->HeaderText = L"Отримувач";
+			this->Pa_ListRecId->Name = L"Pa_ListRecId";
+			this->Pa_ListRecId->ReadOnly = true;
+			// 
+			// Pa_ListDepId
+			// 
+			this->Pa_ListDepId->HeaderText = L"Точка відправки";
+			this->Pa_ListDepId->Name = L"Pa_ListDepId";
+			this->Pa_ListDepId->ReadOnly = true;
+			// 
+			// Pa_ListDelId
+			// 
+			this->Pa_ListDelId->HeaderText = L"Точка прибуття";
+			this->Pa_ListDelId->Name = L"Pa_ListDelId";
+			this->Pa_ListDelId->ReadOnly = true;
+			// 
+			// Pa_ListPrice
+			// 
+			this->Pa_ListPrice->HeaderText = L"Вартість";
+			this->Pa_ListPrice->Name = L"Pa_ListPrice";
+			this->Pa_ListPrice->ReadOnly = true;
+			// 
+			// Pa_ListPSId
+			// 
+			this->Pa_ListPSId->HeaderText = L"Статус";
+			this->Pa_ListPSId->Name = L"Pa_ListPSId";
+			this->Pa_ListPSId->ReadOnly = true;
+			// 
+			// Pa_ListCurId
+			// 
+			this->Pa_ListCurId->HeaderText = L"Місце перебування";
+			this->Pa_ListCurId->Name = L"Pa_ListCurId";
+			this->Pa_ListCurId->ReadOnly = true;
+			// 
+			// Pa_ListDeliveryAddress
+			// 
+			this->Pa_ListDeliveryAddress->HeaderText = L"Адреса доставки";
+			this->Pa_ListDeliveryAddress->Name = L"Pa_ListDeliveryAddress";
+			this->Pa_ListDeliveryAddress->ReadOnly = true;
+			// 
+			// Pa_LableAddRecId
+			// 
+			this->Pa_LableAddRecId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddRecId->Location = System::Drawing::Point(298, 40);
+			this->Pa_LableAddRecId->Name = L"Pa_LableAddRecId";
+			this->Pa_LableAddRecId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddRecId->TabIndex = 9;
+			this->Pa_LableAddRecId->Text = L"Отримувач";
+			// 
+			// Pa_ComboBoxAddRecId
+			// 
+			this->Pa_ComboBoxAddRecId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxAddRecId->FormattingEnabled = true;
+			this->Pa_ComboBoxAddRecId->Location = System::Drawing::Point(298, 62);
+			this->Pa_ComboBoxAddRecId->Name = L"Pa_ComboBoxAddRecId";
+			this->Pa_ComboBoxAddRecId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxAddRecId->TabIndex = 8;
+			// 
+			// Pa_LableAddDepId
+			// 
+			this->Pa_LableAddDepId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddDepId->Location = System::Drawing::Point(394, 40);
+			this->Pa_LableAddDepId->Name = L"Pa_LableAddDepId";
+			this->Pa_LableAddDepId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddDepId->TabIndex = 11;
+			this->Pa_LableAddDepId->Text = L"Т. Відправки";
+			// 
+			// Pa_ComboBoxAddDepId
+			// 
+			this->Pa_ComboBoxAddDepId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxAddDepId->FormattingEnabled = true;
+			this->Pa_ComboBoxAddDepId->Location = System::Drawing::Point(394, 62);
+			this->Pa_ComboBoxAddDepId->Name = L"Pa_ComboBoxAddDepId";
+			this->Pa_ComboBoxAddDepId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxAddDepId->TabIndex = 10;
+			// 
+			// Pa_LableAddDelId
+			// 
+			this->Pa_LableAddDelId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddDelId->Location = System::Drawing::Point(490, 40);
+			this->Pa_LableAddDelId->Name = L"Pa_LableAddDelId";
+			this->Pa_LableAddDelId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddDelId->TabIndex = 13;
+			this->Pa_LableAddDelId->Text = L"Т. Прибуття";
+			// 
+			// Pa_ComboBoxAddDelId
+			// 
+			this->Pa_ComboBoxAddDelId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxAddDelId->FormattingEnabled = true;
+			this->Pa_ComboBoxAddDelId->Location = System::Drawing::Point(490, 62);
+			this->Pa_ComboBoxAddDelId->Name = L"Pa_ComboBoxAddDelId";
+			this->Pa_ComboBoxAddDelId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxAddDelId->TabIndex = 12;
+			// 
+			// Pa_TextBoxAddPrice
+			// 
+			this->Pa_TextBoxAddPrice->Location = System::Drawing::Point(586, 63);
+			this->Pa_TextBoxAddPrice->Name = L"Pa_TextBoxAddPrice";
+			this->Pa_TextBoxAddPrice->Size = System::Drawing::Size(90, 22);
+			this->Pa_TextBoxAddPrice->TabIndex = 15;
+			// 
+			// Pa_LableAddPrice
+			// 
+			this->Pa_LableAddPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddPrice->Location = System::Drawing::Point(586, 40);
+			this->Pa_LableAddPrice->Name = L"Pa_LableAddPrice";
+			this->Pa_LableAddPrice->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddPrice->TabIndex = 14;
+			this->Pa_LableAddPrice->Text = L"Вага";
+			// 
+			// Pa_LableAddPSId
+			// 
+			this->Pa_LableAddPSId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Pa_LableAddPSId->Location = System::Drawing::Point(682, 40);
+			this->Pa_LableAddPSId->Name = L"Pa_LableAddPSId";
+			this->Pa_LableAddPSId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddPSId->TabIndex = 17;
+			this->Pa_LableAddPSId->Text = L"Статус";
+			// 
+			// Pa_ComboBoxAddPSId
+			// 
+			this->Pa_ComboBoxAddPSId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxAddPSId->FormattingEnabled = true;
+			this->Pa_ComboBoxAddPSId->Location = System::Drawing::Point(682, 62);
+			this->Pa_ComboBoxAddPSId->Name = L"Pa_ComboBoxAddPSId";
+			this->Pa_ComboBoxAddPSId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxAddPSId->TabIndex = 16;
+			// 
+			// Pa_LableAddCurId
+			// 
+			this->Pa_LableAddCurId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddCurId->Location = System::Drawing::Point(778, 40);
+			this->Pa_LableAddCurId->Name = L"Pa_LableAddCurId";
+			this->Pa_LableAddCurId->Size = System::Drawing::Size(120, 20);
+			this->Pa_LableAddCurId->TabIndex = 19;
+			this->Pa_LableAddCurId->Text = L"Т. Перебування";
+			// 
+			// Pa_ComboBoxAddCurId
+			// 
+			this->Pa_ComboBoxAddCurId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxAddCurId->FormattingEnabled = true;
+			this->Pa_ComboBoxAddCurId->Location = System::Drawing::Point(778, 62);
+			this->Pa_ComboBoxAddCurId->Name = L"Pa_ComboBoxAddCurId";
+			this->Pa_ComboBoxAddCurId->Size = System::Drawing::Size(120, 24);
+			this->Pa_ComboBoxAddCurId->TabIndex = 18;
+			// 
+			// Pa_TextBoxAddDeliveryAddress
+			// 
+			this->Pa_TextBoxAddDeliveryAddress->Location = System::Drawing::Point(904, 63);
+			this->Pa_TextBoxAddDeliveryAddress->Name = L"Pa_TextBoxAddDeliveryAddress";
+			this->Pa_TextBoxAddDeliveryAddress->Size = System::Drawing::Size(110, 22);
+			this->Pa_TextBoxAddDeliveryAddress->TabIndex = 21;
+			// 
+			// Pa_LableAddDeliveryAddress
+			// 
+			this->Pa_LableAddDeliveryAddress->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddDeliveryAddress->Location = System::Drawing::Point(904, 40);
+			this->Pa_LableAddDeliveryAddress->Name = L"Pa_LableAddDeliveryAddress";
+			this->Pa_LableAddDeliveryAddress->Size = System::Drawing::Size(110, 20);
+			this->Pa_LableAddDeliveryAddress->TabIndex = 20;
+			this->Pa_LableAddDeliveryAddress->Text = L"Адр. доставки";
+			// 
+			// Pa_TextBoxUPDELDeliveryAddress
+			// 
+			this->Pa_TextBoxUPDELDeliveryAddress->Location = System::Drawing::Point(960, 63);
+			this->Pa_TextBoxUPDELDeliveryAddress->Name = L"Pa_TextBoxUPDELDeliveryAddress";
+			this->Pa_TextBoxUPDELDeliveryAddress->Size = System::Drawing::Size(110, 22);
+			this->Pa_TextBoxUPDELDeliveryAddress->TabIndex = 41;
+			// 
+			// Pa_LableUPDELDeliveryAddress
+			// 
+			this->Pa_LableUPDELDeliveryAddress->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableUPDELDeliveryAddress->Location = System::Drawing::Point(960, 40);
+			this->Pa_LableUPDELDeliveryAddress->Name = L"Pa_LableUPDELDeliveryAddress";
+			this->Pa_LableUPDELDeliveryAddress->Size = System::Drawing::Size(110, 20);
+			this->Pa_LableUPDELDeliveryAddress->TabIndex = 40;
+			this->Pa_LableUPDELDeliveryAddress->Text = L"Адр. доставки";
+			// 
+			// Pa_LableUPDELCurId
+			// 
+			this->Pa_LableUPDELCurId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableUPDELCurId->Location = System::Drawing::Point(834, 40);
+			this->Pa_LableUPDELCurId->Name = L"Pa_LableUPDELCurId";
+			this->Pa_LableUPDELCurId->Size = System::Drawing::Size(120, 20);
+			this->Pa_LableUPDELCurId->TabIndex = 39;
+			this->Pa_LableUPDELCurId->Text = L"Т. Перебування";
+			// 
+			// Pa_ComboBoxUPDELCurId
+			// 
+			this->Pa_ComboBoxUPDELCurId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxUPDELCurId->FormattingEnabled = true;
+			this->Pa_ComboBoxUPDELCurId->Location = System::Drawing::Point(834, 62);
+			this->Pa_ComboBoxUPDELCurId->Name = L"Pa_ComboBoxUPDELCurId";
+			this->Pa_ComboBoxUPDELCurId->Size = System::Drawing::Size(120, 24);
+			this->Pa_ComboBoxUPDELCurId->TabIndex = 38;
+			// 
+			// Pa_LableUPDELPSId
+			// 
+			this->Pa_LableUPDELPSId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableUPDELPSId->Location = System::Drawing::Point(738, 40);
+			this->Pa_LableUPDELPSId->Name = L"Pa_LableUPDELPSId";
+			this->Pa_LableUPDELPSId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableUPDELPSId->TabIndex = 37;
+			this->Pa_LableUPDELPSId->Text = L"Статус";
+			// 
+			// Pa_ComboBoxUPDELPSId
+			// 
+			this->Pa_ComboBoxUPDELPSId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxUPDELPSId->FormattingEnabled = true;
+			this->Pa_ComboBoxUPDELPSId->Location = System::Drawing::Point(738, 62);
+			this->Pa_ComboBoxUPDELPSId->Name = L"Pa_ComboBoxUPDELPSId";
+			this->Pa_ComboBoxUPDELPSId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxUPDELPSId->TabIndex = 36;
+			// 
+			// Pa_TextBoxUPDELPrice
+			// 
+			this->Pa_TextBoxUPDELPrice->Location = System::Drawing::Point(642, 63);
+			this->Pa_TextBoxUPDELPrice->Name = L"Pa_TextBoxUPDELPrice";
+			this->Pa_TextBoxUPDELPrice->Size = System::Drawing::Size(90, 22);
+			this->Pa_TextBoxUPDELPrice->TabIndex = 35;
+			// 
+			// Pa_LableUPDELPrice
+			// 
+			this->Pa_LableUPDELPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableUPDELPrice->Location = System::Drawing::Point(642, 40);
+			this->Pa_LableUPDELPrice->Name = L"Pa_LableUPDELPrice";
+			this->Pa_LableUPDELPrice->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableUPDELPrice->TabIndex = 34;
+			this->Pa_LableUPDELPrice->Text = L"Вага";
+			// 
+			// Pa_LableUPDELDelId
+			// 
+			this->Pa_LableUPDELDelId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableUPDELDelId->Location = System::Drawing::Point(546, 40);
+			this->Pa_LableUPDELDelId->Name = L"Pa_LableUPDELDelId";
+			this->Pa_LableUPDELDelId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableUPDELDelId->TabIndex = 33;
+			this->Pa_LableUPDELDelId->Text = L"Т. Прибуття";
+			// 
+			// Pa_ComboBoxUPDELDelId
+			// 
+			this->Pa_ComboBoxUPDELDelId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxUPDELDelId->FormattingEnabled = true;
+			this->Pa_ComboBoxUPDELDelId->Location = System::Drawing::Point(546, 62);
+			this->Pa_ComboBoxUPDELDelId->Name = L"Pa_ComboBoxUPDELDelId";
+			this->Pa_ComboBoxUPDELDelId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxUPDELDelId->TabIndex = 32;
+			// 
+			// Pa_LableUPDELDepId
+			// 
+			this->Pa_LableUPDELDepId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableUPDELDepId->Location = System::Drawing::Point(450, 40);
+			this->Pa_LableUPDELDepId->Name = L"Pa_LableUPDELDepId";
+			this->Pa_LableUPDELDepId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableUPDELDepId->TabIndex = 31;
+			this->Pa_LableUPDELDepId->Text = L"Т. Відправки";
+			// 
+			// Pa_ComboBoxUPDELDepId
+			// 
+			this->Pa_ComboBoxUPDELDepId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxUPDELDepId->FormattingEnabled = true;
+			this->Pa_ComboBoxUPDELDepId->Location = System::Drawing::Point(450, 62);
+			this->Pa_ComboBoxUPDELDepId->Name = L"Pa_ComboBoxUPDELDepId";
+			this->Pa_ComboBoxUPDELDepId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxUPDELDepId->TabIndex = 30;
+			// 
+			// Pa_LableUPDELRecId
+			// 
+			this->Pa_LableUPDELRecId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableUPDELRecId->Location = System::Drawing::Point(354, 40);
+			this->Pa_LableUPDELRecId->Name = L"Pa_LableUPDELRecId";
+			this->Pa_LableUPDELRecId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableUPDELRecId->TabIndex = 29;
+			this->Pa_LableUPDELRecId->Text = L"Отримувач";
+			// 
+			// Pa_ComboBoxUPDELRecId
+			// 
+			this->Pa_ComboBoxUPDELRecId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxUPDELRecId->FormattingEnabled = true;
+			this->Pa_ComboBoxUPDELRecId->Location = System::Drawing::Point(354, 62);
+			this->Pa_ComboBoxUPDELRecId->Name = L"Pa_ComboBoxUPDELRecId";
+			this->Pa_ComboBoxUPDELRecId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxUPDELRecId->TabIndex = 28;
+			// 
+			// Pa_LableUPDELCenId
+			// 
+			this->Pa_LableUPDELCenId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableUPDELCenId->Location = System::Drawing::Point(258, 40);
+			this->Pa_LableUPDELCenId->Name = L"Pa_LableUPDELCenId";
+			this->Pa_LableUPDELCenId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableUPDELCenId->TabIndex = 27;
+			this->Pa_LableUPDELCenId->Text = L"Відправник";
+			// 
+			// Pa_ComboBoxUPDELCenId
+			// 
+			this->Pa_ComboBoxUPDELCenId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxUPDELCenId->FormattingEnabled = true;
+			this->Pa_ComboBoxUPDELCenId->Location = System::Drawing::Point(258, 62);
+			this->Pa_ComboBoxUPDELCenId->Name = L"Pa_ComboBoxUPDELCenId";
+			this->Pa_ComboBoxUPDELCenId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxUPDELCenId->TabIndex = 26;
+			// 
+			// Pa_TextBoxUPDELWeight
+			// 
+			this->Pa_TextBoxUPDELWeight->Location = System::Drawing::Point(162, 63);
+			this->Pa_TextBoxUPDELWeight->Name = L"Pa_TextBoxUPDELWeight";
+			this->Pa_TextBoxUPDELWeight->Size = System::Drawing::Size(90, 22);
+			this->Pa_TextBoxUPDELWeight->TabIndex = 25;
+			// 
+			// Pa_LableUPDELWeight
+			// 
+			this->Pa_LableUPDELWeight->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableUPDELWeight->Location = System::Drawing::Point(162, 40);
+			this->Pa_LableUPDELWeight->Name = L"Pa_LableUPDELWeight";
+			this->Pa_LableUPDELWeight->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableUPDELWeight->TabIndex = 24;
+			this->Pa_LableUPDELWeight->Text = L"Вага";
+			// 
+			// Pa_TextBoxUPDELInfo
+			// 
+			this->Pa_TextBoxUPDELInfo->Location = System::Drawing::Point(66, 63);
+			this->Pa_TextBoxUPDELInfo->Name = L"Pa_TextBoxUPDELInfo";
+			this->Pa_TextBoxUPDELInfo->Size = System::Drawing::Size(90, 22);
+			this->Pa_TextBoxUPDELInfo->TabIndex = 23;
+			// 
+			// Pa_LableUPDELInfo
+			// 
+			this->Pa_LableUPDELInfo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableUPDELInfo->Location = System::Drawing::Point(66, 40);
+			this->Pa_LableUPDELInfo->Name = L"Pa_LableUPDELInfo";
+			this->Pa_LableUPDELInfo->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableUPDELInfo->TabIndex = 22;
+			this->Pa_LableUPDELInfo->Text = L"Інфо";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1912,6 +2723,13 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListEmail;
 			this->Cl_PanelUPDEL->PerformLayout();
 			this->Cl_PanelAdd->ResumeLayout(false);
 			this->Cl_PanelAdd->PerformLayout();
+			this->Pa_Page->ResumeLayout(false);
+			this->Pa_PanelList->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Pa_DataGridView))->EndInit();
+			this->Pa_PanelUPDEL->ResumeLayout(false);
+			this->Pa_PanelUPDEL->PerformLayout();
+			this->Pa_PanelAdd->ResumeLayout(false);
+			this->Pa_PanelAdd->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
