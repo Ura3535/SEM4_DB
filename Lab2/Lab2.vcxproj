@@ -121,6 +121,7 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Repository.h" />
     <ClInclude Include="SQLRepository.h" />
   </ItemGroup>
   <ItemGroup>
