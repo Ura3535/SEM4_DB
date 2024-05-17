@@ -35,20 +35,14 @@ namespace Lab2 {
 			}
 		}
 	private: System::Windows::Forms::TabControl^ MainTabControl;
-	protected:
-
 	private: System::Windows::Forms::TabPage^ MainPage;
 	private: System::Windows::Forms::TabPage^ TablePage;
 	private: System::Windows::Forms::TabPage^ QueryPage;
 	private: System::Windows::Forms::TabPage^ InfoPage;
 	private: System::Windows::Forms::TabControl^ TableTabControl;
-
-
 	private: System::Windows::Forms::TabPage^ FT_Page;
 	private: System::Windows::Forms::Panel^ FT_PanelList;
 	private: System::Windows::Forms::DataGridView^ FT_DataGridView;
-
-
 	private: System::Windows::Forms::Label^ FT_LabelList;
 	private: System::Windows::Forms::Panel^ FT_PanelUPDEL;
 	private: System::Windows::Forms::Button^ FT_ButtonUPDELDelete;
@@ -58,9 +52,7 @@ namespace Lab2 {
 	private: System::Windows::Forms::ComboBox^ FT_ComboBoxUPDELId;
 	private: System::Windows::Forms::Label^ FT_LableUPDELType;
 	private: System::Windows::Forms::Label^ FT_LabelUPDELId;
-
 	private: System::Windows::Forms::Label^ FT_LabelUPDEL;
-
 	private: System::Windows::Forms::Panel^ FT_PanelAdd;
 	private: System::Windows::Forms::Button^ FT_ButtonAdd;
 	private: System::Windows::Forms::TextBox^ FT_TextBoxAddType;
@@ -69,12 +61,6 @@ namespace Lab2 {
 	private: System::Windows::Forms::TabPage^ PF_Page;
 	private: System::Windows::Forms::Panel^ PF_PanelList;
 	private: System::Windows::Forms::DataGridView^ PF_DataGridView;
-
-
-
-
-
-
 	private: System::Windows::Forms::Label^ PF_LabelList;
 	private: System::Windows::Forms::Panel^ PF_PanelUPDEL;
 	private: System::Windows::Forms::Button^ PF_ButtonUPDELDelete;
@@ -93,7 +79,6 @@ namespace Lab2 {
 	private: System::Windows::Forms::TextBox^ PF_TextBoxUPDELName;
 	private: System::Windows::Forms::Label^ PF_LableUPDELName;
 	private: System::Windows::Forms::Label^ PF_LabelUPDEL;
-
 	private: System::Windows::Forms::Panel^ PF_PanelAdd;
 	private: System::Windows::Forms::Label^ PF_LableAddWeightRestrictions;
 	private: System::Windows::Forms::TextBox^ PF_TextBoxAddWeightRestrictions;
@@ -115,285 +100,151 @@ namespace Lab2 {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PF_ListAddress;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PF_ListWorkSchedule;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PF_ListWeightRestrictions;
-private: System::Windows::Forms::TabPage^ PS_Page;
-private: System::Windows::Forms::Panel^ PS_PanelList;
-private: System::Windows::Forms::DataGridView^ PS_DataGridView;
-
-
-
-
-
-private: System::Windows::Forms::Label^ PS_LabelList;
-
-private: System::Windows::Forms::Panel^ PS_PanelUPDEL;
-private: System::Windows::Forms::Button^ PS_ButtonUPDELDelete;
-
-
-private: System::Windows::Forms::Button^ PS_ButtonUPDELRollBack;
-
-private: System::Windows::Forms::Button^ PS_ButtonUPDELSave;
-
-private: System::Windows::Forms::TextBox^ PS_TextBoxUPDELStatus;
-
-private: System::Windows::Forms::ComboBox^ PS_ComboBoxUPDELId;
-
-private: System::Windows::Forms::Label^ PS_LabelUPDELStatus;
-
-private: System::Windows::Forms::Label^ PS_LabelUPDELId;
-
-private: System::Windows::Forms::Label^ PS_LabelUPDEL;
-
-private: System::Windows::Forms::Panel^ PS_PanelAdd;
-
-private: System::Windows::Forms::Button^ PS_ButtonAdd;
-private: System::Windows::Forms::TextBox^ PS_TextBoxAddStatus;
-
-
-
-private: System::Windows::Forms::Label^ PS_LableAddStatus;
-
-private: System::Windows::Forms::Label^ PS_LabelAdd;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ PS_ListId;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ PS_ListStatus;
-private: System::Windows::Forms::TabPage^ Co_Page;
-private: System::Windows::Forms::Panel^ Co_PanelList;
-private: System::Windows::Forms::DataGridView^ Co_DataGridView;
-
-
-
-
-
-
-
-private: System::Windows::Forms::Label^ Co_LabelList;
-
-private: System::Windows::Forms::Panel^ Co_PanelUPDEL;
-private: System::Windows::Forms::Button^ Co_ButtonUPDELDelete;
-
-private: System::Windows::Forms::Button^ Co_ButtonUPDELRollBack;
-
-private: System::Windows::Forms::Button^ Co_ButtonUPDELSave;
-
-private: System::Windows::Forms::ComboBox^ Co_ComboBoxUPDELId;
-
-private: System::Windows::Forms::Label^ Co_LableUPDELId;
-private: System::Windows::Forms::TextBox^ Co_TextBoxUPDELCity;
-
-
-private: System::Windows::Forms::Label^ Co_LableUPDELPaId;
-private: System::Windows::Forms::ComboBox^ Co_ComboBoxUPDELPaId;
-
-
-private: System::Windows::Forms::Label^ Co_LableUPDELCity;
-private: System::Windows::Forms::TextBox^ Co_TextBoxUPDELName;
-
-
-private: System::Windows::Forms::Label^ Co_LableUPDELName;
-
-private: System::Windows::Forms::Label^ Co_LabelUPDEL;
-
-private: System::Windows::Forms::Panel^ Co_PanelAdd;
-private: System::Windows::Forms::TextBox^ Co_TextBoxAddCity;
-
-private: System::Windows::Forms::Label^ Co_LableAddPaId;
-private: System::Windows::Forms::ComboBox^ Co_ComboBoxAddPaId;
-
-
-
-private: System::Windows::Forms::Label^ Co_LableAddCity;
-private: System::Windows::Forms::Button^ Co_ButtonAdd;
-
-
-private: System::Windows::Forms::TextBox^ Co_TextBoxAddName;
-
-private: System::Windows::Forms::Label^ Co_LableAddName;
-
-private: System::Windows::Forms::Label^ Co_LabelAdd;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Co_ListId;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Co_ListName;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Co_ListCity;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Co_ListPaId;
-private: System::Windows::Forms::TabPage^ Cl_Page;
-private: System::Windows::Forms::Panel^ Cl_PanelList;
-private: System::Windows::Forms::DataGridView^ Cl_DataGridView;
-
-
-
-
-
-private: System::Windows::Forms::Label^ Cl_LabelList;
-
-private: System::Windows::Forms::Panel^ Cl_PanelUPDEL;
-private: System::Windows::Forms::TextBox^ Cl_TextBoxUPDELEmail;
-private: System::Windows::Forms::Button^ Cl_ButtonUPDELDelete;
-
-
-private: System::Windows::Forms::Button^ Cl_ButtonUPDELRollBack;
-
-private: System::Windows::Forms::Button^ Cl_ButtonUPDELSave;
-
-private: System::Windows::Forms::ComboBox^ Cl_ComboBoxUPDELId;
-
-private: System::Windows::Forms::Label^ Cl_LableUPDELId;
-private: System::Windows::Forms::TextBox^ Cl_TextBoxUPDELContactNumber;
-
-
-private: System::Windows::Forms::Label^ Cl_LableUPDELEmail;
-
-private: System::Windows::Forms::Label^ Cl_LableUPDELContactNumber;
-private: System::Windows::Forms::TextBox^ Cl_TextBoxUPDELName;
-
-
-private: System::Windows::Forms::Label^ Cl_LableUPDELName;
-
-private: System::Windows::Forms::Label^ Cl_LabelUPDEL;
-
-private: System::Windows::Forms::Panel^ Cl_PanelAdd;
-private: System::Windows::Forms::TextBox^ Cl_TextBoxAddEmail;
-
-private: System::Windows::Forms::TextBox^ Cl_TextBoxAddContactNumber;
-
-private: System::Windows::Forms::Label^ Cl_LableAddEmail;
-
-private: System::Windows::Forms::Label^ Cl_LableAddContactNumber;
-private: System::Windows::Forms::Button^ Cl_ButtonAdd;
-
-private: System::Windows::Forms::TextBox^ Cl_TextBoxAddName;
-private: System::Windows::Forms::Label^ Cl_LableAddName;
-
-
-private: System::Windows::Forms::Label^ Cl_LabelAdd;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListId;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListName;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListContactNumber;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListEmail;
-private: System::Windows::Forms::TabPage^ Pa_Page;
-private: System::Windows::Forms::Panel^ Pa_PanelList;
-private: System::Windows::Forms::DataGridView^ Pa_DataGridView;
-
-
-
-
-private: System::Windows::Forms::Label^ Pa_LabelList;
-
-private: System::Windows::Forms::Panel^ Pa_PanelUPDEL;
-private: System::Windows::Forms::Button^ Pa_ButtonUPDELDelete;
-
-private: System::Windows::Forms::Button^ Pa_ButtonUPDELRollBack;
-
-private: System::Windows::Forms::Button^ Pa_ButtonUPDELSave;
-
-
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELId;
-
-
-private: System::Windows::Forms::Label^ Pa_LableUPDELId;
-
-private: System::Windows::Forms::Label^ Pa_LabelUPDEL;
-
-private: System::Windows::Forms::Panel^ Pa_PanelAdd;
-private: System::Windows::Forms::Button^ Pa_ButtonAdd;
-private: System::Windows::Forms::TextBox^ Pa_TextBoxAddInfo;
-
-
-private: System::Windows::Forms::Label^ Pa_LableAddInfo;
-
-private: System::Windows::Forms::Label^ Pa_LabelAdd;
-
-
-
-
-
-
-
-
-
-
-
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddCenId;
-private: System::Windows::Forms::TextBox^ Pa_TextBoxAddWeight;
-
-
-private: System::Windows::Forms::Label^ Pa_LableAddWeight;
-private: System::Windows::Forms::Label^ Pa_LableAddCenId;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListId;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListInfo;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListWeight;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListSenId;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListRecId;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListDepId;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListDelId;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListPrice;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListPSId;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListCurId;
-private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListDeliveryAddress;
-private: System::Windows::Forms::Label^ Pa_LableAddDepId;
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddDepId;
-private: System::Windows::Forms::Label^ Pa_LableAddRecId;
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddRecId;
-private: System::Windows::Forms::TextBox^ Pa_TextBoxAddPrice;
-
-private: System::Windows::Forms::Label^ Pa_LableAddPrice;
-private: System::Windows::Forms::Label^ Pa_LableAddDelId;
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddDelId;
-private: System::Windows::Forms::Label^ Pa_LableAddPSId;
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddPSId;
-private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELDeliveryAddress;
-
-private: System::Windows::Forms::Label^ Pa_LableUPDELDeliveryAddress;
-
-private: System::Windows::Forms::Label^ Pa_LableUPDELCurId;
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELCurId;
-
-
-private: System::Windows::Forms::Label^ Pa_LableUPDELPSId;
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELPSId;
-
-
-private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELPrice;
-
-private: System::Windows::Forms::Label^ Pa_LableUPDELPrice;
-
-private: System::Windows::Forms::Label^ Pa_LableUPDELDelId;
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELDelId;
-
-
-private: System::Windows::Forms::Label^ Pa_LableUPDELDepId;
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELDepId;
-
-
-private: System::Windows::Forms::Label^ Pa_LableUPDELRecId;
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELRecId;
-
-
-private: System::Windows::Forms::Label^ Pa_LableUPDELCenId;
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELCenId;
-
-
-private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELWeight;
-
-private: System::Windows::Forms::Label^ Pa_LableUPDELWeight;
-private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELInfo;
-
-
-private: System::Windows::Forms::Label^ Pa_LableUPDELInfo;
-
-private: System::Windows::Forms::TextBox^ Pa_TextBoxAddDeliveryAddress;
-private: System::Windows::Forms::Label^ Pa_LableAddDeliveryAddress;
-private: System::Windows::Forms::Label^ Pa_LableAddCurId;
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddCurId;
-
-
-
-
-
-
-
-
-	protected:
-
-
-
+	private: System::Windows::Forms::TabPage^ PS_Page;
+	private: System::Windows::Forms::Panel^ PS_PanelList;
+	private: System::Windows::Forms::DataGridView^ PS_DataGridView;
+	private: System::Windows::Forms::Label^ PS_LabelList;
+	private: System::Windows::Forms::Panel^ PS_PanelUPDEL;
+	private: System::Windows::Forms::Button^ PS_ButtonUPDELDelete;
+	private: System::Windows::Forms::Button^ PS_ButtonUPDELRollBack;
+	private: System::Windows::Forms::Button^ PS_ButtonUPDELSave;
+	private: System::Windows::Forms::TextBox^ PS_TextBoxUPDELStatus;
+	private: System::Windows::Forms::ComboBox^ PS_ComboBoxUPDELId;
+	private: System::Windows::Forms::Label^ PS_LabelUPDELStatus;
+	private: System::Windows::Forms::Label^ PS_LabelUPDELId;
+	private: System::Windows::Forms::Label^ PS_LabelUPDEL;
+	private: System::Windows::Forms::Panel^ PS_PanelAdd;
+	private: System::Windows::Forms::Button^ PS_ButtonAdd;
+	private: System::Windows::Forms::TextBox^ PS_TextBoxAddStatus;
+	private: System::Windows::Forms::Label^ PS_LableAddStatus;
+	private: System::Windows::Forms::Label^ PS_LabelAdd;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PS_ListId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PS_ListStatus;
+	private: System::Windows::Forms::TabPage^ Co_Page;
+	private: System::Windows::Forms::Panel^ Co_PanelList;
+	private: System::Windows::Forms::DataGridView^ Co_DataGridView;
+	private: System::Windows::Forms::Label^ Co_LabelList;
+	private: System::Windows::Forms::Panel^ Co_PanelUPDEL;
+	private: System::Windows::Forms::Button^ Co_ButtonUPDELDelete;
+	private: System::Windows::Forms::Button^ Co_ButtonUPDELRollBack;
+	private: System::Windows::Forms::Button^ Co_ButtonUPDELSave;
+	private: System::Windows::Forms::ComboBox^ Co_ComboBoxUPDELId;
+	private: System::Windows::Forms::Label^ Co_LableUPDELId;
+	private: System::Windows::Forms::TextBox^ Co_TextBoxUPDELCity;
+	private: System::Windows::Forms::Label^ Co_LableUPDELPaId;
+	private: System::Windows::Forms::ComboBox^ Co_ComboBoxUPDELPaId;
+	private: System::Windows::Forms::Label^ Co_LableUPDELCity;
+	private: System::Windows::Forms::TextBox^ Co_TextBoxUPDELName;
+	private: System::Windows::Forms::Label^ Co_LableUPDELName;
+	private: System::Windows::Forms::Label^ Co_LabelUPDEL;
+	private: System::Windows::Forms::Panel^ Co_PanelAdd;
+	private: System::Windows::Forms::TextBox^ Co_TextBoxAddCity;
+	private: System::Windows::Forms::Label^ Co_LableAddPaId;
+	private: System::Windows::Forms::ComboBox^ Co_ComboBoxAddPaId;
+	private: System::Windows::Forms::Label^ Co_LableAddCity;
+	private: System::Windows::Forms::Button^ Co_ButtonAdd;
+	private: System::Windows::Forms::TextBox^ Co_TextBoxAddName;
+	private: System::Windows::Forms::Label^ Co_LableAddName;
+	private: System::Windows::Forms::Label^ Co_LabelAdd;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Co_ListId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Co_ListName;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Co_ListCity;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Co_ListPaId;
+	private: System::Windows::Forms::TabPage^ Cl_Page;
+	private: System::Windows::Forms::Panel^ Cl_PanelList;
+	private: System::Windows::Forms::DataGridView^ Cl_DataGridView;
+	private: System::Windows::Forms::Label^ Cl_LabelList;
+	private: System::Windows::Forms::Panel^ Cl_PanelUPDEL;
+	private: System::Windows::Forms::TextBox^ Cl_TextBoxUPDELEmail;
+	private: System::Windows::Forms::Button^ Cl_ButtonUPDELDelete;
+	private: System::Windows::Forms::Button^ Cl_ButtonUPDELRollBack;
+	private: System::Windows::Forms::Button^ Cl_ButtonUPDELSave;
+	private: System::Windows::Forms::ComboBox^ Cl_ComboBoxUPDELId;
+	private: System::Windows::Forms::Label^ Cl_LableUPDELId;
+	private: System::Windows::Forms::TextBox^ Cl_TextBoxUPDELContactNumber;
+	private: System::Windows::Forms::Label^ Cl_LableUPDELEmail;
+	private: System::Windows::Forms::Label^ Cl_LableUPDELContactNumber;
+	private: System::Windows::Forms::TextBox^ Cl_TextBoxUPDELName;
+	private: System::Windows::Forms::Label^ Cl_LableUPDELName;
+	private: System::Windows::Forms::Label^ Cl_LabelUPDEL;
+	private: System::Windows::Forms::Panel^ Cl_PanelAdd;
+	private: System::Windows::Forms::TextBox^ Cl_TextBoxAddEmail;
+	private: System::Windows::Forms::TextBox^ Cl_TextBoxAddContactNumber;
+	private: System::Windows::Forms::Label^ Cl_LableAddEmail;
+	private: System::Windows::Forms::Label^ Cl_LableAddContactNumber;
+	private: System::Windows::Forms::Button^ Cl_ButtonAdd;
+	private: System::Windows::Forms::TextBox^ Cl_TextBoxAddName;
+	private: System::Windows::Forms::Label^ Cl_LableAddName;
+	private: System::Windows::Forms::Label^ Cl_LabelAdd;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListName;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListContactNumber;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListEmail;
+	private: System::Windows::Forms::TabPage^ Pa_Page;
+	private: System::Windows::Forms::Panel^ Pa_PanelList;
+	private: System::Windows::Forms::DataGridView^ Pa_DataGridView;
+	private: System::Windows::Forms::Label^ Pa_LabelList;
+	private: System::Windows::Forms::Panel^ Pa_PanelUPDEL;
+	private: System::Windows::Forms::Button^ Pa_ButtonUPDELDelete;
+	private: System::Windows::Forms::Button^ Pa_ButtonUPDELRollBack;
+	private: System::Windows::Forms::Button^ Pa_ButtonUPDELSave;
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELId;
+	private: System::Windows::Forms::Label^ Pa_LableUPDELId;
+	private: System::Windows::Forms::Label^ Pa_LabelUPDEL;
+	private: System::Windows::Forms::Panel^ Pa_PanelAdd;
+	private: System::Windows::Forms::Button^ Pa_ButtonAdd;
+	private: System::Windows::Forms::TextBox^ Pa_TextBoxAddInfo;
+	private: System::Windows::Forms::Label^ Pa_LableAddInfo;
+	private: System::Windows::Forms::Label^ Pa_LabelAdd;
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddCenId;
+	private: System::Windows::Forms::TextBox^ Pa_TextBoxAddWeight;
+	private: System::Windows::Forms::Label^ Pa_LableAddWeight;
+	private: System::Windows::Forms::Label^ Pa_LableAddCenId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListInfo;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListWeight;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListSenId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListRecId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListDepId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListDelId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListPrice;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListPSId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListCurId;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListDeliveryAddress;
+	private: System::Windows::Forms::Label^ Pa_LableAddDepId;
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddDepId;
+	private: System::Windows::Forms::Label^ Pa_LableAddRecId;
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddRecId;
+	private: System::Windows::Forms::TextBox^ Pa_TextBoxAddPrice;
+	private: System::Windows::Forms::Label^ Pa_LableAddPrice;
+	private: System::Windows::Forms::Label^ Pa_LableAddDelId;
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddDelId;
+	private: System::Windows::Forms::Label^ Pa_LableAddPSId;
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddPSId;
+	private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELDeliveryAddress;
+	private: System::Windows::Forms::Label^ Pa_LableUPDELDeliveryAddress;
+	private: System::Windows::Forms::Label^ Pa_LableUPDELCurId;
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELCurId;
+	private: System::Windows::Forms::Label^ Pa_LableUPDELPSId;
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELPSId;
+	private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELPrice;
+	private: System::Windows::Forms::Label^ Pa_LableUPDELPrice;
+	private: System::Windows::Forms::Label^ Pa_LableUPDELDelId;
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELDelId;
+	private: System::Windows::Forms::Label^ Pa_LableUPDELDepId;
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELDepId;
+	private: System::Windows::Forms::Label^ Pa_LableUPDELRecId;
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELRecId;
+	private: System::Windows::Forms::Label^ Pa_LableUPDELCenId;
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELCenId;
+	private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELWeight;
+	private: System::Windows::Forms::Label^ Pa_LableUPDELWeight;
+	private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELInfo;
+	private: System::Windows::Forms::Label^ Pa_LableUPDELInfo;
+	private: System::Windows::Forms::TextBox^ Pa_TextBoxAddDeliveryAddress;
+	private: System::Windows::Forms::Label^ Pa_LableAddDeliveryAddress;
+	private: System::Windows::Forms::Label^ Pa_LableAddCurId;
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddCurId;
 	private:
 		/// <summary>
 		/// Required designer variable.
