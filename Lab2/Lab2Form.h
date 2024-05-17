@@ -1438,6 +1438,7 @@ namespace Lab2 {
 			this->Co_ButtonUPDELDelete->TabIndex = 16;
 			this->Co_ButtonUPDELDelete->Text = L"Видалити";
 			this->Co_ButtonUPDELDelete->UseVisualStyleBackColor = true;
+			this->Co_ButtonUPDELDelete->Click += gcnew System::EventHandler(this, &Lab2Form::Co_ButtonUPDELDelete_Click);
 			// 
 			// Co_ButtonUPDELRollBack
 			// 
@@ -1447,6 +1448,7 @@ namespace Lab2 {
 			this->Co_ButtonUPDELRollBack->TabIndex = 15;
 			this->Co_ButtonUPDELRollBack->Text = L"Відмінити";
 			this->Co_ButtonUPDELRollBack->UseVisualStyleBackColor = true;
+			this->Co_ButtonUPDELRollBack->Click += gcnew System::EventHandler(this, &Lab2Form::Co_ButtonUPDELRollBack_Click);
 			// 
 			// Co_ButtonUPDELSave
 			// 
@@ -1456,6 +1458,7 @@ namespace Lab2 {
 			this->Co_ButtonUPDELSave->TabIndex = 14;
 			this->Co_ButtonUPDELSave->Text = L"Зберегти";
 			this->Co_ButtonUPDELSave->UseVisualStyleBackColor = true;
+			this->Co_ButtonUPDELSave->Click += gcnew System::EventHandler(this, &Lab2Form::Co_ButtonUPDELSave_Click);
 			// 
 			// Co_ComboBoxUPDELId
 			// 
@@ -1465,6 +1468,7 @@ namespace Lab2 {
 			this->Co_ComboBoxUPDELId->Name = L"Co_ComboBoxUPDELId";
 			this->Co_ComboBoxUPDELId->Size = System::Drawing::Size(50, 24);
 			this->Co_ComboBoxUPDELId->TabIndex = 13;
+			this->Co_ComboBoxUPDELId->SelectedIndexChanged += gcnew System::EventHandler(this, &Lab2Form::Co_ComboBoxUPDELId_SelectedIndexChanged);
 			// 
 			// Co_LableUPDELId
 			// 
@@ -1593,6 +1597,7 @@ namespace Lab2 {
 			this->Co_ButtonAdd->TabIndex = 3;
 			this->Co_ButtonAdd->Text = L"Додати";
 			this->Co_ButtonAdd->UseVisualStyleBackColor = true;
+			this->Co_ButtonAdd->Click += gcnew System::EventHandler(this, &Lab2Form::Co_ButtonAdd_Click);
 			// 
 			// Co_TextBoxAddName
 			// 
@@ -2626,6 +2631,14 @@ namespace Lab2 {
 	private: Void PS_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
 	private: Void PS_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
 	private: Void PS_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e);
+#pragma endregion
+
+#pragma region Couriers
+	private: Void Co_ButtonAdd_Click(Object^ sender, EventArgs^ e);
+	private: Void Co_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e);
+	private: Void Co_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
+	private: Void Co_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
+	private: Void Co_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e);
 #pragma endregion
 
 };

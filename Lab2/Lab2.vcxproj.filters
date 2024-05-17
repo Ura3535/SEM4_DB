@@ -56,5 +56,8 @@
     <ClCompile Include="ParcelStatusController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
+    <ClCompile Include="CouriersController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

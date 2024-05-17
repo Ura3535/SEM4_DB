@@ -125,6 +125,7 @@
     <ClInclude Include="SQLRepository.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CouriersController.cpp" />
     <ClCompile Include="FacilityTypeController.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Lab2Form.cpp" />
