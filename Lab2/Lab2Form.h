@@ -908,6 +908,7 @@ namespace Lab2 {
 			this->PF_ComboBoxUPDELId->Name = L"PF_ComboBoxUPDELId";
 			this->PF_ComboBoxUPDELId->Size = System::Drawing::Size(50, 24);
 			this->PF_ComboBoxUPDELId->TabIndex = 13;
+			this->PF_ComboBoxUPDELId->SelectedIndexChanged += gcnew System::EventHandler(this, &Lab2Form::PF_ComboBoxUPDELId_SelectedIndexChanged);
 			// 
 			// PF_LableUPDELId
 			// 
@@ -1215,6 +1216,7 @@ namespace Lab2 {
 			this->PS_ButtonUPDELDelete->TabIndex = 8;
 			this->PS_ButtonUPDELDelete->Text = L"Видалити";
 			this->PS_ButtonUPDELDelete->UseVisualStyleBackColor = true;
+			this->PS_ButtonUPDELDelete->Click += gcnew System::EventHandler(this, &Lab2Form::PS_ButtonUPDELDelete_Click);
 			// 
 			// PS_ButtonUPDELRollBack
 			// 
@@ -1224,6 +1226,7 @@ namespace Lab2 {
 			this->PS_ButtonUPDELRollBack->TabIndex = 7;
 			this->PS_ButtonUPDELRollBack->Text = L"Відмінити";
 			this->PS_ButtonUPDELRollBack->UseVisualStyleBackColor = true;
+			this->PS_ButtonUPDELRollBack->Click += gcnew System::EventHandler(this, &Lab2Form::PS_ButtonUPDELRollBack_Click);
 			// 
 			// PS_ButtonUPDELSave
 			// 
@@ -1233,6 +1236,7 @@ namespace Lab2 {
 			this->PS_ButtonUPDELSave->TabIndex = 6;
 			this->PS_ButtonUPDELSave->Text = L"Зберегти";
 			this->PS_ButtonUPDELSave->UseVisualStyleBackColor = true;
+			this->PS_ButtonUPDELSave->Click += gcnew System::EventHandler(this, &Lab2Form::PS_ButtonUPDELSave_Click);
 			// 
 			// PS_TextBoxUPDELStatus
 			// 
@@ -1249,6 +1253,7 @@ namespace Lab2 {
 			this->PS_ComboBoxUPDELId->Name = L"PS_ComboBoxUPDELId";
 			this->PS_ComboBoxUPDELId->Size = System::Drawing::Size(50, 24);
 			this->PS_ComboBoxUPDELId->TabIndex = 4;
+			this->PS_ComboBoxUPDELId->SelectedIndexChanged += gcnew System::EventHandler(this, &Lab2Form::PS_ComboBoxUPDELId_SelectedIndexChanged);
 			// 
 			// PS_LabelUPDELStatus
 			// 
@@ -1300,6 +1305,7 @@ namespace Lab2 {
 			this->PS_ButtonAdd->TabIndex = 3;
 			this->PS_ButtonAdd->Text = L"Додати";
 			this->PS_ButtonAdd->UseVisualStyleBackColor = true;
+			this->PS_ButtonAdd->Click += gcnew System::EventHandler(this, &Lab2Form::PS_ButtonAdd_Click);
 			// 
 			// PS_TextBoxAddStatus
 			// 
@@ -2611,6 +2617,15 @@ namespace Lab2 {
 	private: Void PF_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e);
 	private: Void PF_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
 	private: Void PF_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
+	private: Void PF_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e);
+#pragma endregion
+
+#pragma region ParcelStatuses
+	private: Void PS_ButtonAdd_Click(Object^ sender, EventArgs^ e);
+	private: Void PS_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e);
+	private: Void PS_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
+	private: Void PS_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
+	private: Void PS_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e);
 #pragma endregion
 
 };
