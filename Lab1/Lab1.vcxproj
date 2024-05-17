@@ -128,7 +128,7 @@
   <ItemGroup>
     <ClCompile Include="FacilityTypeRepository.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Lab1Form.cpp" />
     <ClCompile Include="PostalFacilityRepository.cpp" />
     <ClCompile Include="Repository.cpp" />
   </ItemGroup>

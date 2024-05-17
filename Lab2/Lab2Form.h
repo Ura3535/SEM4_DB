@@ -1,4 +1,5 @@
 #pragma once
+#include "Repository.h"
 
 namespace Lab2 {
 
@@ -15,7 +16,8 @@ namespace Lab2 {
 	public ref class Lab2Form : public System::Windows::Forms::Form
 	{
 	public:
-		Lab2Form(void)
+		Lab2Form(Repository::IRepository^ repository)
+			: rep(repository)
 		{
 			InitializeComponent();
 			//
@@ -34,6 +36,7 @@ namespace Lab2 {
 				delete components;
 			}
 		}
+	private: Repository::IRepository^ rep;
 	private: System::Windows::Forms::TabControl^ MainTabControl;
 	private: System::Windows::Forms::TabPage^ MainPage;
 	private: System::Windows::Forms::TabPage^ TablePage;

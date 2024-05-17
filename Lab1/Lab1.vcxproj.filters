@@ -33,7 +33,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MyForm.cpp">
+    <ClCompile Include="Lab1Form.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
