@@ -98,14 +98,14 @@ namespace Lab2 {
 	private: System::Windows::Forms::TextBox^ PF_TextBoxAddName;
 	private: System::Windows::Forms::Label^ PF_LableAddName;
 	private: System::Windows::Forms::Label^ PF_LabelAdd;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ FT_ListId;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ FT_ListType;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PF_ListId;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PF_ListName;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PF_ListFTId;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PF_ListAddress;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PF_ListWorkSchedule;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PF_ListWeightRestrictions;
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::TabPage^ PS_Page;
 	private: System::Windows::Forms::Panel^ PS_PanelList;
 	private: System::Windows::Forms::DataGridView^ PS_DataGridView;
@@ -124,8 +124,8 @@ namespace Lab2 {
 	private: System::Windows::Forms::TextBox^ PS_TextBoxAddStatus;
 	private: System::Windows::Forms::Label^ PS_LableAddStatus;
 	private: System::Windows::Forms::Label^ PS_LabelAdd;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PS_ListId;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ PS_ListStatus;
+
+
 	private: System::Windows::Forms::TabPage^ Co_Page;
 	private: System::Windows::Forms::Panel^ Co_PanelList;
 	private: System::Windows::Forms::DataGridView^ Co_DataGridView;
@@ -152,10 +152,10 @@ namespace Lab2 {
 	private: System::Windows::Forms::TextBox^ Co_TextBoxAddName;
 	private: System::Windows::Forms::Label^ Co_LableAddName;
 	private: System::Windows::Forms::Label^ Co_LabelAdd;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Co_ListId;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Co_ListName;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Co_ListCity;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Co_ListPaId;
+
+
+
+
 	private: System::Windows::Forms::TabPage^ Cl_Page;
 	private: System::Windows::Forms::Panel^ Cl_PanelList;
 	private: System::Windows::Forms::DataGridView^ Cl_DataGridView;
@@ -206,17 +206,17 @@ namespace Lab2 {
 	private: System::Windows::Forms::TextBox^ Pa_TextBoxAddWeight;
 	private: System::Windows::Forms::Label^ Pa_LableAddWeight;
 	private: System::Windows::Forms::Label^ Pa_LableAddSenId;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListId;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListInfo;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListWeight;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListSenId;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListRecId;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListDepId;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListDelId;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListPrice;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListPSId;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListCurId;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListDeliveryAddress;
+
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Label^ Pa_LableAddDepId;
 	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddDepId;
 	private: System::Windows::Forms::Label^ Pa_LableAddRecId;
@@ -271,8 +271,6 @@ namespace Lab2 {
 			this->FT_Page = (gcnew System::Windows::Forms::TabPage());
 			this->FT_PanelList = (gcnew System::Windows::Forms::Panel());
 			this->FT_DataGridView = (gcnew System::Windows::Forms::DataGridView());
-			this->FT_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->FT_ListType = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->FT_LabelList = (gcnew System::Windows::Forms::Label());
 			this->FT_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
 			this->FT_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
@@ -291,12 +289,6 @@ namespace Lab2 {
 			this->PF_Page = (gcnew System::Windows::Forms::TabPage());
 			this->PF_PanelList = (gcnew System::Windows::Forms::Panel());
 			this->PF_DataGridView = (gcnew System::Windows::Forms::DataGridView());
-			this->PF_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PF_ListName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PF_ListFTId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PF_ListAddress = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PF_ListWorkSchedule = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PF_ListWeightRestrictions = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->PF_LabelList = (gcnew System::Windows::Forms::Label());
 			this->PF_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
 			this->PF_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
@@ -331,8 +323,6 @@ namespace Lab2 {
 			this->PS_Page = (gcnew System::Windows::Forms::TabPage());
 			this->PS_PanelList = (gcnew System::Windows::Forms::Panel());
 			this->PS_DataGridView = (gcnew System::Windows::Forms::DataGridView());
-			this->PS_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PS_ListStatus = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->PS_LabelList = (gcnew System::Windows::Forms::Label());
 			this->PS_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
 			this->PS_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
@@ -351,10 +341,6 @@ namespace Lab2 {
 			this->Co_Page = (gcnew System::Windows::Forms::TabPage());
 			this->Co_PanelList = (gcnew System::Windows::Forms::Panel());
 			this->Co_DataGridView = (gcnew System::Windows::Forms::DataGridView());
-			this->Co_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Co_ListName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Co_ListCity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Co_ListPaId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Co_LabelList = (gcnew System::Windows::Forms::Label());
 			this->Co_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
 			this->Co_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
@@ -411,17 +397,6 @@ namespace Lab2 {
 			this->Pa_Page = (gcnew System::Windows::Forms::TabPage());
 			this->Pa_PanelList = (gcnew System::Windows::Forms::Panel());
 			this->Pa_DataGridView = (gcnew System::Windows::Forms::DataGridView());
-			this->Pa_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Pa_ListInfo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Pa_ListWeight = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Pa_ListSenId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Pa_ListRecId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Pa_ListDepId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Pa_ListDelId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Pa_ListPrice = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Pa_ListPSId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Pa_ListCurId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Pa_ListDeliveryAddress = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Pa_LabelList = (gcnew System::Windows::Forms::Label());
 			this->Pa_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
 			this->Pa_TextBoxUPDELDeliveryAddress = (gcnew System::Windows::Forms::TextBox());
@@ -585,27 +560,11 @@ namespace Lab2 {
 			this->FT_DataGridView->AllowUserToAddRows = false;
 			this->FT_DataGridView->AllowUserToDeleteRows = false;
 			this->FT_DataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->FT_DataGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(2) {
-				this->FT_ListId,
-					this->FT_ListType
-			});
 			this->FT_DataGridView->Location = System::Drawing::Point(4, 44);
 			this->FT_DataGridView->Name = L"FT_DataGridView";
 			this->FT_DataGridView->ReadOnly = true;
 			this->FT_DataGridView->Size = System::Drawing::Size(1113, 332);
 			this->FT_DataGridView->TabIndex = 3;
-			// 
-			// FT_ListId
-			// 
-			this->FT_ListId->HeaderText = L"Id";
-			this->FT_ListId->Name = L"FT_ListId";
-			this->FT_ListId->ReadOnly = true;
-			// 
-			// FT_ListType
-			// 
-			this->FT_ListType->HeaderText = L"Тип відділення";
-			this->FT_ListType->Name = L"FT_ListType";
-			this->FT_ListType->ReadOnly = true;
 			// 
 			// FT_LabelList
 			// 
@@ -789,51 +748,11 @@ namespace Lab2 {
 			this->PF_DataGridView->AllowUserToAddRows = false;
 			this->PF_DataGridView->AllowUserToDeleteRows = false;
 			this->PF_DataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->PF_DataGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
-				this->PF_ListId,
-					this->PF_ListName, this->PF_ListFTId, this->PF_ListAddress, this->PF_ListWorkSchedule, this->PF_ListWeightRestrictions
-			});
 			this->PF_DataGridView->Location = System::Drawing::Point(4, 44);
 			this->PF_DataGridView->Name = L"PF_DataGridView";
 			this->PF_DataGridView->ReadOnly = true;
 			this->PF_DataGridView->Size = System::Drawing::Size(1113, 332);
 			this->PF_DataGridView->TabIndex = 3;
-			// 
-			// PF_ListId
-			// 
-			this->PF_ListId->HeaderText = L"Id";
-			this->PF_ListId->Name = L"PF_ListId";
-			this->PF_ListId->ReadOnly = true;
-			// 
-			// PF_ListName
-			// 
-			this->PF_ListName->HeaderText = L"Назва";
-			this->PF_ListName->Name = L"PF_ListName";
-			this->PF_ListName->ReadOnly = true;
-			// 
-			// PF_ListFTId
-			// 
-			this->PF_ListFTId->HeaderText = L"Тип відділення";
-			this->PF_ListFTId->Name = L"PF_ListFTId";
-			this->PF_ListFTId->ReadOnly = true;
-			// 
-			// PF_ListAddress
-			// 
-			this->PF_ListAddress->HeaderText = L"Адреса";
-			this->PF_ListAddress->Name = L"PF_ListAddress";
-			this->PF_ListAddress->ReadOnly = true;
-			// 
-			// PF_ListWorkSchedule
-			// 
-			this->PF_ListWorkSchedule->HeaderText = L"Графік роботи";
-			this->PF_ListWorkSchedule->Name = L"PF_ListWorkSchedule";
-			this->PF_ListWorkSchedule->ReadOnly = true;
-			// 
-			// PF_ListWeightRestrictions
-			// 
-			this->PF_ListWeightRestrictions->HeaderText = L"Обмеження по вазі";
-			this->PF_ListWeightRestrictions->Name = L"PF_ListWeightRestrictions";
-			this->PF_ListWeightRestrictions->ReadOnly = true;
 			// 
 			// PF_LabelList
 			// 
@@ -1161,27 +1080,11 @@ namespace Lab2 {
 			this->PS_DataGridView->AllowUserToAddRows = false;
 			this->PS_DataGridView->AllowUserToDeleteRows = false;
 			this->PS_DataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->PS_DataGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(2) {
-				this->PS_ListId,
-					this->PS_ListStatus
-			});
 			this->PS_DataGridView->Location = System::Drawing::Point(4, 44);
 			this->PS_DataGridView->Name = L"PS_DataGridView";
 			this->PS_DataGridView->ReadOnly = true;
 			this->PS_DataGridView->Size = System::Drawing::Size(1113, 332);
 			this->PS_DataGridView->TabIndex = 3;
-			// 
-			// PS_ListId
-			// 
-			this->PS_ListId->HeaderText = L"Id";
-			this->PS_ListId->Name = L"PS_ListId";
-			this->PS_ListId->ReadOnly = true;
-			// 
-			// PS_ListStatus
-			// 
-			this->PS_ListStatus->HeaderText = L"Статус";
-			this->PS_ListStatus->Name = L"PS_ListStatus";
-			this->PS_ListStatus->ReadOnly = true;
 			// 
 			// PS_LabelList
 			// 
@@ -1365,39 +1268,11 @@ namespace Lab2 {
 			this->Co_DataGridView->AllowUserToAddRows = false;
 			this->Co_DataGridView->AllowUserToDeleteRows = false;
 			this->Co_DataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->Co_DataGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
-				this->Co_ListId,
-					this->Co_ListName, this->Co_ListCity, this->Co_ListPaId
-			});
 			this->Co_DataGridView->Location = System::Drawing::Point(4, 44);
 			this->Co_DataGridView->Name = L"Co_DataGridView";
 			this->Co_DataGridView->ReadOnly = true;
 			this->Co_DataGridView->Size = System::Drawing::Size(1113, 332);
 			this->Co_DataGridView->TabIndex = 3;
-			// 
-			// Co_ListId
-			// 
-			this->Co_ListId->HeaderText = L"Id";
-			this->Co_ListId->Name = L"Co_ListId";
-			this->Co_ListId->ReadOnly = true;
-			// 
-			// Co_ListName
-			// 
-			this->Co_ListName->HeaderText = L"Ім\'я";
-			this->Co_ListName->Name = L"Co_ListName";
-			this->Co_ListName->ReadOnly = true;
-			// 
-			// Co_ListCity
-			// 
-			this->Co_ListCity->HeaderText = L"Місто роботи";
-			this->Co_ListCity->Name = L"Co_ListCity";
-			this->Co_ListCity->ReadOnly = true;
-			// 
-			// Co_ListPaId
-			// 
-			this->Co_ListPaId->HeaderText = L"Посилка";
-			this->Co_ListPaId->Name = L"Co_ListPaId";
-			this->Co_ListPaId->ReadOnly = true;
 			// 
 			// Co_LabelList
 			// 
@@ -1945,82 +1820,11 @@ namespace Lab2 {
 			this->Pa_DataGridView->AllowUserToAddRows = false;
 			this->Pa_DataGridView->AllowUserToDeleteRows = false;
 			this->Pa_DataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->Pa_DataGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(11) {
-				this->Pa_ListId,
-					this->Pa_ListInfo, this->Pa_ListWeight, this->Pa_ListSenId, this->Pa_ListRecId, this->Pa_ListDepId, this->Pa_ListDelId, this->Pa_ListPrice,
-					this->Pa_ListPSId, this->Pa_ListCurId, this->Pa_ListDeliveryAddress
-			});
 			this->Pa_DataGridView->Location = System::Drawing::Point(4, 44);
 			this->Pa_DataGridView->Name = L"Pa_DataGridView";
 			this->Pa_DataGridView->ReadOnly = true;
 			this->Pa_DataGridView->Size = System::Drawing::Size(1113, 332);
 			this->Pa_DataGridView->TabIndex = 3;
-			// 
-			// Pa_ListId
-			// 
-			this->Pa_ListId->HeaderText = L"Id";
-			this->Pa_ListId->Name = L"Pa_ListId";
-			this->Pa_ListId->ReadOnly = true;
-			// 
-			// Pa_ListInfo
-			// 
-			this->Pa_ListInfo->HeaderText = L"Інфо";
-			this->Pa_ListInfo->Name = L"Pa_ListInfo";
-			this->Pa_ListInfo->ReadOnly = true;
-			// 
-			// Pa_ListWeight
-			// 
-			this->Pa_ListWeight->HeaderText = L"Вага";
-			this->Pa_ListWeight->Name = L"Pa_ListWeight";
-			this->Pa_ListWeight->ReadOnly = true;
-			// 
-			// Pa_ListSenId
-			// 
-			this->Pa_ListSenId->HeaderText = L"Відправник";
-			this->Pa_ListSenId->Name = L"Pa_ListSenId";
-			this->Pa_ListSenId->ReadOnly = true;
-			// 
-			// Pa_ListRecId
-			// 
-			this->Pa_ListRecId->HeaderText = L"Отримувач";
-			this->Pa_ListRecId->Name = L"Pa_ListRecId";
-			this->Pa_ListRecId->ReadOnly = true;
-			// 
-			// Pa_ListDepId
-			// 
-			this->Pa_ListDepId->HeaderText = L"Точка відправки";
-			this->Pa_ListDepId->Name = L"Pa_ListDepId";
-			this->Pa_ListDepId->ReadOnly = true;
-			// 
-			// Pa_ListDelId
-			// 
-			this->Pa_ListDelId->HeaderText = L"Точка прибуття";
-			this->Pa_ListDelId->Name = L"Pa_ListDelId";
-			this->Pa_ListDelId->ReadOnly = true;
-			// 
-			// Pa_ListPrice
-			// 
-			this->Pa_ListPrice->HeaderText = L"Вартість";
-			this->Pa_ListPrice->Name = L"Pa_ListPrice";
-			this->Pa_ListPrice->ReadOnly = true;
-			// 
-			// Pa_ListPSId
-			// 
-			this->Pa_ListPSId->HeaderText = L"Статус";
-			this->Pa_ListPSId->Name = L"Pa_ListPSId";
-			this->Pa_ListPSId->ReadOnly = true;
-			// 
-			// Pa_ListCurId
-			// 
-			this->Pa_ListCurId->HeaderText = L"Місце перебування";
-			this->Pa_ListCurId->Name = L"Pa_ListCurId";
-			this->Pa_ListCurId->ReadOnly = true;
-			// 
-			// Pa_ListDeliveryAddress
-			// 
-			this->Pa_ListDeliveryAddress->HeaderText = L"Адреса доставки";
-			this->Pa_ListDeliveryAddress->Name = L"Pa_ListDeliveryAddress";
-			this->Pa_ListDeliveryAddress->ReadOnly = true;
 			// 
 			// Pa_LabelList
 			// 

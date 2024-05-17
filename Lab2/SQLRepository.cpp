@@ -5,11 +5,13 @@ using namespace Repository;
 SQLRepository::SQLRepository()
     : builder(gcnew SqlConnectionStringBuilder())
 {
-    builder->DataSource = "DESKTOP-LGFLGFJ\SQLEXPRESS";
+    builder->DataSource = "DESKTOP-LGFLGFJ\\SQLEXPRESS";
     builder->InitialCatalog = "DBPostOffice";
     builder->IntegratedSecurity = true;
+    builder->Encrypt = false;
+    builder->TrustServerCertificate = true;
 
-    connection = gcnew SqlConnection(Convert::ToString(builder));
+    connection = gcnew SqlConnection(builder->ToString());
 }
 
 long SQLRepository::Add(Table table, Entity^ obj)
@@ -46,12 +48,9 @@ long SQLRepository::Add(Table table, Entity^ obj)
     AddCommandParameters(table, obj);
     connection->Open();
     command->ExecuteNonQuery();
-    text = "SELECT SCOPE_IDENTITY()";
-    command = gcnew SqlCommand(text, connection);
-    long res = Convert::ToInt64(command->ExecuteScalar());
     connection->Close();
 
-    return res;
+    return -1;
 }
 
 Entity^ SQLRepository::Get(Table table, long Id)
@@ -82,9 +81,10 @@ Entity^ SQLRepository::Get(Table table, long Id)
     command->Parameters->AddWithValue("@Id", Id);
     connection->Open();
     reader = command->ExecuteReader();
+    Entity^ res = ReadFromReader(table);
     connection->Close();
 
-    return ReadFromReader(table);
+    return res;
 }
 
 List<Entity^>^ Repository::SQLRepository::GetAll(Table table)
@@ -114,7 +114,6 @@ List<Entity^>^ Repository::SQLRepository::GetAll(Table table)
     command = gcnew SqlCommand(text, connection);
     connection->Open();
     reader = command->ExecuteReader();
-    connection->Close();
 
     List<Entity^>^ res = gcnew List<Entity^>();
     Entity^ item = ReadFromReader(table);
@@ -122,7 +121,7 @@ List<Entity^>^ Repository::SQLRepository::GetAll(Table table)
         res->Add(item);
         item = ReadFromReader(table);
     }
-
+    connection->Close();
     return res;
 }
 
@@ -133,54 +132,53 @@ void SQLRepository::Update(Table table, Entity^ obj)
     {
     case Table::Clients:
         text = "UPDATE dbo.Clients SET "
-            + "Name = '@Name', "
-            + "ContactNumber = '@ContactNumber', "
-            + "Email = '@Email' "
+            + "Name = @Name, "
+            + "ContactNumber = @ContactNumber, "
+            + "Email = @Email "
             + "WHERE Id = @Id";
         break;
     case Table::Couriers:
         text = "UPDATE dbo.Couriers SET "
-            + "Name = '@Name', "
-            + "City = '@City', "
-            + "ParcelId = '@ParcelId' "
+            + "Name = @Name, "
+            + "City = @City, "
+            + "ParcelId = @ParcelId "
             + "WHERE Id = @Id";
         break;
     case Table::FacilityTypes:
         text = "UPDATE dbo.FacilityTypes SET "
-            + "Type = '@Type' "
+            + "Type = @Type "
             + "WHERE Id = @Id";
         break;
     case Table::Parcels:
         text = "UPDATE dbo.Parcels SET "
-            + "Info = '@Info', "
-            + "Weight = '@Weight', "
-            + "SenderId = '@SenderId', "
-            + "ReciverId = '@ReciverId', "
-            + "DeparturePointsId = '@DeparturePointsId', "
-            + "DeliveryPointsId = '@DeliveryPointsId', "
-            + "Price = '@Price', "
+            + "Info = @Info, "
+            + "Weight = @Weight, "
+            + "SenderId = @SenderId, "
+            + "ReciverId = @ReciverId, "
+            + "DeparturePointsId = @DeparturePointsId, "
+            + "DeliveryPointsId = @DeliveryPointsId, "
+            + "Price = @Price, "
             + "StatusId = '@StatusId', "
-            + "CurrentLocationId = '@CurrentLocationId', "
-            + "DeliveryAddress = '@DeliveryAddress' "
+            + "CurrentLocationId = @CurrentLocationId, "
+            + "DeliveryAddress = @DeliveryAddress "
             + "WHERE Id = @Id";
         break;
     case Table::ParcelStatuses:
         text = "UPDATE dbo.ParcelStatuses SET "
-            + "Status = '@Status' "
+            + "Status = @Status "
             + "WHERE Id = @Id";
         break;
     case Table::PostalFacilitys:
         text = "UPDATE dbo.Parcels SET "
-            + "Name = '@Name', "
-            + "FacilityTypeId = '@FacilityTypeId', "
-            + "Address = '@Address', "
-            + "WorkSchedule = '@WorkSchedule', "
-            + "WeightRestrictions = '@WeightRestrictions' "
+            + "Name = @Name, "
+            + "FacilityTypeId = @FacilityTypeId, "
+            + "Address = @Address, "
+            + "WorkSchedule = @WorkSchedule, "
+            + "WeightRestrictions = @WeightRestrictions "
             + "WHERE Id = @Id";
         break;
     default: break;
     }
-    command = gcnew SqlCommand(text, connection);
     AddCommandParameters(table, obj);
     command->Parameters->AddWithValue("@Id", obj->Id);
     connection->Open();
