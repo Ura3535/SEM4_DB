@@ -129,7 +129,6 @@
     <ClCompile Include="CourierController.cpp" />
     <ClCompile Include="FacilityTypeController.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Lab2Form.cpp" />
     <ClCompile Include="ParcelController.cpp" />
     <ClCompile Include="ParcelStatusController.cpp" />
     <ClCompile Include="PostalFacilityController.cpp" />

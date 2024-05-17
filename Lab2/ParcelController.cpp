@@ -20,6 +20,7 @@ Void Lab2Form::Pa_ButtonAdd_Click(Object^ sender, EventArgs^ e)
         tmp->CurrentLocationId = Convert::ToInt64(Pa_ComboBoxAddCurId->Text);
         tmp->DeliveryAddress = Pa_TextBoxAddDeliveryAddress->Text;
         rep->Add(Table::Parcels, tmp);
+        Pa_Update();
     }
     catch (...) {}
 }
@@ -41,6 +42,7 @@ Void Lab2Form::Pa_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
         tmp->CurrentLocationId = Convert::ToInt64(Pa_ComboBoxUPDELCurId->Text);
         tmp->DeliveryAddress = Pa_TextBoxUPDELDeliveryAddress->Text;
         rep->Update(Table::Parcels, tmp);
+        Pa_DataGridViewUpdate();
     }
     catch (...) {}
 }
@@ -69,6 +71,7 @@ Void Lab2Form::Pa_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
     try
     {
         rep->Delete(Table::Parcels, Convert::ToInt64(Pa_ComboBoxUPDELId->Text));
+        Pa_Update();
     }
     catch (...) {}
 }
@@ -76,4 +79,24 @@ Void Lab2Form::Pa_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
 Void Lab2Form::Pa_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e)
 {
     Pa_ButtonUPDELRollBack_Click(sender, e);
+}
+
+Void Lab2Form::Pa_Update()
+{
+    Pa_ComboBoxUPDELId->Items->Clear();
+    Co_ComboBoxAddPaId->Items->Clear();
+    Co_ComboBoxUPDELPaId->Items->Clear();
+    for each (Entity ^ item in rep->GetAll(Table::Parcels)) {
+        Pa_ComboBoxUPDELId->Items->Add(item->Id);
+        Co_ComboBoxAddPaId->Items->Add(item->Id);
+        Co_ComboBoxUPDELPaId->Items->Add(item->Id);
+    }
+    PF_DataGridViewUpdate();
+}
+
+Void Lab2Form::Pa_DataGridViewUpdate()
+{
+    DataTable^ table = gcnew DataTable();
+    rep->GetTableAdapter(Table::Parcels)->Fill(table);
+    Pa_DataGridView->DataSource = table;
 }

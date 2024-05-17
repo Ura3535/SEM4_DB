@@ -44,9 +44,6 @@
     <ClCompile Include="SQLRepository.cpp">
       <Filter>Repository</Filter>
     </ClCompile>
-    <ClCompile Include="Lab2Form.cpp">
-      <Filter>Controllers</Filter>
-    </ClCompile>
     <ClCompile Include="FacilityTypeController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>

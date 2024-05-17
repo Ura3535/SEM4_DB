@@ -15,6 +15,7 @@ Void Lab2Form::PF_ButtonAdd_Click(Object^ sender, EventArgs^ e)
         tmp->WorkSchedule = PF_TextBoxAddWorkSchedule->Text;
         tmp->WeightRestrictions = Convert::ToDouble(PF_TextBoxAddWeightRestrictions->Text);
         rep->Add(Table::PostalFacilitys, tmp);
+        PF_Update();
     }
     catch (...) {}
 }
@@ -31,6 +32,7 @@ Void Lab2Form::PF_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
         tmp->WorkSchedule = PF_TextBoxUPDELWorkSchedule->Text;
         tmp->WeightRestrictions = Convert::ToDouble(PF_TextBoxUPDELWeightRestrictions->Text);
         rep->Update(Table::PostalFacilitys, tmp);
+        PF_DataGridViewUpdate();
     }
     catch (...) {}
 }
@@ -54,6 +56,7 @@ Void Lab2Form::PF_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
     try
     {
         rep->Delete(Table::PostalFacilitys, Convert::ToInt64(PF_ComboBoxUPDELId->Text));
+        PF_Update();
     }
     catch (...) {}
 }
@@ -61,4 +64,32 @@ Void Lab2Form::PF_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
 Void Lab2Form::PF_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e)
 {
     PF_ButtonUPDELRollBack_Click(sender, e);
+}
+
+Void Lab2Form::PF_Update()
+{
+    PF_ComboBoxUPDELId->Items->Clear();
+    Pa_ComboBoxAddDepId->Items->Clear();
+    Pa_ComboBoxUPDELDepId->Items->Clear();
+    Pa_ComboBoxAddDelId->Items->Clear();
+    Pa_ComboBoxUPDELDelId->Items->Clear();
+    Pa_ComboBoxAddCurId->Items->Clear();
+    Pa_ComboBoxUPDELCurId->Items->Clear();
+    for each (Entity ^ item in rep->GetAll(Table::PostalFacilitys)) {
+        PF_ComboBoxUPDELId->Items->Add(item->Id);
+        Pa_ComboBoxAddDepId->Items->Add(item->Id);
+        Pa_ComboBoxUPDELDepId->Items->Add(item->Id);
+        Pa_ComboBoxAddDelId->Items->Add(item->Id);
+        Pa_ComboBoxUPDELDelId->Items->Add(item->Id);
+        Pa_ComboBoxAddCurId->Items->Add(item->Id);
+        Pa_ComboBoxUPDELCurId->Items->Add(item->Id);
+    }
+    PF_DataGridViewUpdate();
+}
+
+Void Lab2Form::PF_DataGridViewUpdate()
+{
+    DataTable^ table = gcnew DataTable();
+    rep->GetTableAdapter(Table::PostalFacilitys)->Fill(table);
+    PF_DataGridView->DataSource = table;
 }

@@ -13,6 +13,7 @@ Void Lab2Form::Cl_ButtonAdd_Click(Object^ sender, EventArgs^ e)
         tmp->ContactNumber = Cl_TextBoxAddContactNumber->Text;
         tmp->Email = Cl_TextBoxAddEmail->Text;
         rep->Add(Table::Clients, tmp);
+        Cl_Update();
     }
     catch (...) {}
 }
@@ -27,6 +28,7 @@ Void Lab2Form::Cl_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
         tmp->ContactNumber = Cl_TextBoxUPDELContactNumber->Text;
         tmp->Email = Cl_TextBoxUPDELEmail->Text;
         rep->Update(Table::Clients, tmp);
+        Cl_DataGridViewUpdate();
     }
     catch (...) {}
 }
@@ -48,6 +50,7 @@ Void Lab2Form::Cl_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
     try
     {
         rep->Delete(Table::Clients, Convert::ToInt64(Cl_ComboBoxUPDELId->Text));
+        Cl_Update();
     }
     catch (...) {}
 }
@@ -55,4 +58,28 @@ Void Lab2Form::Cl_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
 Void Lab2Form::Cl_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e)
 {
     Cl_ButtonUPDELRollBack_Click(sender, e);
+}
+
+Void Lab2Form::Cl_Update()
+{
+    Cl_ComboBoxUPDELId->Items->Clear();
+    Pa_ComboBoxAddSenId->Items->Clear();
+    Pa_ComboBoxUPDELSenId->Items->Clear();
+    Pa_ComboBoxAddRecId->Items->Clear();
+    Pa_ComboBoxUPDELRecId->Items->Clear();
+    for each (Entity ^ item in rep->GetAll(Table::Clients)) {
+        Cl_ComboBoxUPDELId->Items->Add(item->Id);
+        Pa_ComboBoxAddSenId->Items->Add(item->Id);
+        Pa_ComboBoxUPDELSenId->Items->Add(item->Id);
+        Pa_ComboBoxAddRecId->Items->Add(item->Id);
+        Pa_ComboBoxUPDELRecId->Items->Add(item->Id);
+    }
+    Cl_DataGridViewUpdate();
+}
+
+Void Lab2Form::Cl_DataGridViewUpdate()
+{
+    DataTable^ table = gcnew DataTable();
+    rep->GetTableAdapter(Table::Clients)->Fill(table);
+    Cl_DataGridView->DataSource = table;
 }

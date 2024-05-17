@@ -83,73 +83,47 @@ Entity^ SQLRepository::Get(Table table, long Id)
     connection->Open();
     reader = command->ExecuteReader();
     connection->Close();
-    if (reader->Read())
+
+    return ReadFromReader(table);
+}
+
+List<Entity^>^ Repository::SQLRepository::GetAll(Table table)
+{
+    switch (table)
     {
-        switch (table)
-        {
-        case Table::Clients:
-        {
-            Client^ client = gcnew Client();
-            client->Id = Convert::ToInt64(reader["Id"]);
-            client->Name = reader["Id"]->ToString();
-            client->ContactNumber = reader["ContactNumber"]->ToString();
-            client->Email = reader["Email"]->ToString();
-            return client;
-        }
-        case Table::Couriers:
-        {
-            Courier^ courier = gcnew Courier();
-            courier->Id = Convert::ToInt64(reader["Id"]);
-            courier->Name = reader["Id"]->ToString();
-            courier->City = reader["City"]->ToString();
-            courier->ParcelId = Convert::ToInt64(reader["ParcelId"]);
-            return courier;
-        }
-        case Table::FacilityTypes:
-        {
-            FacilityType^ facilityType = gcnew FacilityType();
-            facilityType->Id = Convert::ToInt64(reader["Id"]);
-            facilityType->Type = reader["Type"]->ToString();
-            return facilityType;
-        }
-        case Table::Parcels:
-        {
-            Parcel^ parcel = gcnew Parcel();
-            parcel->Id = Convert::ToInt64(reader["Id"]);
-            parcel->Info = reader["Info"]->ToString();
-            parcel->Weight = Convert::ToDouble(reader["Weight"]);
-            parcel->SenderId = Convert::ToInt64(reader["SenderId"]);
-            parcel->ReciverId = Convert::ToInt64(reader["ReciverId"]);
-            parcel->DeparturePointsId = Convert::ToInt64(reader["DeparturePointsId"]);
-            parcel->DeliveryPointsId = Convert::ToInt64(reader["DeliveryPointsId"]);
-            parcel->Price = Convert::ToInt64(reader["Price"]);
-            parcel->StatusId = Convert::ToInt64(reader["StatusId"]);
-            parcel->CurrentLocationId = Convert::ToInt64(reader["CurrentLocationId"]);
-            parcel->DeliveryAddress = reader["DeliveryAddress"]->ToString();
-            return parcel;
-        }
-        case Table::ParcelStatuses:
-        {
-            ParcelStatus^ parcelStatus = gcnew ParcelStatus();
-            parcelStatus->Id = Convert::ToInt64(reader["Id"]);
-            parcelStatus->Status = reader["Status"]->ToString();
-            return parcelStatus;
-        }
-            break;
-        case Table::PostalFacilitys:
-        {
-            PostalFacility^ postalFacility = gcnew PostalFacility();
-            postalFacility->Id = Convert::ToInt64(reader["Id"]);
-            postalFacility->Name = reader["Name"]->ToString();
-            postalFacility->FacilityTypeId = Convert::ToInt64(reader["FacilityTypeId"]);
-            postalFacility->Address = reader["Address"]->ToString();
-            postalFacility->WorkSchedule = reader["WorkSchedule"]->ToString();
-            postalFacility->WeightRestrictions = Convert::ToDouble(reader["WeightRestrictions"]);
-            return postalFacility;
-        }
-        default: break;
-        }
+    case Table::Clients:
+        text = "SELECT * FROM dbo.Clients";
+        break;
+    case Table::Couriers:
+        text = "SELECT * FROM dbo.Couriers";
+        break;
+    case Table::FacilityTypes:
+        text = "SELECT * FROM dbo.FacilityTypes";
+        break;
+    case Table::Parcels:
+        text = "SELECT * FROM dbo.Parcels";
+        break;
+    case Table::ParcelStatuses:
+        text = "SELECT * FROM dbo.ParcelStatuses";
+        break;
+    case Table::PostalFacilitys:
+        text = "SELECT * FROM dbo.PostalFacilitys";
+        break;
+    default: break;
     }
+    command = gcnew SqlCommand(text, connection);
+    connection->Open();
+    reader = command->ExecuteReader();
+    connection->Close();
+
+    List<Entity^>^ res = gcnew List<Entity^>();
+    Entity^ item = ReadFromReader(table);
+    while (item != nullptr) {
+        res->Add(item);
+        item = ReadFromReader(table);
+    }
+
+    return res;
 }
 
 void SQLRepository::Update(Table table, Entity^ obj)
@@ -272,6 +246,77 @@ SqlDataAdapter^ SQLRepository::GetTableAdapter(Table table)
     }
 
     return gcnew SqlDataAdapter(text, connection);
+}
+
+Entity^ Repository::SQLRepository::ReadFromReader(Table table)
+{
+    if (reader->Read())
+    {
+        switch (table)
+        {
+        case Table::Clients:
+        {
+            Client^ client = gcnew Client();
+            client->Id = Convert::ToInt64(reader["Id"]);
+            client->Name = reader["Id"]->ToString();
+            client->ContactNumber = reader["ContactNumber"]->ToString();
+            client->Email = reader["Email"]->ToString();
+            return client;
+        }
+        case Table::Couriers:
+        {
+            Courier^ courier = gcnew Courier();
+            courier->Id = Convert::ToInt64(reader["Id"]);
+            courier->Name = reader["Id"]->ToString();
+            courier->City = reader["City"]->ToString();
+            courier->ParcelId = Convert::ToInt64(reader["ParcelId"]);
+            return courier;
+        }
+        case Table::FacilityTypes:
+        {
+            FacilityType^ facilityType = gcnew FacilityType();
+            facilityType->Id = Convert::ToInt64(reader["Id"]);
+            facilityType->Type = reader["Type"]->ToString();
+            return facilityType;
+        }
+        case Table::Parcels:
+        {
+            Parcel^ parcel = gcnew Parcel();
+            parcel->Id = Convert::ToInt64(reader["Id"]);
+            parcel->Info = reader["Info"]->ToString();
+            parcel->Weight = Convert::ToDouble(reader["Weight"]);
+            parcel->SenderId = Convert::ToInt64(reader["SenderId"]);
+            parcel->ReciverId = Convert::ToInt64(reader["ReciverId"]);
+            parcel->DeparturePointsId = Convert::ToInt64(reader["DeparturePointsId"]);
+            parcel->DeliveryPointsId = Convert::ToInt64(reader["DeliveryPointsId"]);
+            parcel->Price = Convert::ToInt64(reader["Price"]);
+            parcel->StatusId = Convert::ToInt64(reader["StatusId"]);
+            parcel->CurrentLocationId = Convert::ToInt64(reader["CurrentLocationId"]);
+            parcel->DeliveryAddress = reader["DeliveryAddress"]->ToString();
+            return parcel;
+        }
+        case Table::ParcelStatuses:
+        {
+            ParcelStatus^ parcelStatus = gcnew ParcelStatus();
+            parcelStatus->Id = Convert::ToInt64(reader["Id"]);
+            parcelStatus->Status = reader["Status"]->ToString();
+            return parcelStatus;
+        }
+        break;
+        case Table::PostalFacilitys:
+        {
+            PostalFacility^ postalFacility = gcnew PostalFacility();
+            postalFacility->Id = Convert::ToInt64(reader["Id"]);
+            postalFacility->Name = reader["Name"]->ToString();
+            postalFacility->FacilityTypeId = Convert::ToInt64(reader["FacilityTypeId"]);
+            postalFacility->Address = reader["Address"]->ToString();
+            postalFacility->WorkSchedule = reader["WorkSchedule"]->ToString();
+            postalFacility->WeightRestrictions = Convert::ToDouble(reader["WeightRestrictions"]);
+            return postalFacility;
+        }
+        default: return nullptr;
+        }
+    }
 }
 
 void SQLRepository::AddCommandParameters(Table table, Entity^ obj) {

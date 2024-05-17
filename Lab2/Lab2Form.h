@@ -20,9 +20,12 @@ namespace Lab2 {
 			: rep(repository)
 		{
 			InitializeComponent();
-			//
-			//TODO: Add the constructor code here
-			//
+			Cl_Update();
+			Co_Update();
+			FT_Update();
+			Pa_Update();
+			PS_Update();
+			PF_Update();
 		}
 
 	protected:
@@ -199,12 +202,10 @@ namespace Lab2 {
 	private: System::Windows::Forms::TextBox^ Pa_TextBoxAddInfo;
 	private: System::Windows::Forms::Label^ Pa_LableAddInfo;
 	private: System::Windows::Forms::Label^ Pa_LabelAdd;
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddSenId;
-
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddSenId;
 	private: System::Windows::Forms::TextBox^ Pa_TextBoxAddWeight;
 	private: System::Windows::Forms::Label^ Pa_LableAddWeight;
-private: System::Windows::Forms::Label^ Pa_LableAddSenId;
-
+	private: System::Windows::Forms::Label^ Pa_LableAddSenId;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListId;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListInfo;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListWeight;
@@ -240,10 +241,8 @@ private: System::Windows::Forms::Label^ Pa_LableAddSenId;
 	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELDepId;
 	private: System::Windows::Forms::Label^ Pa_LableUPDELRecId;
 	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELRecId;
-private: System::Windows::Forms::Label^ Pa_LableUPDELSenId;
-private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELSenId;
-
-
+	private: System::Windows::Forms::Label^ Pa_LableUPDELSenId;
+	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELSenId;
 	private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELWeight;
 	private: System::Windows::Forms::Label^ Pa_LableUPDELWeight;
 	private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELInfo;
@@ -2629,6 +2628,8 @@ private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELSenId;
 	private: Void FT_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
 	private: Void FT_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
 	private: Void FT_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e);
+	private: Void FT_Update();
+	private: Void FT_DataGridViewUpdate();
 #pragma endregion
 
 #pragma region PostalFacility
@@ -2637,6 +2638,8 @@ private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELSenId;
 	private: Void PF_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
 	private: Void PF_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
 	private: Void PF_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e);
+	private: Void PF_Update();
+	private: Void PF_DataGridViewUpdate();
 #pragma endregion
 
 #pragma region ParcelStatus
@@ -2645,6 +2648,8 @@ private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELSenId;
 	private: Void PS_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
 	private: Void PS_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
 	private: Void PS_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e);
+	private: Void PS_Update();
+	private: Void PS_DataGridViewUpdate();
 #pragma endregion
 
 #pragma region Courier
@@ -2653,6 +2658,8 @@ private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELSenId;
 	private: Void Co_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
 	private: Void Co_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
 	private: Void Co_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e);
+	private: Void Co_Update();
+	private: Void Co_DataGridViewUpdate();
 #pragma endregion
 
 #pragma region Client
@@ -2661,6 +2668,8 @@ private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELSenId;
 	private: Void Cl_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
 	private: Void Cl_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
 	private: Void Cl_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e);
+	private: Void Cl_Update();
+	private: Void Cl_DataGridViewUpdate();
 #pragma endregion
 
 #pragma region Parcel
@@ -2669,6 +2678,8 @@ private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELSenId;
 	private: Void Pa_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
 	private: Void Pa_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
 	private: Void Pa_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e);
+	private: Void Pa_Update();
+	private: Void Pa_DataGridViewUpdate();
 #pragma endregion
 
 };
