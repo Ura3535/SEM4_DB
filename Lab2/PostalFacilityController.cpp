@@ -58,7 +58,7 @@ Void Lab2Form::PF_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
     catch (...) {}
 }
 
-Void Lab2::Lab2Form::PF_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e)
+Void Lab2Form::PF_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e)
 {
     PF_ButtonUPDELRollBack_Click(sender, e);
 }

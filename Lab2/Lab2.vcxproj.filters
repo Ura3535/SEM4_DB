@@ -62,5 +62,8 @@
     <ClCompile Include="ClientController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
+    <ClCompile Include="ParcelController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -199,10 +199,12 @@ namespace Lab2 {
 	private: System::Windows::Forms::TextBox^ Pa_TextBoxAddInfo;
 	private: System::Windows::Forms::Label^ Pa_LableAddInfo;
 	private: System::Windows::Forms::Label^ Pa_LabelAdd;
-	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddCenId;
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxAddSenId;
+
 	private: System::Windows::Forms::TextBox^ Pa_TextBoxAddWeight;
 	private: System::Windows::Forms::Label^ Pa_LableAddWeight;
-	private: System::Windows::Forms::Label^ Pa_LableAddCenId;
+private: System::Windows::Forms::Label^ Pa_LableAddSenId;
+
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListId;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListInfo;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Pa_ListWeight;
@@ -238,8 +240,10 @@ namespace Lab2 {
 	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELDepId;
 	private: System::Windows::Forms::Label^ Pa_LableUPDELRecId;
 	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELRecId;
-	private: System::Windows::Forms::Label^ Pa_LableUPDELCenId;
-	private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELCenId;
+private: System::Windows::Forms::Label^ Pa_LableUPDELSenId;
+private: System::Windows::Forms::ComboBox^ Pa_ComboBoxUPDELSenId;
+
+
 	private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELWeight;
 	private: System::Windows::Forms::Label^ Pa_LableUPDELWeight;
 	private: System::Windows::Forms::TextBox^ Pa_TextBoxUPDELInfo;
@@ -435,8 +439,8 @@ namespace Lab2 {
 			this->Pa_ComboBoxUPDELDepId = (gcnew System::Windows::Forms::ComboBox());
 			this->Pa_LableUPDELRecId = (gcnew System::Windows::Forms::Label());
 			this->Pa_ComboBoxUPDELRecId = (gcnew System::Windows::Forms::ComboBox());
-			this->Pa_LableUPDELCenId = (gcnew System::Windows::Forms::Label());
-			this->Pa_ComboBoxUPDELCenId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableUPDELSenId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxUPDELSenId = (gcnew System::Windows::Forms::ComboBox());
 			this->Pa_TextBoxUPDELWeight = (gcnew System::Windows::Forms::TextBox());
 			this->Pa_LableUPDELWeight = (gcnew System::Windows::Forms::Label());
 			this->Pa_TextBoxUPDELInfo = (gcnew System::Windows::Forms::TextBox());
@@ -462,8 +466,8 @@ namespace Lab2 {
 			this->Pa_ComboBoxAddDepId = (gcnew System::Windows::Forms::ComboBox());
 			this->Pa_LableAddRecId = (gcnew System::Windows::Forms::Label());
 			this->Pa_ComboBoxAddRecId = (gcnew System::Windows::Forms::ComboBox());
-			this->Pa_LableAddCenId = (gcnew System::Windows::Forms::Label());
-			this->Pa_ComboBoxAddCenId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableAddSenId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxAddSenId = (gcnew System::Windows::Forms::ComboBox());
 			this->Pa_TextBoxAddWeight = (gcnew System::Windows::Forms::TextBox());
 			this->Pa_LableAddWeight = (gcnew System::Windows::Forms::Label());
 			this->Pa_ButtonAdd = (gcnew System::Windows::Forms::Button());
@@ -2046,8 +2050,8 @@ namespace Lab2 {
 			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELDepId);
 			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELRecId);
 			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELRecId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELCenId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELCenId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELSenId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELSenId);
 			this->Pa_PanelUPDEL->Controls->Add(this->Pa_TextBoxUPDELWeight);
 			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELWeight);
 			this->Pa_PanelUPDEL->Controls->Add(this->Pa_TextBoxUPDELInfo);
@@ -2135,7 +2139,7 @@ namespace Lab2 {
 			this->Pa_LableUPDELPrice->Name = L"Pa_LableUPDELPrice";
 			this->Pa_LableUPDELPrice->Size = System::Drawing::Size(90, 20);
 			this->Pa_LableUPDELPrice->TabIndex = 34;
-			this->Pa_LableUPDELPrice->Text = L"Вага";
+			this->Pa_LableUPDELPrice->Text = L"Вартість";
 			// 
 			// Pa_LableUPDELDelId
 			// 
@@ -2194,24 +2198,24 @@ namespace Lab2 {
 			this->Pa_ComboBoxUPDELRecId->Size = System::Drawing::Size(90, 24);
 			this->Pa_ComboBoxUPDELRecId->TabIndex = 28;
 			// 
-			// Pa_LableUPDELCenId
+			// Pa_LableUPDELSenId
 			// 
-			this->Pa_LableUPDELCenId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+			this->Pa_LableUPDELSenId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->Pa_LableUPDELCenId->Location = System::Drawing::Point(258, 40);
-			this->Pa_LableUPDELCenId->Name = L"Pa_LableUPDELCenId";
-			this->Pa_LableUPDELCenId->Size = System::Drawing::Size(90, 20);
-			this->Pa_LableUPDELCenId->TabIndex = 27;
-			this->Pa_LableUPDELCenId->Text = L"Відправник";
+			this->Pa_LableUPDELSenId->Location = System::Drawing::Point(258, 40);
+			this->Pa_LableUPDELSenId->Name = L"Pa_LableUPDELSenId";
+			this->Pa_LableUPDELSenId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableUPDELSenId->TabIndex = 27;
+			this->Pa_LableUPDELSenId->Text = L"Відправник";
 			// 
-			// Pa_ComboBoxUPDELCenId
+			// Pa_ComboBoxUPDELSenId
 			// 
-			this->Pa_ComboBoxUPDELCenId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->Pa_ComboBoxUPDELCenId->FormattingEnabled = true;
-			this->Pa_ComboBoxUPDELCenId->Location = System::Drawing::Point(258, 62);
-			this->Pa_ComboBoxUPDELCenId->Name = L"Pa_ComboBoxUPDELCenId";
-			this->Pa_ComboBoxUPDELCenId->Size = System::Drawing::Size(90, 24);
-			this->Pa_ComboBoxUPDELCenId->TabIndex = 26;
+			this->Pa_ComboBoxUPDELSenId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxUPDELSenId->FormattingEnabled = true;
+			this->Pa_ComboBoxUPDELSenId->Location = System::Drawing::Point(258, 62);
+			this->Pa_ComboBoxUPDELSenId->Name = L"Pa_ComboBoxUPDELSenId";
+			this->Pa_ComboBoxUPDELSenId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxUPDELSenId->TabIndex = 26;
 			// 
 			// Pa_TextBoxUPDELWeight
 			// 
@@ -2255,6 +2259,7 @@ namespace Lab2 {
 			this->Pa_ButtonUPDELDelete->TabIndex = 8;
 			this->Pa_ButtonUPDELDelete->Text = L"Видалити";
 			this->Pa_ButtonUPDELDelete->UseVisualStyleBackColor = true;
+			this->Pa_ButtonUPDELDelete->Click += gcnew System::EventHandler(this, &Lab2Form::Pa_ButtonUPDELDelete_Click);
 			// 
 			// Pa_ButtonUPDELRollBack
 			// 
@@ -2264,6 +2269,7 @@ namespace Lab2 {
 			this->Pa_ButtonUPDELRollBack->TabIndex = 7;
 			this->Pa_ButtonUPDELRollBack->Text = L"Відмінити";
 			this->Pa_ButtonUPDELRollBack->UseVisualStyleBackColor = true;
+			this->Pa_ButtonUPDELRollBack->Click += gcnew System::EventHandler(this, &Lab2Form::Pa_ButtonUPDELRollBack_Click);
 			// 
 			// Pa_ButtonUPDELSave
 			// 
@@ -2273,6 +2279,7 @@ namespace Lab2 {
 			this->Pa_ButtonUPDELSave->TabIndex = 6;
 			this->Pa_ButtonUPDELSave->Text = L"Зберегти";
 			this->Pa_ButtonUPDELSave->UseVisualStyleBackColor = true;
+			this->Pa_ButtonUPDELSave->Click += gcnew System::EventHandler(this, &Lab2Form::Pa_ButtonUPDELSave_Click);
 			// 
 			// Pa_ComboBoxUPDELId
 			// 
@@ -2282,6 +2289,7 @@ namespace Lab2 {
 			this->Pa_ComboBoxUPDELId->Name = L"Pa_ComboBoxUPDELId";
 			this->Pa_ComboBoxUPDELId->Size = System::Drawing::Size(50, 24);
 			this->Pa_ComboBoxUPDELId->TabIndex = 4;
+			this->Pa_ComboBoxUPDELId->SelectedIndexChanged += gcnew System::EventHandler(this, &Lab2Form::Pa_ComboBoxUPDELId_SelectedIndexChanged);
 			// 
 			// Pa_LableUPDELId
 			// 
@@ -2320,8 +2328,8 @@ namespace Lab2 {
 			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddDepId);
 			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddRecId);
 			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddRecId);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddCenId);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddCenId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddSenId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddSenId);
 			this->Pa_PanelAdd->Controls->Add(this->Pa_TextBoxAddWeight);
 			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddWeight);
 			this->Pa_PanelAdd->Controls->Add(this->Pa_ButtonAdd);
@@ -2405,7 +2413,7 @@ namespace Lab2 {
 			this->Pa_LableAddPrice->Name = L"Pa_LableAddPrice";
 			this->Pa_LableAddPrice->Size = System::Drawing::Size(90, 20);
 			this->Pa_LableAddPrice->TabIndex = 14;
-			this->Pa_LableAddPrice->Text = L"Вага";
+			this->Pa_LableAddPrice->Text = L"Вартість";
 			// 
 			// Pa_LableAddDelId
 			// 
@@ -2464,24 +2472,24 @@ namespace Lab2 {
 			this->Pa_ComboBoxAddRecId->Size = System::Drawing::Size(90, 24);
 			this->Pa_ComboBoxAddRecId->TabIndex = 8;
 			// 
-			// Pa_LableAddCenId
+			// Pa_LableAddSenId
 			// 
-			this->Pa_LableAddCenId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+			this->Pa_LableAddSenId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
 				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->Pa_LableAddCenId->Location = System::Drawing::Point(202, 40);
-			this->Pa_LableAddCenId->Name = L"Pa_LableAddCenId";
-			this->Pa_LableAddCenId->Size = System::Drawing::Size(90, 20);
-			this->Pa_LableAddCenId->TabIndex = 7;
-			this->Pa_LableAddCenId->Text = L"Відправник";
+			this->Pa_LableAddSenId->Location = System::Drawing::Point(202, 40);
+			this->Pa_LableAddSenId->Name = L"Pa_LableAddSenId";
+			this->Pa_LableAddSenId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddSenId->TabIndex = 7;
+			this->Pa_LableAddSenId->Text = L"Відправник";
 			// 
-			// Pa_ComboBoxAddCenId
+			// Pa_ComboBoxAddSenId
 			// 
-			this->Pa_ComboBoxAddCenId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->Pa_ComboBoxAddCenId->FormattingEnabled = true;
-			this->Pa_ComboBoxAddCenId->Location = System::Drawing::Point(202, 62);
-			this->Pa_ComboBoxAddCenId->Name = L"Pa_ComboBoxAddCenId";
-			this->Pa_ComboBoxAddCenId->Size = System::Drawing::Size(90, 24);
-			this->Pa_ComboBoxAddCenId->TabIndex = 6;
+			this->Pa_ComboBoxAddSenId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxAddSenId->FormattingEnabled = true;
+			this->Pa_ComboBoxAddSenId->Location = System::Drawing::Point(202, 62);
+			this->Pa_ComboBoxAddSenId->Name = L"Pa_ComboBoxAddSenId";
+			this->Pa_ComboBoxAddSenId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxAddSenId->TabIndex = 6;
 			// 
 			// Pa_TextBoxAddWeight
 			// 
@@ -2508,6 +2516,7 @@ namespace Lab2 {
 			this->Pa_ButtonAdd->TabIndex = 3;
 			this->Pa_ButtonAdd->Text = L"Додати";
 			this->Pa_ButtonAdd->UseVisualStyleBackColor = true;
+			this->Pa_ButtonAdd->Click += gcnew System::EventHandler(this, &Lab2Form::Pa_ButtonAdd_Click);
 			// 
 			// Pa_TextBoxAddInfo
 			// 
@@ -2652,6 +2661,14 @@ namespace Lab2 {
 	private: Void Cl_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
 	private: Void Cl_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
 	private: Void Cl_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e);
+#pragma endregion
+
+#pragma region Parcel
+	private: Void Pa_ButtonAdd_Click(Object^ sender, EventArgs^ e);
+	private: Void Pa_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e);
+	private: Void Pa_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
+	private: Void Pa_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
+	private: Void Pa_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e);
 #pragma endregion
 
 };
