@@ -32,8 +32,7 @@ Void Lab2Form::FT_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)
     try
     {
         FacilityType^ tmp = (FacilityType^)rep->Get(Table::FacilityTypes, Convert::ToInt64(FT_ComboBoxUPDELId->Text));
-        tmp->Type = FT_TextBoxAddType->Text;
-        rep->Add(Table::FacilityTypes, tmp);
+        FT_TextBoxAddType->Text = tmp->Type;
     }
     catch (...) {}
 }

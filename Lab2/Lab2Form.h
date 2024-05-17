@@ -878,6 +878,7 @@ namespace Lab2 {
 			this->PF_ButtonUPDELDelete->TabIndex = 16;
 			this->PF_ButtonUPDELDelete->Text = L"Видалити";
 			this->PF_ButtonUPDELDelete->UseVisualStyleBackColor = true;
+			this->PF_ButtonUPDELDelete->Click += gcnew System::EventHandler(this, &Lab2Form::PF_ButtonUPDELDelete_Click);
 			// 
 			// PF_ButtonUPDELRollBack
 			// 
@@ -887,6 +888,7 @@ namespace Lab2 {
 			this->PF_ButtonUPDELRollBack->TabIndex = 15;
 			this->PF_ButtonUPDELRollBack->Text = L"Відмінити";
 			this->PF_ButtonUPDELRollBack->UseVisualStyleBackColor = true;
+			this->PF_ButtonUPDELRollBack->Click += gcnew System::EventHandler(this, &Lab2Form::PF_ButtonUPDELRollBack_Click);
 			// 
 			// PF_ButtonUPDELSave
 			// 
@@ -896,6 +898,7 @@ namespace Lab2 {
 			this->PF_ButtonUPDELSave->TabIndex = 14;
 			this->PF_ButtonUPDELSave->Text = L"Зберегти";
 			this->PF_ButtonUPDELSave->UseVisualStyleBackColor = true;
+			this->PF_ButtonUPDELSave->Click += gcnew System::EventHandler(this, &Lab2Form::PF_ButtonUPDELSave_Click);
 			// 
 			// PF_ComboBoxUPDELId
 			// 
@@ -1097,6 +1100,7 @@ namespace Lab2 {
 			this->PF_ButtonAdd->TabIndex = 3;
 			this->PF_ButtonAdd->Text = L"Додати";
 			this->PF_ButtonAdd->UseVisualStyleBackColor = true;
+			this->PF_ButtonAdd->Click += gcnew System::EventHandler(this, &Lab2Form::PF_ButtonAdd_Click);
 			// 
 			// PF_TextBoxAddName
 			// 
@@ -2536,13 +2540,13 @@ namespace Lab2 {
 			this->InfoPage->Text = L"Інфо";
 			this->InfoPage->UseVisualStyleBackColor = true;
 			// 
-			// MyForm
+			// Lab2Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1184, 761);
 			this->Controls->Add(this->MainTabControl);
-			this->Name = L"MyForm";
+			this->Name = L"Lab2Form";
 			this->Text = L"MyForm";
 			this->MainTabControl->ResumeLayout(false);
 			this->TablePage->ResumeLayout(false);
@@ -2600,6 +2604,13 @@ namespace Lab2 {
 	private: Void FT_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
 	private: Void FT_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
 	private: Void FT_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e);
+#pragma endregion
+
+#pragma region PostalFacility
+	private: Void PF_ButtonAdd_Click(Object^ sender, EventArgs^ e);
+	private: Void PF_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e);
+	private: Void PF_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
+	private: Void PF_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
 #pragma endregion
 
 };

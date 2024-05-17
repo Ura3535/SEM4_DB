@@ -128,6 +128,7 @@
     <ClCompile Include="FacilityTypeController.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Lab2Form.cpp" />
+    <ClCompile Include="PostalFacilityController.cpp" />
     <ClCompile Include="SQLRepository.cpp" />
   </ItemGroup>
   <ItemGroup>

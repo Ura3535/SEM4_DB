@@ -50,5 +50,8 @@
     <ClCompile Include="FacilityTypeController.cpp">
       <Filter>Controllers</Filter>
     </ClCompile>
+    <ClCompile Include="PostalFacilityController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
