@@ -1,10 +1,10 @@
-#include "MyForm.h"
+#include "Lab1Form.h"
 #include <vcclr.h>
 
 using namespace System::Runtime::InteropServices;
 using namespace Lab1;
 
-long MyForm::GetFTId()
+long Lab1Form::GetFTId()
 {
     auto Id_ptr = Marshal::StringToHGlobalAnsi(FT_ComboBoxUPDELId->Text);
     long Id;
@@ -20,7 +20,7 @@ long MyForm::GetFTId()
     return Id;
 }
 
-long MyForm::GetPFId()
+long Lab1Form::GetPFId()
 {
     auto Id_ptr = Marshal::StringToHGlobalAnsi(PF_ComboBoxUPDELId->Text);
     long Id;
@@ -36,7 +36,7 @@ long MyForm::GetPFId()
     return Id;
 }
 
-void MyForm::FT_UPDDataGridView()
+void Lab1Form::FT_UPDDataGridView()
 {
     FT_DataGridView->Rows->Clear();
     for (const auto& x : rep->facilityType.GetAll()) {
@@ -45,34 +45,34 @@ void MyForm::FT_UPDDataGridView()
     }
 }
 
-void MyForm::FT_UPDComboBoxId()
+void Lab1Form::FT_UPDComboBoxId()
 {
     FT_ComboBoxUPDELId->Items->Clear();
     for (const auto& x : rep->facilityType.GetAll())
         FT_ComboBoxUPDELId->Items->Add(x.Id.ToString());
 }
 
-void MyForm::PF_UPDDataGridView()
+void Lab1Form::PF_UPDDataGridView()
 {
     PF_DataGridView->Rows->Clear();
     for (const auto& x : rep->postalFacility.GetAll()) {
         array<String^>^ row = {
-            x.Id.ToString(), gcnew String(x.Name), 
-            x.FacilityTypeId.ToString(), gcnew String(x.Address), 
+            x.Id.ToString(), gcnew String(x.Name),
+            x.FacilityTypeId.ToString(), gcnew String(x.Address),
             gcnew String(x.WorkSchedule), x.WeightRestrictions.ToString()
         };
         PF_DataGridView->Rows->Add(row);
     }
 }
 
-void MyForm::PF_UPDComboBoxId()
+void Lab1Form::PF_UPDComboBoxId()
 {
     PF_ComboBoxUPDELId->Items->Clear();
     for (const auto& x : rep->postalFacility.GetAll())
         PF_ComboBoxUPDELId->Items->Add(x.Id.ToString());
 }
 
-void MyForm::PF_UPDComboBoxFTId()
+void Lab1Form::PF_UPDComboBoxFTId()
 {
     PF_ComboBoxUPDELFTId->Items->Clear();
     PF_ComboBoxAddFTId->Items->Clear();
@@ -82,7 +82,7 @@ void MyForm::PF_UPDComboBoxFTId()
     }
 }
 
-Void MyForm::FT_ButtonAdd_Click(System::Object^ sender, System::EventArgs^ e)
+Void Lab1Form::FT_ButtonAdd_Click(System::Object^ sender, System::EventArgs^ e)
 {
     auto type_ptr = Marshal::StringToHGlobalAnsi(FT_TextBoxAddType->Text);
     try
@@ -98,13 +98,13 @@ Void MyForm::FT_ButtonAdd_Click(System::Object^ sender, System::EventArgs^ e)
             PF_UPDComboBoxFTId();
         }
     }
-    catch (const std::exception&) { }
+    catch (const std::exception&) {}
     finally {
         Marshal::FreeHGlobal(type_ptr);
     }
 }
 
-Void MyForm::FT_ButtonUPDELSave_Click(System::Object^ sender, System::EventArgs^ e)
+Void Lab1Form::FT_ButtonUPDELSave_Click(System::Object^ sender, System::EventArgs^ e)
 {
     auto type_ptr = Marshal::StringToHGlobalAnsi(FT_TextBoxUPDELType->Text);
     try
@@ -120,23 +120,23 @@ Void MyForm::FT_ButtonUPDELSave_Click(System::Object^ sender, System::EventArgs^
             FT_UPDDataGridView();
         }
     }
-    catch (const std::exception&) { }
+    catch (const std::exception&) {}
     finally {
         Marshal::FreeHGlobal(type_ptr);
     }
 }
 
-Void MyForm::FT_ButtonUPDELRollBack_Click(System::Object^ sender, System::EventArgs^ e)
+Void Lab1Form::FT_ButtonUPDELRollBack_Click(System::Object^ sender, System::EventArgs^ e)
 {
     try
     {
         long Id = GetFTId();
         FT_TextBoxUPDELType->Text = gcnew String(rep->facilityType.Get(Id).Type);
     }
-    catch (const std::exception&) { }
+    catch (const std::exception&) {}
 }
 
-Void MyForm::FT_ButtonUPDELDelete_Click(System::Object^ sender, System::EventArgs^ e)
+Void Lab1Form::FT_ButtonUPDELDelete_Click(System::Object^ sender, System::EventArgs^ e)
 {
     try
     {
@@ -151,15 +151,15 @@ Void MyForm::FT_ButtonUPDELDelete_Click(System::Object^ sender, System::EventArg
         PF_UPDComboBoxId();
         PF_UPDComboBoxFTId();
     }
-    catch (const std::exception&) { }
+    catch (const std::exception&) {}
 }
 
-Void MyForm::FT_ComboBoxUPDELId_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
+Void Lab1Form::FT_ComboBoxUPDELId_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
 {
     FT_ButtonUPDELRollBack_Click(sender, e);
 }
 
-Void MyForm::PF_ButtonAdd_Click(System::Object^ sender, System::EventArgs^ e)
+Void Lab1Form::PF_ButtonAdd_Click(System::Object^ sender, System::EventArgs^ e)
 {
     auto name_ptr = Marshal::StringToHGlobalAnsi(PF_TextBoxAddName->Text);
     auto facilityTypeId_ptr = Marshal::StringToHGlobalAnsi(PF_ComboBoxAddFTId->Text);
@@ -187,7 +187,7 @@ Void MyForm::PF_ButtonAdd_Click(System::Object^ sender, System::EventArgs^ e)
             PF_UPDComboBoxId();
         }
     }
-    catch (const std::exception&) { }
+    catch (const std::exception&) {}
     finally {
         Marshal::FreeHGlobal(name_ptr);
         Marshal::FreeHGlobal(facilityTypeId_ptr);
@@ -197,7 +197,7 @@ Void MyForm::PF_ButtonAdd_Click(System::Object^ sender, System::EventArgs^ e)
     }
 }
 
-Void MyForm::PF_ButtonUPDELSave_Click(System::Object^ sender, System::EventArgs^ e)
+Void Lab1Form::PF_ButtonUPDELSave_Click(System::Object^ sender, System::EventArgs^ e)
 {
     auto name_ptr = Marshal::StringToHGlobalAnsi(PF_TextBoxUPDELName->Text);
     auto facilityTypeId_ptr = Marshal::StringToHGlobalAnsi(PF_ComboBoxUPDELFTId->Text);
@@ -226,7 +226,7 @@ Void MyForm::PF_ButtonUPDELSave_Click(System::Object^ sender, System::EventArgs^
             PF_UPDDataGridView();
         }
     }
-    catch (const std::exception&) { }
+    catch (const std::exception&) {}
     finally {
         Marshal::FreeHGlobal(name_ptr);
         Marshal::FreeHGlobal(facilityTypeId_ptr);
@@ -236,7 +236,7 @@ Void MyForm::PF_ButtonUPDELSave_Click(System::Object^ sender, System::EventArgs^
     }
 }
 
-Void MyForm::PF_ButtonUPDELRollBack_Click(System::Object^ sender, System::EventArgs^ e)
+Void Lab1Form::PF_ButtonUPDELRollBack_Click(System::Object^ sender, System::EventArgs^ e)
 {
     try
     {
@@ -248,10 +248,10 @@ Void MyForm::PF_ButtonUPDELRollBack_Click(System::Object^ sender, System::EventA
         PF_TextBoxUPDELWorkSchedule->Text = gcnew String(tmp.WorkSchedule);
         PF_TextBoxUPDELWeightRestrictions->Text = tmp.WeightRestrictions.ToString();
     }
-    catch (const std::exception&) { }
+    catch (const std::exception&) {}
 }
 
-Void MyForm::PF_ButtonUPDELDelete_Click(System::Object^ sender, System::EventArgs^ e)
+Void Lab1Form::PF_ButtonUPDELDelete_Click(System::Object^ sender, System::EventArgs^ e)
 {
     try
     {
@@ -261,10 +261,10 @@ Void MyForm::PF_ButtonUPDELDelete_Click(System::Object^ sender, System::EventArg
         PF_UPDDataGridView();
         PF_UPDComboBoxId();
     }
-    catch (const std::exception&) { }
+    catch (const std::exception&) {}
 }
 
-Void MyForm::PF_ComboBoxUPDELId_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
+Void Lab1Form::PF_ComboBoxUPDELId_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e)
 {
     PF_ButtonUPDELRollBack_Click(sender, e);
 }

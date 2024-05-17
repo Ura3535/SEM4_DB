@@ -12,10 +12,10 @@ namespace Lab2 {
 	/// <summary>
 	/// Summary for MyForm
 	/// </summary>
-	public ref class MyForm : public System::Windows::Forms::Form
+	public ref class Lab2Form : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm(void)
+		Lab2Form(void)
 		{
 			InitializeComponent();
 			//
@@ -27,7 +27,7 @@ namespace Lab2 {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyForm()
+		~Lab2Form()
 		{
 			if (components)
 			{
@@ -261,12 +261,12 @@ namespace Lab2 {
 			this->MainTabControl = (gcnew System::Windows::Forms::TabControl());
 			this->MainPage = (gcnew System::Windows::Forms::TabPage());
 			this->TablePage = (gcnew System::Windows::Forms::TabPage());
-			this->QueryPage = (gcnew System::Windows::Forms::TabPage());
-			this->InfoPage = (gcnew System::Windows::Forms::TabPage());
 			this->TableTabControl = (gcnew System::Windows::Forms::TabControl());
 			this->FT_Page = (gcnew System::Windows::Forms::TabPage());
 			this->FT_PanelList = (gcnew System::Windows::Forms::Panel());
 			this->FT_DataGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->FT_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->FT_ListType = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->FT_LabelList = (gcnew System::Windows::Forms::Label());
 			this->FT_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
 			this->FT_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
@@ -285,6 +285,12 @@ namespace Lab2 {
 			this->PF_Page = (gcnew System::Windows::Forms::TabPage());
 			this->PF_PanelList = (gcnew System::Windows::Forms::Panel());
 			this->PF_DataGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->PF_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->PF_ListName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->PF_ListFTId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->PF_ListAddress = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->PF_ListWorkSchedule = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->PF_ListWeightRestrictions = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->PF_LabelList = (gcnew System::Windows::Forms::Label());
 			this->PF_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
 			this->PF_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
@@ -316,17 +322,11 @@ namespace Lab2 {
 			this->PF_TextBoxAddName = (gcnew System::Windows::Forms::TextBox());
 			this->PF_LableAddName = (gcnew System::Windows::Forms::Label());
 			this->PF_LabelAdd = (gcnew System::Windows::Forms::Label());
-			this->FT_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->FT_ListType = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PF_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PF_ListName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PF_ListFTId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PF_ListAddress = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PF_ListWorkSchedule = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PF_ListWeightRestrictions = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->PS_Page = (gcnew System::Windows::Forms::TabPage());
 			this->PS_PanelList = (gcnew System::Windows::Forms::Panel());
 			this->PS_DataGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->PS_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->PS_ListStatus = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->PS_LabelList = (gcnew System::Windows::Forms::Label());
 			this->PS_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
 			this->PS_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
@@ -342,12 +342,13 @@ namespace Lab2 {
 			this->PS_TextBoxAddStatus = (gcnew System::Windows::Forms::TextBox());
 			this->PS_LableAddStatus = (gcnew System::Windows::Forms::Label());
 			this->PS_LabelAdd = (gcnew System::Windows::Forms::Label());
-			this->PS_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->PS_ListStatus = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Co_Page = (gcnew System::Windows::Forms::TabPage());
-			this->Co_LabelAdd = (gcnew System::Windows::Forms::Label());
 			this->Co_PanelList = (gcnew System::Windows::Forms::Panel());
 			this->Co_DataGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->Co_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Co_ListName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Co_ListCity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Co_ListPaId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Co_LabelList = (gcnew System::Windows::Forms::Label());
 			this->Co_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
 			this->Co_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
@@ -370,15 +371,17 @@ namespace Lab2 {
 			this->Co_ButtonAdd = (gcnew System::Windows::Forms::Button());
 			this->Co_TextBoxAddName = (gcnew System::Windows::Forms::TextBox());
 			this->Co_LableAddName = (gcnew System::Windows::Forms::Label());
-			this->Co_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Co_ListName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Co_ListCity = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Co_ListPaId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Co_LabelAdd = (gcnew System::Windows::Forms::Label());
 			this->Cl_Page = (gcnew System::Windows::Forms::TabPage());
 			this->Cl_PanelList = (gcnew System::Windows::Forms::Panel());
 			this->Cl_DataGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->Cl_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Cl_ListName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Cl_ListContactNumber = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Cl_ListEmail = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Cl_LabelList = (gcnew System::Windows::Forms::Label());
 			this->Cl_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
+			this->Cl_TextBoxUPDELEmail = (gcnew System::Windows::Forms::TextBox());
 			this->Cl_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
 			this->Cl_ButtonUPDELRollBack = (gcnew System::Windows::Forms::Button());
 			this->Cl_ButtonUPDELSave = (gcnew System::Windows::Forms::Button());
@@ -391,6 +394,7 @@ namespace Lab2 {
 			this->Cl_LableUPDELName = (gcnew System::Windows::Forms::Label());
 			this->Cl_LabelUPDEL = (gcnew System::Windows::Forms::Label());
 			this->Cl_PanelAdd = (gcnew System::Windows::Forms::Panel());
+			this->Cl_TextBoxAddEmail = (gcnew System::Windows::Forms::TextBox());
 			this->Cl_TextBoxAddContactNumber = (gcnew System::Windows::Forms::TextBox());
 			this->Cl_LableAddEmail = (gcnew System::Windows::Forms::Label());
 			this->Cl_LableAddContactNumber = (gcnew System::Windows::Forms::Label());
@@ -398,32 +402,9 @@ namespace Lab2 {
 			this->Cl_TextBoxAddName = (gcnew System::Windows::Forms::TextBox());
 			this->Cl_LableAddName = (gcnew System::Windows::Forms::Label());
 			this->Cl_LabelAdd = (gcnew System::Windows::Forms::Label());
-			this->Cl_TextBoxAddEmail = (gcnew System::Windows::Forms::TextBox());
-			this->Cl_TextBoxUPDELEmail = (gcnew System::Windows::Forms::TextBox());
-			this->Cl_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Cl_ListName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Cl_ListContactNumber = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Cl_ListEmail = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Pa_Page = (gcnew System::Windows::Forms::TabPage());
 			this->Pa_PanelList = (gcnew System::Windows::Forms::Panel());
 			this->Pa_DataGridView = (gcnew System::Windows::Forms::DataGridView());
-			this->Pa_LabelList = (gcnew System::Windows::Forms::Label());
-			this->Pa_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
-			this->Pa_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
-			this->Pa_ButtonUPDELRollBack = (gcnew System::Windows::Forms::Button());
-			this->Pa_ButtonUPDELSave = (gcnew System::Windows::Forms::Button());
-			this->Pa_ComboBoxUPDELId = (gcnew System::Windows::Forms::ComboBox());
-			this->Pa_LableUPDELId = (gcnew System::Windows::Forms::Label());
-			this->Pa_LabelUPDEL = (gcnew System::Windows::Forms::Label());
-			this->Pa_PanelAdd = (gcnew System::Windows::Forms::Panel());
-			this->Pa_ButtonAdd = (gcnew System::Windows::Forms::Button());
-			this->Pa_TextBoxAddInfo = (gcnew System::Windows::Forms::TextBox());
-			this->Pa_LableAddInfo = (gcnew System::Windows::Forms::Label());
-			this->Pa_LabelAdd = (gcnew System::Windows::Forms::Label());
-			this->Pa_TextBoxAddWeight = (gcnew System::Windows::Forms::TextBox());
-			this->Pa_LableAddWeight = (gcnew System::Windows::Forms::Label());
-			this->Pa_ComboBoxAddCenId = (gcnew System::Windows::Forms::ComboBox());
-			this->Pa_LableAddCenId = (gcnew System::Windows::Forms::Label());
 			this->Pa_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Pa_ListInfo = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Pa_ListWeight = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -435,20 +416,8 @@ namespace Lab2 {
 			this->Pa_ListPSId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Pa_ListCurId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Pa_ListDeliveryAddress = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Pa_LableAddRecId = (gcnew System::Windows::Forms::Label());
-			this->Pa_ComboBoxAddRecId = (gcnew System::Windows::Forms::ComboBox());
-			this->Pa_LableAddDepId = (gcnew System::Windows::Forms::Label());
-			this->Pa_ComboBoxAddDepId = (gcnew System::Windows::Forms::ComboBox());
-			this->Pa_LableAddDelId = (gcnew System::Windows::Forms::Label());
-			this->Pa_ComboBoxAddDelId = (gcnew System::Windows::Forms::ComboBox());
-			this->Pa_TextBoxAddPrice = (gcnew System::Windows::Forms::TextBox());
-			this->Pa_LableAddPrice = (gcnew System::Windows::Forms::Label());
-			this->Pa_LableAddPSId = (gcnew System::Windows::Forms::Label());
-			this->Pa_ComboBoxAddPSId = (gcnew System::Windows::Forms::ComboBox());
-			this->Pa_LableAddCurId = (gcnew System::Windows::Forms::Label());
-			this->Pa_ComboBoxAddCurId = (gcnew System::Windows::Forms::ComboBox());
-			this->Pa_TextBoxAddDeliveryAddress = (gcnew System::Windows::Forms::TextBox());
-			this->Pa_LableAddDeliveryAddress = (gcnew System::Windows::Forms::Label());
+			this->Pa_LabelList = (gcnew System::Windows::Forms::Label());
+			this->Pa_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
 			this->Pa_TextBoxUPDELDeliveryAddress = (gcnew System::Windows::Forms::TextBox());
 			this->Pa_LableUPDELDeliveryAddress = (gcnew System::Windows::Forms::Label());
 			this->Pa_LableUPDELCurId = (gcnew System::Windows::Forms::Label());
@@ -469,6 +438,37 @@ namespace Lab2 {
 			this->Pa_LableUPDELWeight = (gcnew System::Windows::Forms::Label());
 			this->Pa_TextBoxUPDELInfo = (gcnew System::Windows::Forms::TextBox());
 			this->Pa_LableUPDELInfo = (gcnew System::Windows::Forms::Label());
+			this->Pa_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
+			this->Pa_ButtonUPDELRollBack = (gcnew System::Windows::Forms::Button());
+			this->Pa_ButtonUPDELSave = (gcnew System::Windows::Forms::Button());
+			this->Pa_ComboBoxUPDELId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableUPDELId = (gcnew System::Windows::Forms::Label());
+			this->Pa_LabelUPDEL = (gcnew System::Windows::Forms::Label());
+			this->Pa_PanelAdd = (gcnew System::Windows::Forms::Panel());
+			this->Pa_TextBoxAddDeliveryAddress = (gcnew System::Windows::Forms::TextBox());
+			this->Pa_LableAddDeliveryAddress = (gcnew System::Windows::Forms::Label());
+			this->Pa_LableAddCurId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxAddCurId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableAddPSId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxAddPSId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_TextBoxAddPrice = (gcnew System::Windows::Forms::TextBox());
+			this->Pa_LableAddPrice = (gcnew System::Windows::Forms::Label());
+			this->Pa_LableAddDelId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxAddDelId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableAddDepId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxAddDepId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableAddRecId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxAddRecId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_LableAddCenId = (gcnew System::Windows::Forms::Label());
+			this->Pa_ComboBoxAddCenId = (gcnew System::Windows::Forms::ComboBox());
+			this->Pa_TextBoxAddWeight = (gcnew System::Windows::Forms::TextBox());
+			this->Pa_LableAddWeight = (gcnew System::Windows::Forms::Label());
+			this->Pa_ButtonAdd = (gcnew System::Windows::Forms::Button());
+			this->Pa_TextBoxAddInfo = (gcnew System::Windows::Forms::TextBox());
+			this->Pa_LableAddInfo = (gcnew System::Windows::Forms::Label());
+			this->Pa_LabelAdd = (gcnew System::Windows::Forms::Label());
+			this->QueryPage = (gcnew System::Windows::Forms::TabPage());
+			this->InfoPage = (gcnew System::Windows::Forms::TabPage());
 			this->MainTabControl->SuspendLayout();
 			this->TablePage->SuspendLayout();
 			this->TableTabControl->SuspendLayout();
@@ -521,7 +521,7 @@ namespace Lab2 {
 			this->MainPage->Location = System::Drawing::Point(4, 22);
 			this->MainPage->Name = L"MainPage";
 			this->MainPage->Padding = System::Windows::Forms::Padding(3);
-			this->MainPage->Size = System::Drawing::Size(952, 711);
+			this->MainPage->Size = System::Drawing::Size(1152, 711);
 			this->MainPage->TabIndex = 0;
 			this->MainPage->Text = L"Головна";
 			this->MainPage->UseVisualStyleBackColor = true;
@@ -536,26 +536,6 @@ namespace Lab2 {
 			this->TablePage->Size = System::Drawing::Size(1152, 711);
 			this->TablePage->TabIndex = 1;
 			this->TablePage->Text = L"Таблиці";
-			// 
-			// QueryPage
-			// 
-			this->QueryPage->Location = System::Drawing::Point(4, 22);
-			this->QueryPage->Name = L"QueryPage";
-			this->QueryPage->Padding = System::Windows::Forms::Padding(3);
-			this->QueryPage->Size = System::Drawing::Size(1152, 711);
-			this->QueryPage->TabIndex = 2;
-			this->QueryPage->Text = L"Запити";
-			this->QueryPage->UseVisualStyleBackColor = true;
-			// 
-			// InfoPage
-			// 
-			this->InfoPage->Location = System::Drawing::Point(4, 22);
-			this->InfoPage->Name = L"InfoPage";
-			this->InfoPage->Padding = System::Windows::Forms::Padding(3);
-			this->InfoPage->Size = System::Drawing::Size(852, 711);
-			this->InfoPage->TabIndex = 3;
-			this->InfoPage->Text = L"Інфо";
-			this->InfoPage->UseVisualStyleBackColor = true;
 			// 
 			// TableTabControl
 			// 
@@ -609,6 +589,18 @@ namespace Lab2 {
 			this->FT_DataGridView->Size = System::Drawing::Size(1113, 332);
 			this->FT_DataGridView->TabIndex = 3;
 			// 
+			// FT_ListId
+			// 
+			this->FT_ListId->HeaderText = L"Id";
+			this->FT_ListId->Name = L"FT_ListId";
+			this->FT_ListId->ReadOnly = true;
+			// 
+			// FT_ListType
+			// 
+			this->FT_ListType->HeaderText = L"Тип відділення";
+			this->FT_ListType->Name = L"FT_ListType";
+			this->FT_ListType->ReadOnly = true;
+			// 
 			// FT_LabelList
 			// 
 			this->FT_LabelList->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -645,6 +637,7 @@ namespace Lab2 {
 			this->FT_ButtonUPDELDelete->TabIndex = 8;
 			this->FT_ButtonUPDELDelete->Text = L"Видалити";
 			this->FT_ButtonUPDELDelete->UseVisualStyleBackColor = true;
+			this->FT_ButtonUPDELDelete->Click += gcnew System::EventHandler(this, &Lab2Form::FT_ButtonUPDELDelete_Click);
 			// 
 			// FT_ButtonUPDELRollBack
 			// 
@@ -654,6 +647,7 @@ namespace Lab2 {
 			this->FT_ButtonUPDELRollBack->TabIndex = 7;
 			this->FT_ButtonUPDELRollBack->Text = L"Відмінити";
 			this->FT_ButtonUPDELRollBack->UseVisualStyleBackColor = true;
+			this->FT_ButtonUPDELRollBack->Click += gcnew System::EventHandler(this, &Lab2Form::FT_ButtonUPDELRollBack_Click);
 			// 
 			// FT_ButtonUPDELSave
 			// 
@@ -663,6 +657,7 @@ namespace Lab2 {
 			this->FT_ButtonUPDELSave->TabIndex = 6;
 			this->FT_ButtonUPDELSave->Text = L"Зберегти";
 			this->FT_ButtonUPDELSave->UseVisualStyleBackColor = true;
+			this->FT_ButtonUPDELSave->Click += gcnew System::EventHandler(this, &Lab2Form::FT_ButtonUPDELSave_Click);
 			// 
 			// FT_TextBoxUPDELType
 			// 
@@ -679,6 +674,7 @@ namespace Lab2 {
 			this->FT_ComboBoxUPDELId->Name = L"FT_ComboBoxUPDELId";
 			this->FT_ComboBoxUPDELId->Size = System::Drawing::Size(50, 24);
 			this->FT_ComboBoxUPDELId->TabIndex = 4;
+			this->FT_ComboBoxUPDELId->SelectedIndexChanged += gcnew System::EventHandler(this, &Lab2Form::FT_ComboBoxUPDELId_SelectedIndexChanged);
 			// 
 			// FT_LableUPDELType
 			// 
@@ -730,6 +726,7 @@ namespace Lab2 {
 			this->FT_ButtonAdd->TabIndex = 3;
 			this->FT_ButtonAdd->Text = L"Додати";
 			this->FT_ButtonAdd->UseVisualStyleBackColor = true;
+			this->FT_ButtonAdd->Click += gcnew System::EventHandler(this, &Lab2Form::FT_ButtonAdd_Click);
 			// 
 			// FT_TextBoxAddType
 			// 
@@ -795,6 +792,42 @@ namespace Lab2 {
 			this->PF_DataGridView->ReadOnly = true;
 			this->PF_DataGridView->Size = System::Drawing::Size(1113, 332);
 			this->PF_DataGridView->TabIndex = 3;
+			// 
+			// PF_ListId
+			// 
+			this->PF_ListId->HeaderText = L"Id";
+			this->PF_ListId->Name = L"PF_ListId";
+			this->PF_ListId->ReadOnly = true;
+			// 
+			// PF_ListName
+			// 
+			this->PF_ListName->HeaderText = L"Назва";
+			this->PF_ListName->Name = L"PF_ListName";
+			this->PF_ListName->ReadOnly = true;
+			// 
+			// PF_ListFTId
+			// 
+			this->PF_ListFTId->HeaderText = L"Тип відділення";
+			this->PF_ListFTId->Name = L"PF_ListFTId";
+			this->PF_ListFTId->ReadOnly = true;
+			// 
+			// PF_ListAddress
+			// 
+			this->PF_ListAddress->HeaderText = L"Адреса";
+			this->PF_ListAddress->Name = L"PF_ListAddress";
+			this->PF_ListAddress->ReadOnly = true;
+			// 
+			// PF_ListWorkSchedule
+			// 
+			this->PF_ListWorkSchedule->HeaderText = L"Графік роботи";
+			this->PF_ListWorkSchedule->Name = L"PF_ListWorkSchedule";
+			this->PF_ListWorkSchedule->ReadOnly = true;
+			// 
+			// PF_ListWeightRestrictions
+			// 
+			this->PF_ListWeightRestrictions->HeaderText = L"Обмеження по вазі";
+			this->PF_ListWeightRestrictions->Name = L"PF_ListWeightRestrictions";
+			this->PF_ListWeightRestrictions->ReadOnly = true;
 			// 
 			// PF_LabelList
 			// 
@@ -1089,54 +1122,6 @@ namespace Lab2 {
 			this->PF_LabelAdd->TabIndex = 0;
 			this->PF_LabelAdd->Text = L"Додати нове відділення";
 			// 
-			// FT_ListId
-			// 
-			this->FT_ListId->HeaderText = L"Id";
-			this->FT_ListId->Name = L"FT_ListId";
-			this->FT_ListId->ReadOnly = true;
-			// 
-			// FT_ListType
-			// 
-			this->FT_ListType->HeaderText = L"Тип відділення";
-			this->FT_ListType->Name = L"FT_ListType";
-			this->FT_ListType->ReadOnly = true;
-			// 
-			// PF_ListId
-			// 
-			this->PF_ListId->HeaderText = L"Id";
-			this->PF_ListId->Name = L"PF_ListId";
-			this->PF_ListId->ReadOnly = true;
-			// 
-			// PF_ListName
-			// 
-			this->PF_ListName->HeaderText = L"Назва";
-			this->PF_ListName->Name = L"PF_ListName";
-			this->PF_ListName->ReadOnly = true;
-			// 
-			// PF_ListFTId
-			// 
-			this->PF_ListFTId->HeaderText = L"Тип відділення";
-			this->PF_ListFTId->Name = L"PF_ListFTId";
-			this->PF_ListFTId->ReadOnly = true;
-			// 
-			// PF_ListAddress
-			// 
-			this->PF_ListAddress->HeaderText = L"Адреса";
-			this->PF_ListAddress->Name = L"PF_ListAddress";
-			this->PF_ListAddress->ReadOnly = true;
-			// 
-			// PF_ListWorkSchedule
-			// 
-			this->PF_ListWorkSchedule->HeaderText = L"Графік роботи";
-			this->PF_ListWorkSchedule->Name = L"PF_ListWorkSchedule";
-			this->PF_ListWorkSchedule->ReadOnly = true;
-			// 
-			// PF_ListWeightRestrictions
-			// 
-			this->PF_ListWeightRestrictions->HeaderText = L"Обмеження по вазі";
-			this->PF_ListWeightRestrictions->Name = L"PF_ListWeightRestrictions";
-			this->PF_ListWeightRestrictions->ReadOnly = true;
-			// 
 			// PS_Page
 			// 
 			this->PS_Page->BackColor = System::Drawing::Color::LightGray;
@@ -1174,6 +1159,18 @@ namespace Lab2 {
 			this->PS_DataGridView->ReadOnly = true;
 			this->PS_DataGridView->Size = System::Drawing::Size(1113, 332);
 			this->PS_DataGridView->TabIndex = 3;
+			// 
+			// PS_ListId
+			// 
+			this->PS_ListId->HeaderText = L"Id";
+			this->PS_ListId->Name = L"PS_ListId";
+			this->PS_ListId->ReadOnly = true;
+			// 
+			// PS_ListStatus
+			// 
+			this->PS_ListStatus->HeaderText = L"Статус";
+			this->PS_ListStatus->Name = L"PS_ListStatus";
+			this->PS_ListStatus->ReadOnly = true;
 			// 
 			// PS_LabelList
 			// 
@@ -1324,18 +1321,6 @@ namespace Lab2 {
 			this->PS_LabelAdd->TabIndex = 0;
 			this->PS_LabelAdd->Text = L"Додати новий статус посилки";
 			// 
-			// PS_ListId
-			// 
-			this->PS_ListId->HeaderText = L"Id";
-			this->PS_ListId->Name = L"PS_ListId";
-			this->PS_ListId->ReadOnly = true;
-			// 
-			// PS_ListStatus
-			// 
-			this->PS_ListStatus->HeaderText = L"Статус";
-			this->PS_ListStatus->Name = L"PS_ListStatus";
-			this->PS_ListStatus->ReadOnly = true;
-			// 
 			// Co_Page
 			// 
 			this->Co_Page->BackColor = System::Drawing::Color::LightGray;
@@ -1348,16 +1333,6 @@ namespace Lab2 {
 			this->Co_Page->Size = System::Drawing::Size(1132, 673);
 			this->Co_Page->TabIndex = 3;
 			this->Co_Page->Text = L"Couriers";
-			// 
-			// Co_LabelAdd
-			// 
-			this->Co_LabelAdd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->Co_LabelAdd->Location = System::Drawing::Point(10, 10);
-			this->Co_LabelAdd->Name = L"Co_LabelAdd";
-			this->Co_LabelAdd->Size = System::Drawing::Size(1107, 30);
-			this->Co_LabelAdd->TabIndex = 0;
-			this->Co_LabelAdd->Text = L"Додати нового кур\'єра";
 			// 
 			// Co_PanelList
 			// 
@@ -1383,6 +1358,30 @@ namespace Lab2 {
 			this->Co_DataGridView->ReadOnly = true;
 			this->Co_DataGridView->Size = System::Drawing::Size(1113, 332);
 			this->Co_DataGridView->TabIndex = 3;
+			// 
+			// Co_ListId
+			// 
+			this->Co_ListId->HeaderText = L"Id";
+			this->Co_ListId->Name = L"Co_ListId";
+			this->Co_ListId->ReadOnly = true;
+			// 
+			// Co_ListName
+			// 
+			this->Co_ListName->HeaderText = L"Ім\'я";
+			this->Co_ListName->Name = L"Co_ListName";
+			this->Co_ListName->ReadOnly = true;
+			// 
+			// Co_ListCity
+			// 
+			this->Co_ListCity->HeaderText = L"Місто роботи";
+			this->Co_ListCity->Name = L"Co_ListCity";
+			this->Co_ListCity->ReadOnly = true;
+			// 
+			// Co_ListPaId
+			// 
+			this->Co_ListPaId->HeaderText = L"Посилка";
+			this->Co_ListPaId->Name = L"Co_ListPaId";
+			this->Co_ListPaId->ReadOnly = true;
 			// 
 			// Co_LabelList
 			// 
@@ -1599,29 +1598,15 @@ namespace Lab2 {
 			this->Co_LableAddName->TabIndex = 1;
 			this->Co_LableAddName->Text = L"Ім\'я";
 			// 
-			// Co_ListId
+			// Co_LabelAdd
 			// 
-			this->Co_ListId->HeaderText = L"Id";
-			this->Co_ListId->Name = L"Co_ListId";
-			this->Co_ListId->ReadOnly = true;
-			// 
-			// Co_ListName
-			// 
-			this->Co_ListName->HeaderText = L"Ім\'я";
-			this->Co_ListName->Name = L"Co_ListName";
-			this->Co_ListName->ReadOnly = true;
-			// 
-			// Co_ListCity
-			// 
-			this->Co_ListCity->HeaderText = L"Місто роботи";
-			this->Co_ListCity->Name = L"Co_ListCity";
-			this->Co_ListCity->ReadOnly = true;
-			// 
-			// Co_ListPaId
-			// 
-			this->Co_ListPaId->HeaderText = L"Посилка";
-			this->Co_ListPaId->Name = L"Co_ListPaId";
-			this->Co_ListPaId->ReadOnly = true;
+			this->Co_LabelAdd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Co_LabelAdd->Location = System::Drawing::Point(10, 10);
+			this->Co_LabelAdd->Name = L"Co_LabelAdd";
+			this->Co_LabelAdd->Size = System::Drawing::Size(1107, 30);
+			this->Co_LabelAdd->TabIndex = 0;
+			this->Co_LabelAdd->Text = L"Додати нового кур\'єра";
 			// 
 			// Cl_Page
 			// 
@@ -1661,6 +1646,30 @@ namespace Lab2 {
 			this->Cl_DataGridView->Size = System::Drawing::Size(1113, 332);
 			this->Cl_DataGridView->TabIndex = 3;
 			// 
+			// Cl_ListId
+			// 
+			this->Cl_ListId->HeaderText = L"Id";
+			this->Cl_ListId->Name = L"Cl_ListId";
+			this->Cl_ListId->ReadOnly = true;
+			// 
+			// Cl_ListName
+			// 
+			this->Cl_ListName->HeaderText = L"Ім\'я";
+			this->Cl_ListName->Name = L"Cl_ListName";
+			this->Cl_ListName->ReadOnly = true;
+			// 
+			// Cl_ListContactNumber
+			// 
+			this->Cl_ListContactNumber->HeaderText = L"Контактний номер";
+			this->Cl_ListContactNumber->Name = L"Cl_ListContactNumber";
+			this->Cl_ListContactNumber->ReadOnly = true;
+			// 
+			// Cl_ListEmail
+			// 
+			this->Cl_ListEmail->HeaderText = L"Email";
+			this->Cl_ListEmail->Name = L"Cl_ListEmail";
+			this->Cl_ListEmail->ReadOnly = true;
+			// 
 			// Cl_LabelList
 			// 
 			this->Cl_LabelList->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
@@ -1694,6 +1703,13 @@ namespace Lab2 {
 			this->Cl_PanelUPDEL->Name = L"Cl_PanelUPDEL";
 			this->Cl_PanelUPDEL->Size = System::Drawing::Size(1120, 135);
 			this->Cl_PanelUPDEL->TabIndex = 18;
+			// 
+			// Cl_TextBoxUPDELEmail
+			// 
+			this->Cl_TextBoxUPDELEmail->Location = System::Drawing::Point(323, 64);
+			this->Cl_TextBoxUPDELEmail->Name = L"Cl_TextBoxUPDELEmail";
+			this->Cl_TextBoxUPDELEmail->Size = System::Drawing::Size(122, 22);
+			this->Cl_TextBoxUPDELEmail->TabIndex = 17;
 			// 
 			// Cl_ButtonUPDELDelete
 			// 
@@ -1809,6 +1825,13 @@ namespace Lab2 {
 			this->Cl_PanelAdd->Size = System::Drawing::Size(1120, 135);
 			this->Cl_PanelAdd->TabIndex = 17;
 			// 
+			// Cl_TextBoxAddEmail
+			// 
+			this->Cl_TextBoxAddEmail->Location = System::Drawing::Point(266, 64);
+			this->Cl_TextBoxAddEmail->Name = L"Cl_TextBoxAddEmail";
+			this->Cl_TextBoxAddEmail->Size = System::Drawing::Size(121, 22);
+			this->Cl_TextBoxAddEmail->TabIndex = 8;
+			// 
 			// Cl_TextBoxAddContactNumber
 			// 
 			this->Cl_TextBoxAddContactNumber->Location = System::Drawing::Point(116, 64);
@@ -1868,44 +1891,6 @@ namespace Lab2 {
 			this->Cl_LabelAdd->TabIndex = 0;
 			this->Cl_LabelAdd->Text = L"Додати нового клієнта";
 			// 
-			// Cl_TextBoxAddEmail
-			// 
-			this->Cl_TextBoxAddEmail->Location = System::Drawing::Point(266, 64);
-			this->Cl_TextBoxAddEmail->Name = L"Cl_TextBoxAddEmail";
-			this->Cl_TextBoxAddEmail->Size = System::Drawing::Size(121, 22);
-			this->Cl_TextBoxAddEmail->TabIndex = 8;
-			// 
-			// Cl_TextBoxUPDELEmail
-			// 
-			this->Cl_TextBoxUPDELEmail->Location = System::Drawing::Point(323, 64);
-			this->Cl_TextBoxUPDELEmail->Name = L"Cl_TextBoxUPDELEmail";
-			this->Cl_TextBoxUPDELEmail->Size = System::Drawing::Size(122, 22);
-			this->Cl_TextBoxUPDELEmail->TabIndex = 17;
-			// 
-			// Cl_ListId
-			// 
-			this->Cl_ListId->HeaderText = L"Id";
-			this->Cl_ListId->Name = L"Cl_ListId";
-			this->Cl_ListId->ReadOnly = true;
-			// 
-			// Cl_ListName
-			// 
-			this->Cl_ListName->HeaderText = L"Ім\'я";
-			this->Cl_ListName->Name = L"Cl_ListName";
-			this->Cl_ListName->ReadOnly = true;
-			// 
-			// Cl_ListContactNumber
-			// 
-			this->Cl_ListContactNumber->HeaderText = L"Контактний номер";
-			this->Cl_ListContactNumber->Name = L"Cl_ListContactNumber";
-			this->Cl_ListContactNumber->ReadOnly = true;
-			// 
-			// Cl_ListEmail
-			// 
-			this->Cl_ListEmail->HeaderText = L"Email";
-			this->Cl_ListEmail->Name = L"Cl_ListEmail";
-			this->Cl_ListEmail->ReadOnly = true;
-			// 
 			// Pa_Page
 			// 
 			this->Pa_Page->BackColor = System::Drawing::Color::LightGray;
@@ -1944,212 +1929,6 @@ namespace Lab2 {
 			this->Pa_DataGridView->ReadOnly = true;
 			this->Pa_DataGridView->Size = System::Drawing::Size(1113, 332);
 			this->Pa_DataGridView->TabIndex = 3;
-			// 
-			// Pa_LabelList
-			// 
-			this->Pa_LabelList->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->Pa_LabelList->Location = System::Drawing::Point(10, 10);
-			this->Pa_LabelList->Name = L"Pa_LabelList";
-			this->Pa_LabelList->Size = System::Drawing::Size(1107, 30);
-			this->Pa_LabelList->TabIndex = 2;
-			this->Pa_LabelList->Text = L"Усі посилки";
-			// 
-			// Pa_PanelUPDEL
-			// 
-			this->Pa_PanelUPDEL->BackColor = System::Drawing::Color::Silver;
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_TextBoxUPDELDeliveryAddress);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELDeliveryAddress);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELCurId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELCurId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELPSId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELPSId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_TextBoxUPDELPrice);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELPrice);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELDelId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELDelId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELDepId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELDepId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELRecId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELRecId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELCenId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELCenId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_TextBoxUPDELWeight);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELWeight);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_TextBoxUPDELInfo);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELInfo);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ButtonUPDELDelete);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ButtonUPDELRollBack);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ButtonUPDELSave);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELId);
-			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LabelUPDEL);
-			this->Pa_PanelUPDEL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->Pa_PanelUPDEL->Location = System::Drawing::Point(6, 147);
-			this->Pa_PanelUPDEL->Name = L"Pa_PanelUPDEL";
-			this->Pa_PanelUPDEL->Size = System::Drawing::Size(1120, 135);
-			this->Pa_PanelUPDEL->TabIndex = 4;
-			// 
-			// Pa_ButtonUPDELDelete
-			// 
-			this->Pa_ButtonUPDELDelete->Location = System::Drawing::Point(224, 95);
-			this->Pa_ButtonUPDELDelete->Name = L"Pa_ButtonUPDELDelete";
-			this->Pa_ButtonUPDELDelete->Size = System::Drawing::Size(100, 25);
-			this->Pa_ButtonUPDELDelete->TabIndex = 8;
-			this->Pa_ButtonUPDELDelete->Text = L"Видалити";
-			this->Pa_ButtonUPDELDelete->UseVisualStyleBackColor = true;
-			// 
-			// Pa_ButtonUPDELRollBack
-			// 
-			this->Pa_ButtonUPDELRollBack->Location = System::Drawing::Point(117, 95);
-			this->Pa_ButtonUPDELRollBack->Name = L"Pa_ButtonUPDELRollBack";
-			this->Pa_ButtonUPDELRollBack->Size = System::Drawing::Size(100, 25);
-			this->Pa_ButtonUPDELRollBack->TabIndex = 7;
-			this->Pa_ButtonUPDELRollBack->Text = L"Відмінити";
-			this->Pa_ButtonUPDELRollBack->UseVisualStyleBackColor = true;
-			// 
-			// Pa_ButtonUPDELSave
-			// 
-			this->Pa_ButtonUPDELSave->Location = System::Drawing::Point(10, 95);
-			this->Pa_ButtonUPDELSave->Name = L"Pa_ButtonUPDELSave";
-			this->Pa_ButtonUPDELSave->Size = System::Drawing::Size(100, 25);
-			this->Pa_ButtonUPDELSave->TabIndex = 6;
-			this->Pa_ButtonUPDELSave->Text = L"Зберегти";
-			this->Pa_ButtonUPDELSave->UseVisualStyleBackColor = true;
-			// 
-			// Pa_ComboBoxUPDELId
-			// 
-			this->Pa_ComboBoxUPDELId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->Pa_ComboBoxUPDELId->FormattingEnabled = true;
-			this->Pa_ComboBoxUPDELId->Location = System::Drawing::Point(10, 62);
-			this->Pa_ComboBoxUPDELId->Name = L"Pa_ComboBoxUPDELId";
-			this->Pa_ComboBoxUPDELId->Size = System::Drawing::Size(50, 24);
-			this->Pa_ComboBoxUPDELId->TabIndex = 4;
-			// 
-			// Pa_LableUPDELId
-			// 
-			this->Pa_LableUPDELId->Location = System::Drawing::Point(10, 40);
-			this->Pa_LableUPDELId->Name = L"Pa_LableUPDELId";
-			this->Pa_LableUPDELId->Size = System::Drawing::Size(50, 20);
-			this->Pa_LableUPDELId->TabIndex = 2;
-			this->Pa_LableUPDELId->Text = L"Id";
-			// 
-			// Pa_LabelUPDEL
-			// 
-			this->Pa_LabelUPDEL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->Pa_LabelUPDEL->Location = System::Drawing::Point(10, 10);
-			this->Pa_LabelUPDEL->Name = L"Pa_LabelUPDEL";
-			this->Pa_LabelUPDEL->Size = System::Drawing::Size(1107, 30);
-			this->Pa_LabelUPDEL->TabIndex = 1;
-			this->Pa_LabelUPDEL->Text = L"Редагувати/видалити посилку";
-			// 
-			// Pa_PanelAdd
-			// 
-			this->Pa_PanelAdd->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
-				| System::Windows::Forms::AnchorStyles::Right));
-			this->Pa_PanelAdd->BackColor = System::Drawing::Color::Silver;
-			this->Pa_PanelAdd->Controls->Add(this->Pa_TextBoxAddDeliveryAddress);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddDeliveryAddress);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddCurId);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddCurId);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddPSId);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddPSId);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_TextBoxAddPrice);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddPrice);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddDelId);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddDelId);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddDepId);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddDepId);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddRecId);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddRecId);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddCenId);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddCenId);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_TextBoxAddWeight);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddWeight);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_ButtonAdd);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_TextBoxAddInfo);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddInfo);
-			this->Pa_PanelAdd->Controls->Add(this->Pa_LabelAdd);
-			this->Pa_PanelAdd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->Pa_PanelAdd->Location = System::Drawing::Point(6, 6);
-			this->Pa_PanelAdd->Name = L"Pa_PanelAdd";
-			this->Pa_PanelAdd->Size = System::Drawing::Size(1120, 135);
-			this->Pa_PanelAdd->TabIndex = 3;
-			// 
-			// Pa_ButtonAdd
-			// 
-			this->Pa_ButtonAdd->Location = System::Drawing::Point(10, 100);
-			this->Pa_ButtonAdd->Name = L"Pa_ButtonAdd";
-			this->Pa_ButtonAdd->Size = System::Drawing::Size(100, 25);
-			this->Pa_ButtonAdd->TabIndex = 3;
-			this->Pa_ButtonAdd->Text = L"Додати";
-			this->Pa_ButtonAdd->UseVisualStyleBackColor = true;
-			// 
-			// Pa_TextBoxAddInfo
-			// 
-			this->Pa_TextBoxAddInfo->Location = System::Drawing::Point(10, 63);
-			this->Pa_TextBoxAddInfo->Name = L"Pa_TextBoxAddInfo";
-			this->Pa_TextBoxAddInfo->Size = System::Drawing::Size(90, 22);
-			this->Pa_TextBoxAddInfo->TabIndex = 2;
-			// 
-			// Pa_LableAddInfo
-			// 
-			this->Pa_LableAddInfo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->Pa_LableAddInfo->Location = System::Drawing::Point(10, 40);
-			this->Pa_LableAddInfo->Name = L"Pa_LableAddInfo";
-			this->Pa_LableAddInfo->Size = System::Drawing::Size(90, 20);
-			this->Pa_LableAddInfo->TabIndex = 1;
-			this->Pa_LableAddInfo->Text = L"Інфо";
-			// 
-			// Pa_LabelAdd
-			// 
-			this->Pa_LabelAdd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(204)));
-			this->Pa_LabelAdd->Location = System::Drawing::Point(10, 10);
-			this->Pa_LabelAdd->Name = L"Pa_LabelAdd";
-			this->Pa_LabelAdd->Size = System::Drawing::Size(1107, 30);
-			this->Pa_LabelAdd->TabIndex = 0;
-			this->Pa_LabelAdd->Text = L"Додати нову посилку";
-			// 
-			// Pa_TextBoxAddWeight
-			// 
-			this->Pa_TextBoxAddWeight->Location = System::Drawing::Point(106, 63);
-			this->Pa_TextBoxAddWeight->Name = L"Pa_TextBoxAddWeight";
-			this->Pa_TextBoxAddWeight->Size = System::Drawing::Size(90, 22);
-			this->Pa_TextBoxAddWeight->TabIndex = 5;
-			// 
-			// Pa_LableAddWeight
-			// 
-			this->Pa_LableAddWeight->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->Pa_LableAddWeight->Location = System::Drawing::Point(106, 40);
-			this->Pa_LableAddWeight->Name = L"Pa_LableAddWeight";
-			this->Pa_LableAddWeight->Size = System::Drawing::Size(90, 20);
-			this->Pa_LableAddWeight->TabIndex = 4;
-			this->Pa_LableAddWeight->Text = L"Вага";
-			// 
-			// Pa_ComboBoxAddCenId
-			// 
-			this->Pa_ComboBoxAddCenId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->Pa_ComboBoxAddCenId->FormattingEnabled = true;
-			this->Pa_ComboBoxAddCenId->Location = System::Drawing::Point(202, 62);
-			this->Pa_ComboBoxAddCenId->Name = L"Pa_ComboBoxAddCenId";
-			this->Pa_ComboBoxAddCenId->Size = System::Drawing::Size(90, 24);
-			this->Pa_ComboBoxAddCenId->TabIndex = 6;
-			// 
-			// Pa_LableAddCenId
-			// 
-			this->Pa_LableAddCenId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->Pa_LableAddCenId->Location = System::Drawing::Point(202, 40);
-			this->Pa_LableAddCenId->Name = L"Pa_LableAddCenId";
-			this->Pa_LableAddCenId->Size = System::Drawing::Size(90, 20);
-			this->Pa_LableAddCenId->TabIndex = 7;
-			this->Pa_LableAddCenId->Text = L"Відправник";
 			// 
 			// Pa_ListId
 			// 
@@ -2217,134 +1996,51 @@ namespace Lab2 {
 			this->Pa_ListDeliveryAddress->Name = L"Pa_ListDeliveryAddress";
 			this->Pa_ListDeliveryAddress->ReadOnly = true;
 			// 
-			// Pa_LableAddRecId
+			// Pa_LabelList
 			// 
-			this->Pa_LableAddRecId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->Pa_LableAddRecId->Location = System::Drawing::Point(298, 40);
-			this->Pa_LableAddRecId->Name = L"Pa_LableAddRecId";
-			this->Pa_LableAddRecId->Size = System::Drawing::Size(90, 20);
-			this->Pa_LableAddRecId->TabIndex = 9;
-			this->Pa_LableAddRecId->Text = L"Отримувач";
-			// 
-			// Pa_ComboBoxAddRecId
-			// 
-			this->Pa_ComboBoxAddRecId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->Pa_ComboBoxAddRecId->FormattingEnabled = true;
-			this->Pa_ComboBoxAddRecId->Location = System::Drawing::Point(298, 62);
-			this->Pa_ComboBoxAddRecId->Name = L"Pa_ComboBoxAddRecId";
-			this->Pa_ComboBoxAddRecId->Size = System::Drawing::Size(90, 24);
-			this->Pa_ComboBoxAddRecId->TabIndex = 8;
-			// 
-			// Pa_LableAddDepId
-			// 
-			this->Pa_LableAddDepId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->Pa_LableAddDepId->Location = System::Drawing::Point(394, 40);
-			this->Pa_LableAddDepId->Name = L"Pa_LableAddDepId";
-			this->Pa_LableAddDepId->Size = System::Drawing::Size(90, 20);
-			this->Pa_LableAddDepId->TabIndex = 11;
-			this->Pa_LableAddDepId->Text = L"Т. Відправки";
-			// 
-			// Pa_ComboBoxAddDepId
-			// 
-			this->Pa_ComboBoxAddDepId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->Pa_ComboBoxAddDepId->FormattingEnabled = true;
-			this->Pa_ComboBoxAddDepId->Location = System::Drawing::Point(394, 62);
-			this->Pa_ComboBoxAddDepId->Name = L"Pa_ComboBoxAddDepId";
-			this->Pa_ComboBoxAddDepId->Size = System::Drawing::Size(90, 24);
-			this->Pa_ComboBoxAddDepId->TabIndex = 10;
-			// 
-			// Pa_LableAddDelId
-			// 
-			this->Pa_LableAddDelId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->Pa_LableAddDelId->Location = System::Drawing::Point(490, 40);
-			this->Pa_LableAddDelId->Name = L"Pa_LableAddDelId";
-			this->Pa_LableAddDelId->Size = System::Drawing::Size(90, 20);
-			this->Pa_LableAddDelId->TabIndex = 13;
-			this->Pa_LableAddDelId->Text = L"Т. Прибуття";
-			// 
-			// Pa_ComboBoxAddDelId
-			// 
-			this->Pa_ComboBoxAddDelId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->Pa_ComboBoxAddDelId->FormattingEnabled = true;
-			this->Pa_ComboBoxAddDelId->Location = System::Drawing::Point(490, 62);
-			this->Pa_ComboBoxAddDelId->Name = L"Pa_ComboBoxAddDelId";
-			this->Pa_ComboBoxAddDelId->Size = System::Drawing::Size(90, 24);
-			this->Pa_ComboBoxAddDelId->TabIndex = 12;
-			// 
-			// Pa_TextBoxAddPrice
-			// 
-			this->Pa_TextBoxAddPrice->Location = System::Drawing::Point(586, 63);
-			this->Pa_TextBoxAddPrice->Name = L"Pa_TextBoxAddPrice";
-			this->Pa_TextBoxAddPrice->Size = System::Drawing::Size(90, 22);
-			this->Pa_TextBoxAddPrice->TabIndex = 15;
-			// 
-			// Pa_LableAddPrice
-			// 
-			this->Pa_LableAddPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->Pa_LableAddPrice->Location = System::Drawing::Point(586, 40);
-			this->Pa_LableAddPrice->Name = L"Pa_LableAddPrice";
-			this->Pa_LableAddPrice->Size = System::Drawing::Size(90, 20);
-			this->Pa_LableAddPrice->TabIndex = 14;
-			this->Pa_LableAddPrice->Text = L"Вага";
-			// 
-			// Pa_LableAddPSId
-			// 
-			this->Pa_LableAddPSId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->Pa_LabelList->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->Pa_LableAddPSId->Location = System::Drawing::Point(682, 40);
-			this->Pa_LableAddPSId->Name = L"Pa_LableAddPSId";
-			this->Pa_LableAddPSId->Size = System::Drawing::Size(90, 20);
-			this->Pa_LableAddPSId->TabIndex = 17;
-			this->Pa_LableAddPSId->Text = L"Статус";
+			this->Pa_LabelList->Location = System::Drawing::Point(10, 10);
+			this->Pa_LabelList->Name = L"Pa_LabelList";
+			this->Pa_LabelList->Size = System::Drawing::Size(1107, 30);
+			this->Pa_LabelList->TabIndex = 2;
+			this->Pa_LabelList->Text = L"Усі посилки";
 			// 
-			// Pa_ComboBoxAddPSId
+			// Pa_PanelUPDEL
 			// 
-			this->Pa_ComboBoxAddPSId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->Pa_ComboBoxAddPSId->FormattingEnabled = true;
-			this->Pa_ComboBoxAddPSId->Location = System::Drawing::Point(682, 62);
-			this->Pa_ComboBoxAddPSId->Name = L"Pa_ComboBoxAddPSId";
-			this->Pa_ComboBoxAddPSId->Size = System::Drawing::Size(90, 24);
-			this->Pa_ComboBoxAddPSId->TabIndex = 16;
-			// 
-			// Pa_LableAddCurId
-			// 
-			this->Pa_LableAddCurId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->Pa_LableAddCurId->Location = System::Drawing::Point(778, 40);
-			this->Pa_LableAddCurId->Name = L"Pa_LableAddCurId";
-			this->Pa_LableAddCurId->Size = System::Drawing::Size(120, 20);
-			this->Pa_LableAddCurId->TabIndex = 19;
-			this->Pa_LableAddCurId->Text = L"Т. Перебування";
-			// 
-			// Pa_ComboBoxAddCurId
-			// 
-			this->Pa_ComboBoxAddCurId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->Pa_ComboBoxAddCurId->FormattingEnabled = true;
-			this->Pa_ComboBoxAddCurId->Location = System::Drawing::Point(778, 62);
-			this->Pa_ComboBoxAddCurId->Name = L"Pa_ComboBoxAddCurId";
-			this->Pa_ComboBoxAddCurId->Size = System::Drawing::Size(120, 24);
-			this->Pa_ComboBoxAddCurId->TabIndex = 18;
-			// 
-			// Pa_TextBoxAddDeliveryAddress
-			// 
-			this->Pa_TextBoxAddDeliveryAddress->Location = System::Drawing::Point(904, 63);
-			this->Pa_TextBoxAddDeliveryAddress->Name = L"Pa_TextBoxAddDeliveryAddress";
-			this->Pa_TextBoxAddDeliveryAddress->Size = System::Drawing::Size(110, 22);
-			this->Pa_TextBoxAddDeliveryAddress->TabIndex = 21;
-			// 
-			// Pa_LableAddDeliveryAddress
-			// 
-			this->Pa_LableAddDeliveryAddress->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->Pa_LableAddDeliveryAddress->Location = System::Drawing::Point(904, 40);
-			this->Pa_LableAddDeliveryAddress->Name = L"Pa_LableAddDeliveryAddress";
-			this->Pa_LableAddDeliveryAddress->Size = System::Drawing::Size(110, 20);
-			this->Pa_LableAddDeliveryAddress->TabIndex = 20;
-			this->Pa_LableAddDeliveryAddress->Text = L"Адр. доставки";
+			this->Pa_PanelUPDEL->BackColor = System::Drawing::Color::Silver;
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_TextBoxUPDELDeliveryAddress);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELDeliveryAddress);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELCurId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELCurId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELPSId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELPSId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_TextBoxUPDELPrice);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELPrice);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELDelId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELDelId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELDepId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELDepId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELRecId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELRecId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELCenId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELCenId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_TextBoxUPDELWeight);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELWeight);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_TextBoxUPDELInfo);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELInfo);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ButtonUPDELDelete);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ButtonUPDELRollBack);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ButtonUPDELSave);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_ComboBoxUPDELId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LableUPDELId);
+			this->Pa_PanelUPDEL->Controls->Add(this->Pa_LabelUPDEL);
+			this->Pa_PanelUPDEL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Pa_PanelUPDEL->Location = System::Drawing::Point(6, 147);
+			this->Pa_PanelUPDEL->Name = L"Pa_PanelUPDEL";
+			this->Pa_PanelUPDEL->Size = System::Drawing::Size(1120, 135);
+			this->Pa_PanelUPDEL->TabIndex = 4;
 			// 
 			// Pa_TextBoxUPDELDeliveryAddress
 			// 
@@ -2528,6 +2224,315 @@ namespace Lab2 {
 			this->Pa_LableUPDELInfo->TabIndex = 22;
 			this->Pa_LableUPDELInfo->Text = L"Інфо";
 			// 
+			// Pa_ButtonUPDELDelete
+			// 
+			this->Pa_ButtonUPDELDelete->Location = System::Drawing::Point(224, 95);
+			this->Pa_ButtonUPDELDelete->Name = L"Pa_ButtonUPDELDelete";
+			this->Pa_ButtonUPDELDelete->Size = System::Drawing::Size(100, 25);
+			this->Pa_ButtonUPDELDelete->TabIndex = 8;
+			this->Pa_ButtonUPDELDelete->Text = L"Видалити";
+			this->Pa_ButtonUPDELDelete->UseVisualStyleBackColor = true;
+			// 
+			// Pa_ButtonUPDELRollBack
+			// 
+			this->Pa_ButtonUPDELRollBack->Location = System::Drawing::Point(117, 95);
+			this->Pa_ButtonUPDELRollBack->Name = L"Pa_ButtonUPDELRollBack";
+			this->Pa_ButtonUPDELRollBack->Size = System::Drawing::Size(100, 25);
+			this->Pa_ButtonUPDELRollBack->TabIndex = 7;
+			this->Pa_ButtonUPDELRollBack->Text = L"Відмінити";
+			this->Pa_ButtonUPDELRollBack->UseVisualStyleBackColor = true;
+			// 
+			// Pa_ButtonUPDELSave
+			// 
+			this->Pa_ButtonUPDELSave->Location = System::Drawing::Point(10, 95);
+			this->Pa_ButtonUPDELSave->Name = L"Pa_ButtonUPDELSave";
+			this->Pa_ButtonUPDELSave->Size = System::Drawing::Size(100, 25);
+			this->Pa_ButtonUPDELSave->TabIndex = 6;
+			this->Pa_ButtonUPDELSave->Text = L"Зберегти";
+			this->Pa_ButtonUPDELSave->UseVisualStyleBackColor = true;
+			// 
+			// Pa_ComboBoxUPDELId
+			// 
+			this->Pa_ComboBoxUPDELId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxUPDELId->FormattingEnabled = true;
+			this->Pa_ComboBoxUPDELId->Location = System::Drawing::Point(10, 62);
+			this->Pa_ComboBoxUPDELId->Name = L"Pa_ComboBoxUPDELId";
+			this->Pa_ComboBoxUPDELId->Size = System::Drawing::Size(50, 24);
+			this->Pa_ComboBoxUPDELId->TabIndex = 4;
+			// 
+			// Pa_LableUPDELId
+			// 
+			this->Pa_LableUPDELId->Location = System::Drawing::Point(10, 40);
+			this->Pa_LableUPDELId->Name = L"Pa_LableUPDELId";
+			this->Pa_LableUPDELId->Size = System::Drawing::Size(50, 20);
+			this->Pa_LableUPDELId->TabIndex = 2;
+			this->Pa_LableUPDELId->Text = L"Id";
+			// 
+			// Pa_LabelUPDEL
+			// 
+			this->Pa_LabelUPDEL->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Pa_LabelUPDEL->Location = System::Drawing::Point(10, 10);
+			this->Pa_LabelUPDEL->Name = L"Pa_LabelUPDEL";
+			this->Pa_LabelUPDEL->Size = System::Drawing::Size(1107, 30);
+			this->Pa_LabelUPDEL->TabIndex = 1;
+			this->Pa_LabelUPDEL->Text = L"Редагувати/видалити посилку";
+			// 
+			// Pa_PanelAdd
+			// 
+			this->Pa_PanelAdd->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+				| System::Windows::Forms::AnchorStyles::Right));
+			this->Pa_PanelAdd->BackColor = System::Drawing::Color::Silver;
+			this->Pa_PanelAdd->Controls->Add(this->Pa_TextBoxAddDeliveryAddress);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddDeliveryAddress);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddCurId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddCurId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddPSId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddPSId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_TextBoxAddPrice);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddPrice);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddDelId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddDelId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddDepId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddDepId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddRecId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddRecId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddCenId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ComboBoxAddCenId);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_TextBoxAddWeight);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddWeight);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_ButtonAdd);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_TextBoxAddInfo);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LableAddInfo);
+			this->Pa_PanelAdd->Controls->Add(this->Pa_LabelAdd);
+			this->Pa_PanelAdd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Pa_PanelAdd->Location = System::Drawing::Point(6, 6);
+			this->Pa_PanelAdd->Name = L"Pa_PanelAdd";
+			this->Pa_PanelAdd->Size = System::Drawing::Size(1120, 135);
+			this->Pa_PanelAdd->TabIndex = 3;
+			// 
+			// Pa_TextBoxAddDeliveryAddress
+			// 
+			this->Pa_TextBoxAddDeliveryAddress->Location = System::Drawing::Point(904, 63);
+			this->Pa_TextBoxAddDeliveryAddress->Name = L"Pa_TextBoxAddDeliveryAddress";
+			this->Pa_TextBoxAddDeliveryAddress->Size = System::Drawing::Size(110, 22);
+			this->Pa_TextBoxAddDeliveryAddress->TabIndex = 21;
+			// 
+			// Pa_LableAddDeliveryAddress
+			// 
+			this->Pa_LableAddDeliveryAddress->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddDeliveryAddress->Location = System::Drawing::Point(904, 40);
+			this->Pa_LableAddDeliveryAddress->Name = L"Pa_LableAddDeliveryAddress";
+			this->Pa_LableAddDeliveryAddress->Size = System::Drawing::Size(110, 20);
+			this->Pa_LableAddDeliveryAddress->TabIndex = 20;
+			this->Pa_LableAddDeliveryAddress->Text = L"Адр. доставки";
+			// 
+			// Pa_LableAddCurId
+			// 
+			this->Pa_LableAddCurId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddCurId->Location = System::Drawing::Point(778, 40);
+			this->Pa_LableAddCurId->Name = L"Pa_LableAddCurId";
+			this->Pa_LableAddCurId->Size = System::Drawing::Size(120, 20);
+			this->Pa_LableAddCurId->TabIndex = 19;
+			this->Pa_LableAddCurId->Text = L"Т. Перебування";
+			// 
+			// Pa_ComboBoxAddCurId
+			// 
+			this->Pa_ComboBoxAddCurId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxAddCurId->FormattingEnabled = true;
+			this->Pa_ComboBoxAddCurId->Location = System::Drawing::Point(778, 62);
+			this->Pa_ComboBoxAddCurId->Name = L"Pa_ComboBoxAddCurId";
+			this->Pa_ComboBoxAddCurId->Size = System::Drawing::Size(120, 24);
+			this->Pa_ComboBoxAddCurId->TabIndex = 18;
+			// 
+			// Pa_LableAddPSId
+			// 
+			this->Pa_LableAddPSId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Pa_LableAddPSId->Location = System::Drawing::Point(682, 40);
+			this->Pa_LableAddPSId->Name = L"Pa_LableAddPSId";
+			this->Pa_LableAddPSId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddPSId->TabIndex = 17;
+			this->Pa_LableAddPSId->Text = L"Статус";
+			// 
+			// Pa_ComboBoxAddPSId
+			// 
+			this->Pa_ComboBoxAddPSId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxAddPSId->FormattingEnabled = true;
+			this->Pa_ComboBoxAddPSId->Location = System::Drawing::Point(682, 62);
+			this->Pa_ComboBoxAddPSId->Name = L"Pa_ComboBoxAddPSId";
+			this->Pa_ComboBoxAddPSId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxAddPSId->TabIndex = 16;
+			// 
+			// Pa_TextBoxAddPrice
+			// 
+			this->Pa_TextBoxAddPrice->Location = System::Drawing::Point(586, 63);
+			this->Pa_TextBoxAddPrice->Name = L"Pa_TextBoxAddPrice";
+			this->Pa_TextBoxAddPrice->Size = System::Drawing::Size(90, 22);
+			this->Pa_TextBoxAddPrice->TabIndex = 15;
+			// 
+			// Pa_LableAddPrice
+			// 
+			this->Pa_LableAddPrice->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddPrice->Location = System::Drawing::Point(586, 40);
+			this->Pa_LableAddPrice->Name = L"Pa_LableAddPrice";
+			this->Pa_LableAddPrice->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddPrice->TabIndex = 14;
+			this->Pa_LableAddPrice->Text = L"Вага";
+			// 
+			// Pa_LableAddDelId
+			// 
+			this->Pa_LableAddDelId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddDelId->Location = System::Drawing::Point(490, 40);
+			this->Pa_LableAddDelId->Name = L"Pa_LableAddDelId";
+			this->Pa_LableAddDelId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddDelId->TabIndex = 13;
+			this->Pa_LableAddDelId->Text = L"Т. Прибуття";
+			// 
+			// Pa_ComboBoxAddDelId
+			// 
+			this->Pa_ComboBoxAddDelId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxAddDelId->FormattingEnabled = true;
+			this->Pa_ComboBoxAddDelId->Location = System::Drawing::Point(490, 62);
+			this->Pa_ComboBoxAddDelId->Name = L"Pa_ComboBoxAddDelId";
+			this->Pa_ComboBoxAddDelId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxAddDelId->TabIndex = 12;
+			// 
+			// Pa_LableAddDepId
+			// 
+			this->Pa_LableAddDepId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddDepId->Location = System::Drawing::Point(394, 40);
+			this->Pa_LableAddDepId->Name = L"Pa_LableAddDepId";
+			this->Pa_LableAddDepId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddDepId->TabIndex = 11;
+			this->Pa_LableAddDepId->Text = L"Т. Відправки";
+			// 
+			// Pa_ComboBoxAddDepId
+			// 
+			this->Pa_ComboBoxAddDepId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxAddDepId->FormattingEnabled = true;
+			this->Pa_ComboBoxAddDepId->Location = System::Drawing::Point(394, 62);
+			this->Pa_ComboBoxAddDepId->Name = L"Pa_ComboBoxAddDepId";
+			this->Pa_ComboBoxAddDepId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxAddDepId->TabIndex = 10;
+			// 
+			// Pa_LableAddRecId
+			// 
+			this->Pa_LableAddRecId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddRecId->Location = System::Drawing::Point(298, 40);
+			this->Pa_LableAddRecId->Name = L"Pa_LableAddRecId";
+			this->Pa_LableAddRecId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddRecId->TabIndex = 9;
+			this->Pa_LableAddRecId->Text = L"Отримувач";
+			// 
+			// Pa_ComboBoxAddRecId
+			// 
+			this->Pa_ComboBoxAddRecId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxAddRecId->FormattingEnabled = true;
+			this->Pa_ComboBoxAddRecId->Location = System::Drawing::Point(298, 62);
+			this->Pa_ComboBoxAddRecId->Name = L"Pa_ComboBoxAddRecId";
+			this->Pa_ComboBoxAddRecId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxAddRecId->TabIndex = 8;
+			// 
+			// Pa_LableAddCenId
+			// 
+			this->Pa_LableAddCenId->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddCenId->Location = System::Drawing::Point(202, 40);
+			this->Pa_LableAddCenId->Name = L"Pa_LableAddCenId";
+			this->Pa_LableAddCenId->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddCenId->TabIndex = 7;
+			this->Pa_LableAddCenId->Text = L"Відправник";
+			// 
+			// Pa_ComboBoxAddCenId
+			// 
+			this->Pa_ComboBoxAddCenId->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->Pa_ComboBoxAddCenId->FormattingEnabled = true;
+			this->Pa_ComboBoxAddCenId->Location = System::Drawing::Point(202, 62);
+			this->Pa_ComboBoxAddCenId->Name = L"Pa_ComboBoxAddCenId";
+			this->Pa_ComboBoxAddCenId->Size = System::Drawing::Size(90, 24);
+			this->Pa_ComboBoxAddCenId->TabIndex = 6;
+			// 
+			// Pa_TextBoxAddWeight
+			// 
+			this->Pa_TextBoxAddWeight->Location = System::Drawing::Point(106, 63);
+			this->Pa_TextBoxAddWeight->Name = L"Pa_TextBoxAddWeight";
+			this->Pa_TextBoxAddWeight->Size = System::Drawing::Size(90, 22);
+			this->Pa_TextBoxAddWeight->TabIndex = 5;
+			// 
+			// Pa_LableAddWeight
+			// 
+			this->Pa_LableAddWeight->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Pa_LableAddWeight->Location = System::Drawing::Point(106, 40);
+			this->Pa_LableAddWeight->Name = L"Pa_LableAddWeight";
+			this->Pa_LableAddWeight->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddWeight->TabIndex = 4;
+			this->Pa_LableAddWeight->Text = L"Вага";
+			// 
+			// Pa_ButtonAdd
+			// 
+			this->Pa_ButtonAdd->Location = System::Drawing::Point(10, 100);
+			this->Pa_ButtonAdd->Name = L"Pa_ButtonAdd";
+			this->Pa_ButtonAdd->Size = System::Drawing::Size(100, 25);
+			this->Pa_ButtonAdd->TabIndex = 3;
+			this->Pa_ButtonAdd->Text = L"Додати";
+			this->Pa_ButtonAdd->UseVisualStyleBackColor = true;
+			// 
+			// Pa_TextBoxAddInfo
+			// 
+			this->Pa_TextBoxAddInfo->Location = System::Drawing::Point(10, 63);
+			this->Pa_TextBoxAddInfo->Name = L"Pa_TextBoxAddInfo";
+			this->Pa_TextBoxAddInfo->Size = System::Drawing::Size(90, 22);
+			this->Pa_TextBoxAddInfo->TabIndex = 2;
+			// 
+			// Pa_LableAddInfo
+			// 
+			this->Pa_LableAddInfo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Pa_LableAddInfo->Location = System::Drawing::Point(10, 40);
+			this->Pa_LableAddInfo->Name = L"Pa_LableAddInfo";
+			this->Pa_LableAddInfo->Size = System::Drawing::Size(90, 20);
+			this->Pa_LableAddInfo->TabIndex = 1;
+			this->Pa_LableAddInfo->Text = L"Інфо";
+			// 
+			// Pa_LabelAdd
+			// 
+			this->Pa_LabelAdd->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Pa_LabelAdd->Location = System::Drawing::Point(10, 10);
+			this->Pa_LabelAdd->Name = L"Pa_LabelAdd";
+			this->Pa_LabelAdd->Size = System::Drawing::Size(1107, 30);
+			this->Pa_LabelAdd->TabIndex = 0;
+			this->Pa_LabelAdd->Text = L"Додати нову посилку";
+			// 
+			// QueryPage
+			// 
+			this->QueryPage->Location = System::Drawing::Point(4, 22);
+			this->QueryPage->Name = L"QueryPage";
+			this->QueryPage->Padding = System::Windows::Forms::Padding(3);
+			this->QueryPage->Size = System::Drawing::Size(1152, 711);
+			this->QueryPage->TabIndex = 2;
+			this->QueryPage->Text = L"Запити";
+			this->QueryPage->UseVisualStyleBackColor = true;
+			// 
+			// InfoPage
+			// 
+			this->InfoPage->Location = System::Drawing::Point(4, 22);
+			this->InfoPage->Name = L"InfoPage";
+			this->InfoPage->Padding = System::Windows::Forms::Padding(3);
+			this->InfoPage->Size = System::Drawing::Size(1152, 711);
+			this->InfoPage->TabIndex = 3;
+			this->InfoPage->Text = L"Інфо";
+			this->InfoPage->UseVisualStyleBackColor = true;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -2585,5 +2590,14 @@ namespace Lab2 {
 
 		}
 #pragma endregion
-	};
+
+#pragma region FacilityType
+	private: Void FT_ButtonAdd_Click(Object^ sender, EventArgs^ e);
+	private: Void FT_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e);
+	private: Void FT_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e);
+	private: Void FT_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e);
+	private: Void FT_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e);
+#pragma endregion
+
+};
 }

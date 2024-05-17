@@ -44,7 +44,7 @@
     <ClInclude Include="Repository.h">
       <Filter>Repository</Filter>
     </ClInclude>
-    <ClInclude Include="MyForm.h">
+    <ClInclude Include="Lab1Form.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

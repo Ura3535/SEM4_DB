@@ -11,12 +11,12 @@ namespace Lab1 {
 	using namespace System::Drawing;
 
 	/// <summary>
-	/// Summary for MyForm
+	/// Summary for Lab1Form
 	/// </summary>
-	public ref class MyForm : public System::Windows::Forms::Form
+	public ref class Lab1Form : public System::Windows::Forms::Form
 	{
 	public:
-		MyForm(repository::Repository* rep)
+		Lab1Form(repository::Repository* rep)
 			: rep(rep)
 		{
 			InitializeComponent();
@@ -31,7 +31,7 @@ namespace Lab1 {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyForm()
+		~Lab1Form()
 		{
 			if (components)
 			{
@@ -287,7 +287,7 @@ namespace Lab1 {
 			this->FT_ButtonUPDELDelete->TabIndex = 8;
 			this->FT_ButtonUPDELDelete->Text = L"Видалити";
 			this->FT_ButtonUPDELDelete->UseVisualStyleBackColor = true;
-			this->FT_ButtonUPDELDelete->Click += gcnew System::EventHandler(this, &MyForm::FT_ButtonUPDELDelete_Click);
+			this->FT_ButtonUPDELDelete->Click += gcnew System::EventHandler(this, &Lab1Form::FT_ButtonUPDELDelete_Click);
 			// 
 			// FT_ButtonUPDELRollBack
 			// 
@@ -297,7 +297,7 @@ namespace Lab1 {
 			this->FT_ButtonUPDELRollBack->TabIndex = 7;
 			this->FT_ButtonUPDELRollBack->Text = L"Відмінити";
 			this->FT_ButtonUPDELRollBack->UseVisualStyleBackColor = true;
-			this->FT_ButtonUPDELRollBack->Click += gcnew System::EventHandler(this, &MyForm::FT_ButtonUPDELRollBack_Click);
+			this->FT_ButtonUPDELRollBack->Click += gcnew System::EventHandler(this, &Lab1Form::FT_ButtonUPDELRollBack_Click);
 			// 
 			// FT_ButtonUPDELSave
 			// 
@@ -307,7 +307,7 @@ namespace Lab1 {
 			this->FT_ButtonUPDELSave->TabIndex = 6;
 			this->FT_ButtonUPDELSave->Text = L"Зберегти";
 			this->FT_ButtonUPDELSave->UseVisualStyleBackColor = true;
-			this->FT_ButtonUPDELSave->Click += gcnew System::EventHandler(this, &MyForm::FT_ButtonUPDELSave_Click);
+			this->FT_ButtonUPDELSave->Click += gcnew System::EventHandler(this, &Lab1Form::FT_ButtonUPDELSave_Click);
 			// 
 			// FT_TextBoxUPDELType
 			// 
@@ -324,7 +324,7 @@ namespace Lab1 {
 			this->FT_ComboBoxUPDELId->Name = L"FT_ComboBoxUPDELId";
 			this->FT_ComboBoxUPDELId->Size = System::Drawing::Size(50, 24);
 			this->FT_ComboBoxUPDELId->TabIndex = 4;
-			this->FT_ComboBoxUPDELId->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::FT_ComboBoxUPDELId_SelectedIndexChanged);
+			this->FT_ComboBoxUPDELId->SelectedIndexChanged += gcnew System::EventHandler(this, &Lab1Form::FT_ComboBoxUPDELId_SelectedIndexChanged);
 			// 
 			// FT_LableUPDELType
 			// 
@@ -376,7 +376,7 @@ namespace Lab1 {
 			this->FT_ButtonAdd->TabIndex = 3;
 			this->FT_ButtonAdd->Text = L"Додати";
 			this->FT_ButtonAdd->UseVisualStyleBackColor = true;
-			this->FT_ButtonAdd->Click += gcnew System::EventHandler(this, &MyForm::FT_ButtonAdd_Click);
+			this->FT_ButtonAdd->Click += gcnew System::EventHandler(this, &Lab1Form::FT_ButtonAdd_Click);
 			// 
 			// FT_TextBoxAddType
 			// 
@@ -529,7 +529,7 @@ namespace Lab1 {
 			this->PF_ButtonUPDELDelete->TabIndex = 16;
 			this->PF_ButtonUPDELDelete->Text = L"Видалити";
 			this->PF_ButtonUPDELDelete->UseVisualStyleBackColor = true;
-			this->PF_ButtonUPDELDelete->Click += gcnew System::EventHandler(this, &MyForm::PF_ButtonUPDELDelete_Click);
+			this->PF_ButtonUPDELDelete->Click += gcnew System::EventHandler(this, &Lab1Form::PF_ButtonUPDELDelete_Click);
 			// 
 			// PF_ButtonUPDELRollBack
 			// 
@@ -539,7 +539,7 @@ namespace Lab1 {
 			this->PF_ButtonUPDELRollBack->TabIndex = 15;
 			this->PF_ButtonUPDELRollBack->Text = L"Відмінити";
 			this->PF_ButtonUPDELRollBack->UseVisualStyleBackColor = true;
-			this->PF_ButtonUPDELRollBack->Click += gcnew System::EventHandler(this, &MyForm::PF_ButtonUPDELRollBack_Click);
+			this->PF_ButtonUPDELRollBack->Click += gcnew System::EventHandler(this, &Lab1Form::PF_ButtonUPDELRollBack_Click);
 			// 
 			// PF_ButtonUPDELSave
 			// 
@@ -549,7 +549,7 @@ namespace Lab1 {
 			this->PF_ButtonUPDELSave->TabIndex = 14;
 			this->PF_ButtonUPDELSave->Text = L"Зберегти";
 			this->PF_ButtonUPDELSave->UseVisualStyleBackColor = true;
-			this->PF_ButtonUPDELSave->Click += gcnew System::EventHandler(this, &MyForm::PF_ButtonUPDELSave_Click);
+			this->PF_ButtonUPDELSave->Click += gcnew System::EventHandler(this, &Lab1Form::PF_ButtonUPDELSave_Click);
 			// 
 			// PF_ComboBoxUPDELId
 			// 
@@ -559,7 +559,7 @@ namespace Lab1 {
 			this->PF_ComboBoxUPDELId->Name = L"PF_ComboBoxUPDELId";
 			this->PF_ComboBoxUPDELId->Size = System::Drawing::Size(50, 24);
 			this->PF_ComboBoxUPDELId->TabIndex = 13;
-			this->PF_ComboBoxUPDELId->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::PF_ComboBoxUPDELId_SelectedIndexChanged);
+			this->PF_ComboBoxUPDELId->SelectedIndexChanged += gcnew System::EventHandler(this, &Lab1Form::PF_ComboBoxUPDELId_SelectedIndexChanged);
 			// 
 			// PF_LableUPDELId
 			// 
@@ -752,7 +752,7 @@ namespace Lab1 {
 			this->PF_ButtonAdd->TabIndex = 3;
 			this->PF_ButtonAdd->Text = L"Додати";
 			this->PF_ButtonAdd->UseVisualStyleBackColor = true;
-			this->PF_ButtonAdd->Click += gcnew System::EventHandler(this, &MyForm::PF_ButtonAdd_Click);
+			this->PF_ButtonAdd->Click += gcnew System::EventHandler(this, &Lab1Form::PF_ButtonAdd_Click);
 			// 
 			// PF_TextBoxAddName
 			// 

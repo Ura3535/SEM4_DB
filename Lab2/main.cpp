@@ -1,4 +1,4 @@
-#include "MyForm.h"
+#include "Lab2Form.h"
 
 using namespace Lab2;
 
@@ -7,6 +7,6 @@ int main(array<String^>^ args) {
 	Application::SetCompatibleTextRenderingDefault(false);
 	Application::EnableVisualStyles();
 	
-	MyForm form;
+	Lab2Form form;
 	Application::Run(% form);
 }
