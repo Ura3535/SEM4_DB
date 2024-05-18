@@ -37,12 +37,8 @@ Void Lab2Form::FT_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)
 
 Void Lab2Form::FT_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
 {
-    try
-    {
-        rep->Delete(Table::FacilityTypes, Convert::ToInt64(FT_ComboBoxUPDELId->Text));
-        FT_Update();
-    }
-    catch (...) {}
+    rep->Delete(Table::FacilityTypes, Convert::ToInt64(FT_ComboBoxUPDELId->Text));
+    FT_Update();
 }
 
 Void Lab2Form::FT_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e)

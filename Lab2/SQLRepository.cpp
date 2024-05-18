@@ -87,7 +87,7 @@ Entity^ SQLRepository::Get(Table table, long Id)
     return res;
 }
 
-List<Entity^>^ Repository::SQLRepository::GetAll(Table table)
+List<Entity^>^ SQLRepository::GetAll(Table table)
 {
     switch (table)
     {
@@ -169,7 +169,7 @@ void SQLRepository::Update(Table table, Entity^ obj)
             + "WHERE Id = @Id";
         break;
     case Table::PostalFacilitys:
-        text = "UPDATE dbo.Parcels SET "
+        text = "UPDATE dbo.PostalFacilitys SET "
             + "Name = @Name, "
             + "FacilityTypeId = @FacilityTypeId, "
             + "Address = @Address, "
@@ -192,23 +192,85 @@ void SQLRepository::Delete(Table table, long Id)
     switch (table)
     {
     case Table::Clients:
+    {
+        text = "SELECT Id From dbo.Parcels WHERE CenderId = @Id or ReciverId = @Id";
+        command = gcnew SqlCommand(text, connection);
+        command->Parameters->AddWithValue("@Id", Id);
+        connection->Open();
+        reader = command->ExecuteReader();
+        auto Ids = GetIdByQuery();
+        connection->Close();
+        for each (Id in Ids)
+            Delete(Table::Parcels, Id);
+
         text = "DELETE FROM dbo.Clients WHERE Id = @Id";
         break;
+    }
     case Table::Couriers:
+    {
         text = "DELETE FROM dbo.Couriers WHERE Id = @Id";
         break;
+    }
     case Table::FacilityTypes:
+    {
+        text = "SELECT Id From dbo.PostalFacilitys WHERE FacilityTypeId = @Id";
+        command = gcnew SqlCommand(text, connection);
+        command->Parameters->AddWithValue("@Id", Id);
+        connection->Open();
+        reader = command->ExecuteReader();
+        auto Ids = GetIdByQuery();
+        connection->Close();
+        for each (Id in Ids)
+            Delete(Table::PostalFacilitys, Id);
+
         text = "DELETE FROM dbo.FacilityTypes WHERE Id = @Id";
         break;
+    }
     case Table::Parcels:
+    {
+        text = "UPDATE dbo.Couriers SET ParcelId = NULL WHERE ParcelId = @Id";
+        command = gcnew SqlCommand(text, connection);
+        command->Parameters->AddWithValue("@Id", Id);
+        connection->Open();
+        command->ExecuteNonQuery();
+        connection->Close();
+
         text = "DELETE FROM dbo.Parcels WHERE Id = @Id";
         break;
+    }
     case Table::ParcelStatuses:
+    {
+        text = "UPDATE dbo.Parcels SET StatusId = NULL WHERE StatusId = @Id";
+        command = gcnew SqlCommand(text, connection);
+        command->Parameters->AddWithValue("@Id", Id);
+        connection->Open();
+        command->ExecuteNonQuery();
+        connection->Close();
+
         text = "DELETE FROM dbo.ParcelStatuses WHERE Id = @Id";
         break;
+    }
     case Table::PostalFacilitys:
+    {
+        text = "SELECT Id From dbo.Parcels WHERE DeparturePointsId = @Id or DeliveryPointsId = @Id";
+        command = gcnew SqlCommand(text, connection);
+        command->Parameters->AddWithValue("@Id", Id);
+        connection->Open();
+        reader = command->ExecuteReader();
+        auto Ids = GetIdByQuery();
+        connection->Close();
+        for each (Id in Ids)
+            Delete(Table::Parcels, Id);
+        text = "UPDATE dbo.Parcels SET CurrentLocationId = NULL WHERE CurrentLocationId = @Id";
+        command = gcnew SqlCommand(text, connection);
+        command->Parameters->AddWithValue("@Id", Id);
+        connection->Open();
+        command->ExecuteNonQuery();
+        connection->Close();
+
         text = "DELETE FROM dbo.PostalFacilitys WHERE Id = @Id";
         break;
+    }
     default: break;
     }
     command = gcnew SqlCommand(text, connection);
@@ -246,7 +308,7 @@ SqlDataAdapter^ SQLRepository::GetTableAdapter(Table table)
     return gcnew SqlDataAdapter(text, connection);
 }
 
-Entity^ Repository::SQLRepository::ReadFromReader(Table table)
+Entity^ SQLRepository::ReadFromReader(Table table)
 {
     if (reader->Read())
     {
@@ -315,6 +377,16 @@ Entity^ Repository::SQLRepository::ReadFromReader(Table table)
         default: return nullptr;
         }
     }
+    return nullptr;
+}
+
+List<long>^ SQLRepository::GetIdByQuery()
+{
+    List<long>^ res = gcnew List<long>();
+    while (reader->Read())
+        res->Add(Convert::ToInt64(reader["Id"]));
+
+    return res;
 }
 
 void SQLRepository::AddCommandParameters(Table table, Entity^ obj) {

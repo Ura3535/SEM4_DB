@@ -64,12 +64,12 @@ Void Lab2Form::PS_Update()
         Pa_ComboBoxAddPSId->Items->Add(item->Id);
         Pa_ComboBoxUPDELPSId->Items->Add(item->Id);
     }
-    Pa_DataGridViewUpdate();
+    PS_DataGridViewUpdate();
 }
 
 Void Lab2Form::PS_DataGridViewUpdate()
 {
     DataTable^ table = gcnew DataTable();
     rep->GetTableAdapter(Table::ParcelStatuses)->Fill(table);
-    Pa_DataGridView->DataSource = table;
+    PS_DataGridView->DataSource = table;
 }

@@ -91,7 +91,7 @@ Void Lab2Form::Pa_Update()
         Co_ComboBoxAddPaId->Items->Add(item->Id);
         Co_ComboBoxUPDELPaId->Items->Add(item->Id);
     }
-    PF_DataGridViewUpdate();
+    Pa_DataGridViewUpdate();
 }
 
 Void Lab2Form::Pa_DataGridViewUpdate()

@@ -22,8 +22,6 @@ Void Lab2Form::PF_ButtonAdd_Click(Object^ sender, EventArgs^ e)
 
 Void Lab2Form::PF_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
 {
-    try
-    {
         PostalFacility^ tmp = gcnew PostalFacility();
         tmp->Id = Convert::ToInt64(PF_ComboBoxUPDELId->Text);
         tmp->Name = PF_TextBoxUPDELName->Text;
@@ -33,8 +31,6 @@ Void Lab2Form::PF_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
         tmp->WeightRestrictions = Convert::ToDouble(PF_TextBoxUPDELWeightRestrictions->Text);
         rep->Update(Table::PostalFacilitys, tmp);
         PF_DataGridViewUpdate();
-    }
-    catch (...) {}
 }
 
 Void Lab2Form::PF_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)

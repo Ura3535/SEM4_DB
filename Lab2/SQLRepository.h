@@ -22,6 +22,7 @@ namespace Repository
 		virtual SqlDataAdapter^ GetTableAdapter(Table table);
 	private:
 		Entity^ ReadFromReader(Table table);
+		List<long>^ GetIdByQuery();
 		void AddCommandParameters(Table table, Entity^ obj);
 
 		SqlConnectionStringBuilder^ builder;

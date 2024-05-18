@@ -57,7 +57,7 @@ Void Lab2Form::Co_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
 
 Void Lab2Form::Co_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e)
 {
-    Co_ButtonUPDELDelete_Click(sender, e);
+    Co_ButtonUPDELRollBack_Click(sender, e);
 }
 
 Void Lab2Form::Co_Update()

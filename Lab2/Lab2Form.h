@@ -182,10 +182,10 @@ namespace Lab2 {
 	private: System::Windows::Forms::TextBox^ Cl_TextBoxAddName;
 	private: System::Windows::Forms::Label^ Cl_LableAddName;
 	private: System::Windows::Forms::Label^ Cl_LabelAdd;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListId;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListName;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListContactNumber;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Cl_ListEmail;
+
+
+
+
 	private: System::Windows::Forms::TabPage^ Pa_Page;
 	private: System::Windows::Forms::Panel^ Pa_PanelList;
 	private: System::Windows::Forms::DataGridView^ Pa_DataGridView;
@@ -367,10 +367,6 @@ namespace Lab2 {
 			this->Cl_Page = (gcnew System::Windows::Forms::TabPage());
 			this->Cl_PanelList = (gcnew System::Windows::Forms::Panel());
 			this->Cl_DataGridView = (gcnew System::Windows::Forms::DataGridView());
-			this->Cl_ListId = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Cl_ListName = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Cl_ListContactNumber = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->Cl_ListEmail = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->Cl_LabelList = (gcnew System::Windows::Forms::Label());
 			this->Cl_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
 			this->Cl_TextBoxUPDELEmail = (gcnew System::Windows::Forms::TextBox());
@@ -1532,39 +1528,11 @@ namespace Lab2 {
 			this->Cl_DataGridView->AllowUserToAddRows = false;
 			this->Cl_DataGridView->AllowUserToDeleteRows = false;
 			this->Cl_DataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->Cl_DataGridView->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(4) {
-				this->Cl_ListId,
-					this->Cl_ListName, this->Cl_ListContactNumber, this->Cl_ListEmail
-			});
 			this->Cl_DataGridView->Location = System::Drawing::Point(4, 44);
 			this->Cl_DataGridView->Name = L"Cl_DataGridView";
 			this->Cl_DataGridView->ReadOnly = true;
 			this->Cl_DataGridView->Size = System::Drawing::Size(1113, 332);
 			this->Cl_DataGridView->TabIndex = 3;
-			// 
-			// Cl_ListId
-			// 
-			this->Cl_ListId->HeaderText = L"Id";
-			this->Cl_ListId->Name = L"Cl_ListId";
-			this->Cl_ListId->ReadOnly = true;
-			// 
-			// Cl_ListName
-			// 
-			this->Cl_ListName->HeaderText = L"Ім\'я";
-			this->Cl_ListName->Name = L"Cl_ListName";
-			this->Cl_ListName->ReadOnly = true;
-			// 
-			// Cl_ListContactNumber
-			// 
-			this->Cl_ListContactNumber->HeaderText = L"Контактний номер";
-			this->Cl_ListContactNumber->Name = L"Cl_ListContactNumber";
-			this->Cl_ListContactNumber->ReadOnly = true;
-			// 
-			// Cl_ListEmail
-			// 
-			this->Cl_ListEmail->HeaderText = L"Email";
-			this->Cl_ListEmail->Name = L"Cl_ListEmail";
-			this->Cl_ListEmail->ReadOnly = true;
 			// 
 			// Cl_LabelList
 			// 
