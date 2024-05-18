@@ -1,6 +1,8 @@
 #include "SQLRepository.h"
+#include "Logger.h"
 
 using namespace Repository;
+using namespace Logging;
 
 SQLRepository::SQLRepository()
     : builder(gcnew SqlConnectionStringBuilder())
@@ -200,8 +202,8 @@ void SQLRepository::Delete(Table table, long Id)
         reader = command->ExecuteReader();
         auto Ids = GetIdByQuery();
         connection->Close();
-        for each (Id in Ids)
-            Delete(Table::Parcels, Id);
+        for each (long DeleteById in Ids)
+            Delete(Table::Parcels, DeleteById);
 
         text = "DELETE FROM dbo.Clients WHERE Id = @Id";
         break;
@@ -220,8 +222,8 @@ void SQLRepository::Delete(Table table, long Id)
         reader = command->ExecuteReader();
         auto Ids = GetIdByQuery();
         connection->Close();
-        for each (Id in Ids)
-            Delete(Table::PostalFacilitys, Id);
+        for each (long DeleteById in Ids)
+            Delete(Table::PostalFacilitys, DeleteById);
 
         text = "DELETE FROM dbo.FacilityTypes WHERE Id = @Id";
         break;
@@ -259,8 +261,8 @@ void SQLRepository::Delete(Table table, long Id)
         reader = command->ExecuteReader();
         auto Ids = GetIdByQuery();
         connection->Close();
-        for each (Id in Ids)
-            Delete(Table::Parcels, Id);
+        for each (long DeleteById in Ids)
+            Delete(Table::Parcels, DeleteById);
         text = "UPDATE dbo.Parcels SET CurrentLocationId = NULL WHERE CurrentLocationId = @Id";
         command = gcnew SqlCommand(text, connection);
         command->Parameters->AddWithValue("@Id", Id);
@@ -273,6 +275,7 @@ void SQLRepository::Delete(Table table, long Id)
     }
     default: break;
     }
+    Loggers::FileLog->LogMessage(text + " [Id = " + Id.ToString() + "]");
     command = gcnew SqlCommand(text, connection);
     command->Parameters->AddWithValue("@Id", Id);
     connection->Open();

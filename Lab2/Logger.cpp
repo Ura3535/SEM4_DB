@@ -2,17 +2,17 @@
 
 using namespace Logging;
 
-Logger::Logger(String^ filePath)
-    : LogFile(gcnew StreamWriter(filePath, true))
+FileLogger::FileLogger(String^ filePath, bool append)
+    : LogFile(gcnew StreamWriter(filePath, append))
 {}
 
-Logger::~Logger()
+FileLogger::~FileLogger()
 {
     if (LogFile != nullptr)
         LogFile->Close();
 }
 
-void Logger::LogMessage(String^ message)
+void FileLogger::LogMessage(String^ message)
 {
     if (LogFile != nullptr) {
         String^ dateTime = DateTime::Now.ToString("yyyy-MM-dd HH:mm:ss");
