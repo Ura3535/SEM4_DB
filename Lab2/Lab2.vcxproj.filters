@@ -22,6 +22,9 @@
     <Filter Include="Controllers">
       <UniqueIdentifier>{098c4d78-cfbc-49c1-ba85-a8700f3a16d3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Loger">
+      <UniqueIdentifier>{4371a79d-ad1a-4989-857f-64b066dfe60b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Lab2Form.h">
@@ -35,6 +38,9 @@
     </ClInclude>
     <ClInclude Include="Model.h">
       <Filter>Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Logger.h">
+      <Filter>Loger</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +67,9 @@
     </ClCompile>
     <ClCompile Include="ParcelController.cpp">
       <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Loger</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
