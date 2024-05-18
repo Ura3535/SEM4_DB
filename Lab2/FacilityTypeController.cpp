@@ -39,6 +39,9 @@ Void Lab2Form::FT_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
 {
     rep->Delete(Table::FacilityTypes, Convert::ToInt64(FT_ComboBoxUPDELId->Text));
     FT_Update();
+    PF_Update();
+    Pa_Update();
+    Co_Update();
 }
 
 Void Lab2Form::FT_ComboBoxUPDELId_SelectedIndexChanged(Object^ sender, EventArgs^ e)

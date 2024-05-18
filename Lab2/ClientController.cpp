@@ -51,6 +51,8 @@ Void Lab2Form::Cl_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
     {
         rep->Delete(Table::Clients, Convert::ToInt64(Cl_ComboBoxUPDELId->Text));
         Cl_Update();
+        Pa_Update();
+        Co_Update();
     }
     catch (...) {}
 }

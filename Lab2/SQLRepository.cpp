@@ -10,7 +10,6 @@ SQLRepository::SQLRepository()
     builder->DataSource = "DESKTOP-LGFLGFJ\\SQLEXPRESS";
     builder->InitialCatalog = "DBPostOffice";
     builder->IntegratedSecurity = true;
-    builder->Encrypt = false;
     builder->TrustServerCertificate = true;
 
     connection = gcnew SqlConnection(builder->ToString());

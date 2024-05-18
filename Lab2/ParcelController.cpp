@@ -72,6 +72,7 @@ Void Lab2Form::Pa_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
     {
         rep->Delete(Table::Parcels, Convert::ToInt64(Pa_ComboBoxUPDELId->Text));
         Pa_Update();
+        Co_Update();
     }
     catch (...) {}
 }

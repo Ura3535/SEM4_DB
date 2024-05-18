@@ -53,6 +53,8 @@ Void Lab2Form::PF_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
     {
         rep->Delete(Table::PostalFacilitys, Convert::ToInt64(PF_ComboBoxUPDELId->Text));
         PF_Update();
+        Pa_Update();
+        Co_Update();
     }
     catch (...) {}
 }
