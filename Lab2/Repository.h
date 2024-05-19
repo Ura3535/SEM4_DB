@@ -20,7 +20,8 @@ namespace Repository
 
 	public interface class IRepository
 	{
-		long Add(Table table, Entity^ obj);
+	public:
+		void Add(Table table, Entity^ obj);
 		Entity^ Get(Table table, long Id);
 		List<Entity^>^ GetAll(Table table);
 		void Update(Table table, Entity^ obj);

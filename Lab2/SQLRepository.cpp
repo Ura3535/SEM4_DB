@@ -15,7 +15,7 @@ SQLRepository::SQLRepository()
     connection = gcnew SqlConnection(builder->ToString());
 }
 
-long SQLRepository::Add(Table table, Entity^ obj)
+void SQLRepository::Add(Table table, Entity^ obj)
 {
     switch (table)
     {
@@ -46,16 +46,14 @@ long SQLRepository::Add(Table table, Entity^ obj)
     default:
         break;
     }
-    AddCommandParameters(table, obj);
-    connection->Open();
-    command->ExecuteNonQuery();
-    connection->Close();
-
-    return -1;
+    Execute(text, GetCommandParameters(table, obj, false));
 }
 
 Entity^ SQLRepository::Get(Table table, long Id)
 {
+    List<KeyValuePair<String^, Object^>>^ params = gcnew List<KeyValuePair<String^, Object^>>;
+    params->Add(KeyValuePair<String^, Object^>("@Id", Id));
+
     switch (table)
     {
     case Table::Clients:
@@ -78,11 +76,9 @@ Entity^ SQLRepository::Get(Table table, long Id)
         break;
     default: break;
     }
-    command = gcnew SqlCommand(text, connection);
-    command->Parameters->AddWithValue("@Id", Id);
+
     connection->Open();
-    reader = command->ExecuteReader();
-    Entity^ res = ReadFromReader(table);
+    Entity^ res = ReadFromReader(table, ExecuteReader(text, params));
     connection->Close();
 
     return res;
@@ -90,6 +86,8 @@ Entity^ SQLRepository::Get(Table table, long Id)
 
 List<Entity^>^ SQLRepository::GetAll(Table table)
 {
+    List<KeyValuePair<String^, Object^>>^ params = gcnew List<KeyValuePair<String^, Object^>>;
+
     switch (table)
     {
     case Table::Clients:
@@ -112,23 +110,22 @@ List<Entity^>^ SQLRepository::GetAll(Table table)
         break;
     default: break;
     }
-    command = gcnew SqlCommand(text, connection);
-    connection->Open();
-    reader = command->ExecuteReader();
 
+    connection->Open();
+    SqlDataReader^ reader = ExecuteReader(text, params);
     List<Entity^>^ res = gcnew List<Entity^>();
-    Entity^ item = ReadFromReader(table);
+    Entity^ item = ReadFromReader(table, reader);
     while (item != nullptr) {
         res->Add(item);
-        item = ReadFromReader(table);
+        item = ReadFromReader(table, reader);
     }
     connection->Close();
+
     return res;
 }
 
 void SQLRepository::Update(Table table, Entity^ obj)
 {
-
     switch (table)
     {
     case Table::Clients:
@@ -180,30 +177,20 @@ void SQLRepository::Update(Table table, Entity^ obj)
         break;
     default: break;
     }
-    AddCommandParameters(table, obj);
-    command->Parameters->AddWithValue("@Id", obj->Id);
-    connection->Open();
-    command->ExecuteNonQuery();
-    connection->Close();
+    Execute(text, GetCommandParameters(table, obj, true));
 }
 
 void SQLRepository::Delete(Table table, long Id)
 {
-
+    List<KeyValuePair<String^, Object^>>^ params = gcnew List<KeyValuePair<String^, Object^>>;
+    params->Add(KeyValuePair<String^, Object^>("@Id", Id));
     switch (table)
     {
     case Table::Clients:
     {
         text = "SELECT Id From dbo.Parcels WHERE CenderId = @Id or ReciverId = @Id";
-        command = gcnew SqlCommand(text, connection);
-        command->Parameters->AddWithValue("@Id", Id);
-        connection->Open();
-        reader = command->ExecuteReader();
-        auto Ids = GetIdByQuery();
-        connection->Close();
-        for each (long DeleteById in Ids)
+        for each (long DeleteById in GetIdsByQuery(text, params))
             Delete(Table::Parcels, DeleteById);
-
         text = "DELETE FROM dbo.Clients WHERE Id = @Id";
         break;
     }
@@ -215,71 +202,39 @@ void SQLRepository::Delete(Table table, long Id)
     case Table::FacilityTypes:
     {
         text = "SELECT Id From dbo.PostalFacilitys WHERE FacilityTypeId = @Id";
-        command = gcnew SqlCommand(text, connection);
-        command->Parameters->AddWithValue("@Id", Id);
-        connection->Open();
-        reader = command->ExecuteReader();
-        auto Ids = GetIdByQuery();
-        connection->Close();
-        for each (long DeleteById in Ids)
+        for each (long DeleteById in GetIdsByQuery(text, params))
             Delete(Table::PostalFacilitys, DeleteById);
-
         text = "DELETE FROM dbo.FacilityTypes WHERE Id = @Id";
         break;
     }
     case Table::Parcels:
     {
         text = "UPDATE dbo.Couriers SET ParcelId = NULL WHERE ParcelId = @Id";
-        command = gcnew SqlCommand(text, connection);
-        command->Parameters->AddWithValue("@Id", Id);
-        connection->Open();
-        command->ExecuteNonQuery();
-        connection->Close();
-
+        Execute(text, params);
         text = "DELETE FROM dbo.Parcels WHERE Id = @Id";
         break;
     }
     case Table::ParcelStatuses:
     {
         text = "UPDATE dbo.Parcels SET StatusId = NULL WHERE StatusId = @Id";
-        command = gcnew SqlCommand(text, connection);
-        command->Parameters->AddWithValue("@Id", Id);
-        connection->Open();
-        command->ExecuteNonQuery();
-        connection->Close();
-
+        Execute(text, params);
         text = "DELETE FROM dbo.ParcelStatuses WHERE Id = @Id";
         break;
     }
     case Table::PostalFacilitys:
     {
         text = "SELECT Id From dbo.Parcels WHERE DeparturePointsId = @Id or DeliveryPointsId = @Id";
-        command = gcnew SqlCommand(text, connection);
-        command->Parameters->AddWithValue("@Id", Id);
-        connection->Open();
-        reader = command->ExecuteReader();
-        auto Ids = GetIdByQuery();
-        connection->Close();
-        for each (long DeleteById in Ids)
+        for each (long DeleteById in GetIdsByQuery(text, params))
             Delete(Table::Parcels, DeleteById);
         text = "UPDATE dbo.Parcels SET CurrentLocationId = NULL WHERE CurrentLocationId = @Id";
-        command = gcnew SqlCommand(text, connection);
-        command->Parameters->AddWithValue("@Id", Id);
-        connection->Open();
-        command->ExecuteNonQuery();
-        connection->Close();
-
+        Execute(text, params);
         text = "DELETE FROM dbo.PostalFacilitys WHERE Id = @Id";
         break;
     }
     default: break;
     }
     Loggers::FileLog->LogMessage(text + " [Id = " + Id.ToString() + "]");
-    command = gcnew SqlCommand(text, connection);
-    command->Parameters->AddWithValue("@Id", Id);
-    connection->Open();
-    command->ExecuteNonQuery();
-    connection->Close();
+    Execute(text, params);
 }
 
 SqlDataAdapter^ SQLRepository::GetTableAdapter(Table table)
@@ -310,39 +265,136 @@ SqlDataAdapter^ SQLRepository::GetTableAdapter(Table table)
     return gcnew SqlDataAdapter(text, connection);
 }
 
-Entity^ SQLRepository::ReadFromReader(Table table)
+void SQLRepository::Validate(Table table, Entity^ obj)
 {
+    switch (table)
+    {
+    case Table::Clients: {
+        Client^ client = (Client^)obj;
+        if (client->Name->Length >= 50)
+            throw gcnew Exception("Ім'я повинно бути завдовжки менше 50");
+        if ((gcnew Text::RegularExpressions::Regex("^\\+?[0-9]{1,3}?[- .]?\\(?[0-9]{1,4}?\\)?[- .]?[0-9]{1,4}[- .]?[0-9]{1,9}$"))->IsMatch(client->ContactNumber))
+            throw gcnew Exception("Не коректний номер телефону");
+        if (client->Email->Length >= 50)
+            throw gcnew Exception("Email повинен бути завдовжки менше 50");
+        break;
+    }
+    case Table::Couriers: {
+        Courier^ сourier = (Courier^)obj;
+        if (сourier->Name->Length >= 50)
+            throw gcnew Exception("Ім'я повинно бути завдовжки менше 50");
+        if (сourier->City->Length >= 50)
+            throw gcnew Exception("Назва міста повинна бути завдовжки менше 50");
+        break;
+    }
+    case Table::FacilityTypes: {
+        FacilityType^ facilityType = (FacilityType^)obj;
+        if (facilityType->Type->Length >= 50)
+            throw gcnew Exception("Назва типу повинно бути завдовжки менше 50");
+        break;
+    }
+    case Table::Parcels: {
+        Parcel^ parcel = (Parcel^)obj;
+        if (parcel->Info->Length >= 50)
+            throw gcnew Exception("Інформація повинна бути завдовжки менше 50");
+        if (parcel->Weight < 0)
+            throw gcnew Exception("Вага не може бути від'ємною");
+        if (parcel->SenderId == parcel->ReciverId)
+            throw gcnew Exception("Відправник та отримувач не може бути одною й тоюж людиною");
+        if (parcel->DeparturePointsId == parcel->DeliveryPointsId)
+            throw gcnew Exception("Відділення відправки та отримки не може бути одне й теж");
+        if (parcel->Price < 0)
+            throw gcnew Exception("Вартість не може бути від'ємною");
+        if (parcel->DeliveryAddress->Length > 50)
+            throw gcnew Exception("Адреса доставки повинна бути завдовжки менше 50");
+        break;
+    }
+    case Table::ParcelStatuses: {
+        ParcelStatus^ parcelStatus = (ParcelStatus^)obj;
+        if (parcelStatus->Status->Length >= 50)
+            throw gcnew Exception("Назва статусу повинно бути завдовжки менше 50");
+        break;
+    }
+    case Table::PostalFacilitys: {
+        PostalFacility^ postalFacility = (PostalFacility^)obj;
+        if (postalFacility->Name->Length >= 50)
+            throw gcnew Exception("Назва відділення повинна бути завдовжки менше 50");
+        if (postalFacility->Address->Length >= 50)
+            throw gcnew Exception("Адреса відділення повинна бути завдовжки менше 50");
+        if (postalFacility->WorkSchedule->Length >= 50)
+            throw gcnew Exception("Робочий графік відділення повинен бути завдовжки менше 50");
+        if (postalFacility->WeightRestrictions < 0)
+            throw gcnew Exception("Максимальна вага для посилок не може бути від'ємною");
+        break;
+    }
+    default: break;
+    }
+
+}
+
+void SQLRepository::Execute(String^ query, List<KeyValuePair<String^, Object^>>^ params)
+{
+    command = gcnew SqlCommand(query, connection);
+    for each (auto param in params)
+        command->Parameters->AddWithValue(param.Key, param.Value);
+    connection->Open();
+    command->ExecuteNonQuery();
+    connection->Close();
+}
+
+Object^ SQLRepository::ExecuteScalar(String^ query, List<KeyValuePair<String^, Object^>>^ params)
+{
+    command = gcnew SqlCommand(query, connection);
+    for each (auto param in params)
+        command->Parameters->AddWithValue(param.Key, param.Value);
+    connection->Open();
+    Object^ res = command->ExecuteScalar();
+    connection->Close();
+    return res;
+}
+
+SqlDataReader^ SQLRepository::ExecuteReader(String^ query, List<KeyValuePair<String^, Object^>>^ params)
+{
+    command = gcnew SqlCommand(query, connection);
+    for each (auto param in params)
+        command->Parameters->AddWithValue(param.Key, param.Value);
+    SqlDataReader^ res = command->ExecuteReader();
+    return res;
+}
+
+Entity^ SQLRepository::ReadFromReader(Table table, SqlDataReader^ reader)
+{
+    Entity^ res = nullptr;
     if (reader->Read())
     {
         switch (table)
         {
-        case Table::Clients:
-        {
+        case Table::Clients: {
             Client^ client = gcnew Client();
             client->Id = Convert::ToInt64(reader["Id"]);
             client->Name = reader["Id"]->ToString();
             client->ContactNumber = reader["ContactNumber"]->ToString();
             client->Email = reader["Email"]->ToString();
-            return client;
+            res = client;
+            break;
         }
-        case Table::Couriers:
-        {
+        case Table::Couriers: {
             Courier^ courier = gcnew Courier();
             courier->Id = Convert::ToInt64(reader["Id"]);
             courier->Name = reader["Id"]->ToString();
             courier->City = reader["City"]->ToString();
             courier->ParcelId = Convert::ToInt64(reader["ParcelId"]);
-            return courier;
+            res = courier;
+            break;
         }
-        case Table::FacilityTypes:
-        {
+        case Table::FacilityTypes: {
             FacilityType^ facilityType = gcnew FacilityType();
             facilityType->Id = Convert::ToInt64(reader["Id"]);
             facilityType->Type = reader["Type"]->ToString();
-            return facilityType;
+            res = facilityType;
+            break;
         }
-        case Table::Parcels:
-        {
+        case Table::Parcels: {
             Parcel^ parcel = gcnew Parcel();
             parcel->Id = Convert::ToInt64(reader["Id"]);
             parcel->Info = reader["Info"]->ToString();
@@ -355,18 +407,17 @@ Entity^ SQLRepository::ReadFromReader(Table table)
             parcel->StatusId = Convert::ToInt64(reader["StatusId"]);
             parcel->CurrentLocationId = Convert::ToInt64(reader["CurrentLocationId"]);
             parcel->DeliveryAddress = reader["DeliveryAddress"]->ToString();
-            return parcel;
+            res = parcel;
+            break;
         }
-        case Table::ParcelStatuses:
-        {
+        case Table::ParcelStatuses: {
             ParcelStatus^ parcelStatus = gcnew ParcelStatus();
             parcelStatus->Id = Convert::ToInt64(reader["Id"]);
             parcelStatus->Status = reader["Status"]->ToString();
-            return parcelStatus;
+            res = parcelStatus;
+            break;
         }
-        break;
-        case Table::PostalFacilitys:
-        {
+        case Table::PostalFacilitys: {
             PostalFacility^ postalFacility = gcnew PostalFacility();
             postalFacility->Id = Convert::ToInt64(reader["Id"]);
             postalFacility->Name = reader["Name"]->ToString();
@@ -374,86 +425,84 @@ Entity^ SQLRepository::ReadFromReader(Table table)
             postalFacility->Address = reader["Address"]->ToString();
             postalFacility->WorkSchedule = reader["WorkSchedule"]->ToString();
             postalFacility->WeightRestrictions = Convert::ToDouble(reader["WeightRestrictions"]);
-            return postalFacility;
+            res = postalFacility;
         }
-        default: return nullptr;
+        default: break;
         }
     }
-    return nullptr;
-}
-
-List<long>^ SQLRepository::GetIdByQuery()
-{
-    List<long>^ res = gcnew List<long>();
-    while (reader->Read())
-        res->Add(Convert::ToInt64(reader["Id"]));
-
     return res;
 }
 
-void SQLRepository::AddCommandParameters(Table table, Entity^ obj) {
-    command = gcnew SqlCommand(text, connection);
+List<long>^ SQLRepository::GetIdsByQuery(String^ query, List<KeyValuePair<String^, Object^>>^ params)
+{
+    connection->Open();
+    SqlDataReader^ reader = ExecuteReader(query, params);
+    List<long>^ res = gcnew List<long>();
+    while (reader->Read())
+        res->Add(Convert::ToInt64(reader["Id"]));
+    connection->Close();
+    return res;
+}
+
+List<KeyValuePair<String^, Object^>>^ SQLRepository::GetCommandParameters(Table table, Entity^ obj, bool withId) {
+    List<KeyValuePair<String^, Object^>>^ res = gcnew List<KeyValuePair<String^, Object^>>();
+    if(withId)
+        res->Add(KeyValuePair<String^, Object^>("@Id", obj->Id));
     switch (table)
     {
     case Table::Clients:
     {
         Client^ client = (Client^)obj;
-        command->Parameters->AddWithValue("@Name", client->Name);
-        command->Parameters->AddWithValue("@ContactNumber", client->ContactNumber);
-        command->Parameters->AddWithValue("@Email", client->Email);
+        res->Add(KeyValuePair<String^, Object^>("@Name", client->Name ));
+        res->Add(KeyValuePair<String^, Object^>("@ContactNumber", client->ContactNumber));
+        res->Add(KeyValuePair<String^, Object^>("@Email", client->Email));
+        return res;
     }
-        break;
-
     case Table::Couriers:
     {
         Courier^ courier = (Courier^)obj;
-        command->Parameters->AddWithValue("@Name", courier->Name);
-        command->Parameters->AddWithValue("@City", courier->City);
-        command->Parameters->AddWithValue("@ParcelId", courier->ParcelId);
+        res->Add(KeyValuePair<String^, Object^>("@Name", courier->Name));
+        res->Add(KeyValuePair<String^, Object^>("@City", courier->City));
+        res->Add(KeyValuePair<String^, Object^>("@ParcelId", courier->ParcelId));
+        return res;
     }
-        break;
-
     case Table::FacilityTypes:
     {
         FacilityType^ facilityType = (FacilityType^)obj;
-        command->Parameters->AddWithValue("@Type", facilityType->Type);
+        res->Add(KeyValuePair<String^, Object^>("@Type", facilityType->Type));
+        return res;
     }
-        break;
-
     case Table::Parcels:
     {
         Parcel^ parcel = (Parcel^)obj;
-        command->Parameters->AddWithValue("@Info", parcel->Info);
-        command->Parameters->AddWithValue("@Weight", parcel->Weight);
-        command->Parameters->AddWithValue("@SenderId", parcel->SenderId);
-        command->Parameters->AddWithValue("@ReciverId", parcel->ReciverId);
-        command->Parameters->AddWithValue("@DeparturePointsId", parcel->DeparturePointsId);
-        command->Parameters->AddWithValue("@DeliveryPointsId", parcel->DeliveryPointsId);
-        command->Parameters->AddWithValue("@Price", parcel->Price);
-        command->Parameters->AddWithValue("@StatusId", parcel->StatusId);
-        command->Parameters->AddWithValue("@CurrentLocationId", parcel->CurrentLocationId);
-        command->Parameters->AddWithValue("@DeliveryAddress", parcel->DeliveryAddress);
+        res->Add(KeyValuePair<String^, Object^>("@Info", parcel->Info));
+        res->Add(KeyValuePair<String^, Object^>("@Weight", parcel->Weight));
+        res->Add(KeyValuePair<String^, Object^>("@SenderId", parcel->SenderId));
+        res->Add(KeyValuePair<String^, Object^>("@ReciverId", parcel->ReciverId));
+        res->Add(KeyValuePair<String^, Object^>("@DeparturePointsId", parcel->DeparturePointsId));
+        res->Add(KeyValuePair<String^, Object^>("@DeliveryPointsId", parcel->DeliveryPointsId));
+        res->Add(KeyValuePair<String^, Object^>("@Price", parcel->Price));
+        res->Add(KeyValuePair<String^, Object^>("@StatusId", parcel->StatusId));
+        res->Add(KeyValuePair<String^, Object^>("@CurrentLocationId", parcel->CurrentLocationId));
+        res->Add(KeyValuePair<String^, Object^>("@DeliveryAddress", parcel->DeliveryAddress));
+        return res;
     }
-        break;
-
     case Table::ParcelStatuses:
     {
         ParcelStatus^ parcelStatus = (ParcelStatus^)obj;
-        command->Parameters->AddWithValue("@Status", parcelStatus->Status);
+        res->Add(KeyValuePair<String^, Object^>("@Status", parcelStatus->Status));
+        return res;
     }
-        break;
-
     case Table::PostalFacilitys:
     {
         PostalFacility^ postalFacility = (PostalFacility^)obj;
-        command->Parameters->AddWithValue("@Name", postalFacility->Name);
-        command->Parameters->AddWithValue("@FacilityTypeId", postalFacility->FacilityTypeId);
-        command->Parameters->AddWithValue("@Address", postalFacility->Address);
-        command->Parameters->AddWithValue("@WorkSchedule", postalFacility->WorkSchedule);
-        command->Parameters->AddWithValue("@WeightRestrictions", postalFacility->WeightRestrictions);
+        res->Add(KeyValuePair<String^, Object^>("@Name", postalFacility->Name));
+        res->Add(KeyValuePair<String^, Object^>("@FacilityTypeId", postalFacility->FacilityTypeId));
+        res->Add(KeyValuePair<String^, Object^>("@Address", postalFacility->Address));
+        res->Add(KeyValuePair<String^, Object^>("@WorkSchedule", postalFacility->WorkSchedule));
+        res->Add(KeyValuePair<String^, Object^>("@WeightRestrictions", postalFacility->WeightRestrictions));
+        return res;
     }
-        break;
-
     default: break;
     }
 }

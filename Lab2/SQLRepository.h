@@ -14,22 +14,25 @@ namespace Repository
 	public:
 		SQLRepository();
 		
-		virtual long Add(Table table, Entity^ obj);
+		virtual void Add(Table table, Entity^ obj);
 		virtual Entity^ Get(Table table, long Id);
 		virtual List<Entity^>^ GetAll(Table table);
 		virtual void Update(Table table, Entity^ obj);
 		virtual void Delete(Table table, long Id);
 		virtual SqlDataAdapter^ GetTableAdapter(Table table);
 	private:
-		Entity^ ReadFromReader(Table table);
-		List<long>^ GetIdByQuery();
-		void AddCommandParameters(Table table, Entity^ obj);
+		void Validate(Table table, Entity^ obj);
+		void Execute(String^ query, List<KeyValuePair<String^, Object^>>^ params);
+		Object^ ExecuteScalar(String^ query, List<KeyValuePair<String^, Object^>>^ params);
+		SqlDataReader^ ExecuteReader(String^ query, List<KeyValuePair<String^, Object^>>^ params);
+		Entity^ ReadFromReader(Table table, SqlDataReader^ reader);
+		List<long>^ GetIdsByQuery(String^ query, List<KeyValuePair<String^, Object^>>^ params);
+		List<KeyValuePair<String^, Object^>>^ GetCommandParameters(Table table, Entity^ obj, bool withId);
 
 		SqlConnectionStringBuilder^ builder;
 		SqlConnection^ connection;
 		String^ text;
 		SqlCommand^ command;
-		SqlDataReader^ reader;
 	};
 
 }
