@@ -307,6 +307,26 @@ void SQLRepository::Validate(Table table, Entity^ obj)
             throw gcnew Exception("Вартість не може бути від'ємною");
         if (parcel->DeliveryAddress->Length > 50)
             throw gcnew Exception("Адреса доставки повинна бути завдовжки менше 50");
+        List<KeyValuePair<String^, Object^>>^ params = gcnew List<KeyValuePair<String^, Object^>>;
+
+        text = "SELECT WeightRestrictions From dbo.PostalFacilitys WHERE Id = @DeparturePointsId";
+        params->Clear();
+        params->Add(KeyValuePair<String^, Object^>("@DeparturePointsId", parcel->DeparturePointsId));
+        if (parcel->Weight > Convert::ToDouble(ExecuteScalar(text, params)))
+            throw gcnew Exception("Посилка заважка для точки відправки");
+
+        text = "SELECT WeightRestrictions From dbo.PostalFacilitys WHERE Id = @DeliveryPointsId";
+        params->Clear();
+        params->Add(KeyValuePair<String^, Object^>("@DeliveryPointsId", parcel->DeliveryPointsId));
+        if (parcel->Weight > Convert::ToDouble(ExecuteScalar(text, params)))
+            throw gcnew Exception("Посилка заважка для точки прибуття");
+
+        text = "SELECT WeightRestrictions From dbo.PostalFacilitys WHERE Id = @CurrentLocationId";
+        params->Clear();
+        params->Add(KeyValuePair<String^, Object^>("@CurrentLocationId", parcel->CurrentLocationId));
+        if (parcel->Weight > Convert::ToDouble(ExecuteScalar(text, params)))
+            throw gcnew Exception("Посилка заважка для точки перебування");
+
         break;
     }
     case Table::ParcelStatuses: {
