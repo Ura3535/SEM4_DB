@@ -20,6 +20,7 @@ namespace Repository
 		virtual void Update(Table table, Entity^ obj);
 		virtual void Delete(Table table, long Id);
 		virtual SqlDataAdapter^ GetTableAdapter(Table table);
+		virtual SqlDataAdapter^ GetAdapterByQuery(String^ query, List<KeyValuePair<String^, Object^>>^ params);
 	private:
 		void Validate(Table table, Entity^ obj);
 		void Execute(String^ query, List<KeyValuePair<String^, Object^>>^ params);

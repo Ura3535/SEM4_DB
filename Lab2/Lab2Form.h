@@ -26,6 +26,7 @@ namespace Lab2 {
 			Pa_Update();
 			PS_Update();
 			PF_Update();
+			Query_Update();
 		}
 
 	protected:
@@ -265,6 +266,25 @@ private: System::Windows::Forms::Label^ Cl_LabelUPDELError;
 private: System::Windows::Forms::Label^ Cl_LabelAddError;
 private: System::Windows::Forms::Label^ Pa_LabelUPDELError;
 private: System::Windows::Forms::Label^ Pa_LabelAddError;
+private: System::Windows::Forms::Label^ Query_LabelValue;
+private: System::Windows::Forms::ComboBox^ Query_ComboBoxChose;
+
+
+
+private: System::Windows::Forms::Label^ Query_LabelChose;
+private: System::Windows::Forms::TextBox^ Query_TextBoxAboutQuery;
+
+private: System::Windows::Forms::Label^ Query_LabelAboutQuery;
+private: System::Windows::Forms::TextBox^ Query_TextBoxValue;
+private: System::Windows::Forms::TextBox^ Query_TextBoxCode;
+
+
+
+private: System::Windows::Forms::Label^ Query_LabelCode;
+private: System::Windows::Forms::Button^ Query_ButtonComplete;
+private: System::Windows::Forms::DataGridView^ Query_DataGridView;
+
+private: System::Windows::Forms::Label^ Query_LabelError;
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -471,7 +491,18 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Pa_LableAddInfo = (gcnew System::Windows::Forms::Label());
 			this->Pa_LabelAdd = (gcnew System::Windows::Forms::Label());
 			this->QueryPage = (gcnew System::Windows::Forms::TabPage());
+			this->Query_ButtonComplete = (gcnew System::Windows::Forms::Button());
+			this->Query_DataGridView = (gcnew System::Windows::Forms::DataGridView());
+			this->Query_TextBoxCode = (gcnew System::Windows::Forms::TextBox());
+			this->Query_LabelCode = (gcnew System::Windows::Forms::Label());
+			this->Query_TextBoxAboutQuery = (gcnew System::Windows::Forms::TextBox());
+			this->Query_LabelAboutQuery = (gcnew System::Windows::Forms::Label());
+			this->Query_TextBoxValue = (gcnew System::Windows::Forms::TextBox());
+			this->Query_LabelValue = (gcnew System::Windows::Forms::Label());
+			this->Query_ComboBoxChose = (gcnew System::Windows::Forms::ComboBox());
+			this->Query_LabelChose = (gcnew System::Windows::Forms::Label());
 			this->InfoPage = (gcnew System::Windows::Forms::TabPage());
+			this->Query_LabelError = (gcnew System::Windows::Forms::Label());
 			this->MainTabControl->SuspendLayout();
 			this->TablePage->SuspendLayout();
 			this->TableTabControl->SuspendLayout();
@@ -505,6 +536,8 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Pa_DataGridView))->BeginInit();
 			this->Pa_PanelUPDEL->SuspendLayout();
 			this->Pa_PanelAdd->SuspendLayout();
+			this->QueryPage->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Query_DataGridView))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// MainTabControl
@@ -2476,6 +2509,17 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			// 
 			// QueryPage
 			// 
+			this->QueryPage->Controls->Add(this->Query_LabelError);
+			this->QueryPage->Controls->Add(this->Query_ButtonComplete);
+			this->QueryPage->Controls->Add(this->Query_DataGridView);
+			this->QueryPage->Controls->Add(this->Query_TextBoxCode);
+			this->QueryPage->Controls->Add(this->Query_LabelCode);
+			this->QueryPage->Controls->Add(this->Query_TextBoxAboutQuery);
+			this->QueryPage->Controls->Add(this->Query_LabelAboutQuery);
+			this->QueryPage->Controls->Add(this->Query_TextBoxValue);
+			this->QueryPage->Controls->Add(this->Query_LabelValue);
+			this->QueryPage->Controls->Add(this->Query_ComboBoxChose);
+			this->QueryPage->Controls->Add(this->Query_LabelChose);
 			this->QueryPage->Location = System::Drawing::Point(4, 22);
 			this->QueryPage->Name = L"QueryPage";
 			this->QueryPage->Padding = System::Windows::Forms::Padding(3);
@@ -2483,6 +2527,108 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->QueryPage->TabIndex = 2;
 			this->QueryPage->Text = L"Запити";
 			this->QueryPage->UseVisualStyleBackColor = true;
+			// 
+			// Query_ButtonComplete
+			// 
+			this->Query_ButtonComplete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Query_ButtonComplete->Location = System::Drawing::Point(377, 53);
+			this->Query_ButtonComplete->Name = L"Query_ButtonComplete";
+			this->Query_ButtonComplete->Size = System::Drawing::Size(150, 25);
+			this->Query_ButtonComplete->TabIndex = 9;
+			this->Query_ButtonComplete->Text = L"Виконати запит";
+			this->Query_ButtonComplete->UseVisualStyleBackColor = true;
+			this->Query_ButtonComplete->Click += gcnew System::EventHandler(this, &Lab2Form::Query_ButtonComplete_Click);
+			// 
+			// Query_DataGridView
+			// 
+			this->Query_DataGridView->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->Query_DataGridView->Location = System::Drawing::Point(14, 436);
+			this->Query_DataGridView->Name = L"Query_DataGridView";
+			this->Query_DataGridView->Size = System::Drawing::Size(1116, 269);
+			this->Query_DataGridView->TabIndex = 8;
+			// 
+			// Query_TextBoxCode
+			// 
+			this->Query_TextBoxCode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Query_TextBoxCode->Location = System::Drawing::Point(480, 130);
+			this->Query_TextBoxCode->Multiline = true;
+			this->Query_TextBoxCode->Name = L"Query_TextBoxCode";
+			this->Query_TextBoxCode->ScrollBars = System::Windows::Forms::ScrollBars::Both;
+			this->Query_TextBoxCode->Size = System::Drawing::Size(650, 300);
+			this->Query_TextBoxCode->TabIndex = 7;
+			// 
+			// Query_LabelCode
+			// 
+			this->Query_LabelCode->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Query_LabelCode->Location = System::Drawing::Point(476, 100);
+			this->Query_LabelCode->Name = L"Query_LabelCode";
+			this->Query_LabelCode->Size = System::Drawing::Size(150, 24);
+			this->Query_LabelCode->TabIndex = 6;
+			this->Query_LabelCode->Text = L"SQL запит";
+			// 
+			// Query_TextBoxAboutQuery
+			// 
+			this->Query_TextBoxAboutQuery->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Query_TextBoxAboutQuery->Location = System::Drawing::Point(14, 130);
+			this->Query_TextBoxAboutQuery->Multiline = true;
+			this->Query_TextBoxAboutQuery->Name = L"Query_TextBoxAboutQuery";
+			this->Query_TextBoxAboutQuery->Size = System::Drawing::Size(450, 300);
+			this->Query_TextBoxAboutQuery->TabIndex = 5;
+			this->Query_TextBoxAboutQuery->TextChanged += gcnew System::EventHandler(this, &Lab2Form::Query_TextBoxAboutQuery_TextChanged);
+			// 
+			// Query_LabelAboutQuery
+			// 
+			this->Query_LabelAboutQuery->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Query_LabelAboutQuery->Location = System::Drawing::Point(10, 100);
+			this->Query_LabelAboutQuery->Name = L"Query_LabelAboutQuery";
+			this->Query_LabelAboutQuery->Size = System::Drawing::Size(150, 24);
+			this->Query_LabelAboutQuery->TabIndex = 4;
+			this->Query_LabelAboutQuery->Text = L"Про запит";
+			// 
+			// Query_TextBoxValue
+			// 
+			this->Query_TextBoxValue->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Query_TextBoxValue->Location = System::Drawing::Point(207, 54);
+			this->Query_TextBoxValue->Name = L"Query_TextBoxValue";
+			this->Query_TextBoxValue->Size = System::Drawing::Size(150, 20);
+			this->Query_TextBoxValue->TabIndex = 3;
+			// 
+			// Query_LabelValue
+			// 
+			this->Query_LabelValue->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Query_LabelValue->Location = System::Drawing::Point(207, 25);
+			this->Query_LabelValue->Name = L"Query_LabelValue";
+			this->Query_LabelValue->Size = System::Drawing::Size(150, 24);
+			this->Query_LabelValue->TabIndex = 2;
+			this->Query_LabelValue->Text = L"@Value =";
+			// 
+			// Query_ComboBoxChose
+			// 
+			this->Query_ComboBoxChose->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 8.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Query_ComboBoxChose->FormattingEnabled = true;
+			this->Query_ComboBoxChose->Location = System::Drawing::Point(10, 53);
+			this->Query_ComboBoxChose->Name = L"Query_ComboBoxChose";
+			this->Query_ComboBoxChose->Size = System::Drawing::Size(180, 21);
+			this->Query_ComboBoxChose->TabIndex = 1;
+			this->Query_ComboBoxChose->SelectedIndexChanged += gcnew System::EventHandler(this, &Lab2Form::Query_ComboBoxChose_SelectedIndexChanged);
+			// 
+			// Query_LabelChose
+			// 
+			this->Query_LabelChose->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Query_LabelChose->Location = System::Drawing::Point(10, 25);
+			this->Query_LabelChose->Name = L"Query_LabelChose";
+			this->Query_LabelChose->Size = System::Drawing::Size(150, 24);
+			this->Query_LabelChose->TabIndex = 0;
+			this->Query_LabelChose->Text = L"Обрати запит";
 			// 
 			// InfoPage
 			// 
@@ -2493,6 +2639,17 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->InfoPage->TabIndex = 3;
 			this->InfoPage->Text = L"Інфо";
 			this->InfoPage->UseVisualStyleBackColor = true;
+			// 
+			// Query_LabelError
+			// 
+			this->Query_LabelError->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Query_LabelError->ForeColor = System::Drawing::Color::Red;
+			this->Query_LabelError->Location = System::Drawing::Point(534, 54);
+			this->Query_LabelError->Name = L"Query_LabelError";
+			this->Query_LabelError->Size = System::Drawing::Size(596, 23);
+			this->Query_LabelError->TabIndex = 10;
+			this->Query_LabelError->Text = L" ";
 			// 
 			// Lab2Form
 			// 
@@ -2547,6 +2704,9 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Pa_PanelUPDEL->PerformLayout();
 			this->Pa_PanelAdd->ResumeLayout(false);
 			this->Pa_PanelAdd->PerformLayout();
+			this->QueryPage->ResumeLayout(false);
+			this->QueryPage->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Query_DataGridView))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -2612,5 +2772,12 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 	private: Void Pa_DataGridViewUpdate();
 #pragma endregion
 
+#pragma region Query
+	private: Void Query_ComboBoxChose_SelectedIndexChanged(Object^ sender, EventArgs^ e);
+	private: Void Query_ButtonComplete_Click(Object^ sender, EventArgs^ e);
+	private: Void Query_Update();
+#pragma endregion
+private: System::Void Query_TextBoxAboutQuery_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

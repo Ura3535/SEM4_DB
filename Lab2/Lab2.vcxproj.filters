@@ -71,5 +71,13 @@
     <ClCompile Include="Logger.cpp">
       <Filter>Loger</Filter>
     </ClCompile>
+    <ClCompile Include="QueryController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Query.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

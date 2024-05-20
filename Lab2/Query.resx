@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Запит з множинним порівнянням 1About" xml:space="preserve">
+    <value>Імена отримувачів, для яких є посилки всіх статусів.</value>
+  </data>
+  <data name="Запит з множинним порівнянням 1Code" xml:space="preserve">
+    <value>SELECT Name
+FROM Clients
+WHERE NOT EXISTS(
+	SELECT *
+	FROM ParcelStatuses
+	WHERE Id NOT IN (
+		SELECT StatusId
+		FROM Parcels
+		WHERE Parcels.ReciverId = Clients.Id
+	)
+)</value>
+  </data>
+  <data name="Запит з множинним порівнянням 2About" xml:space="preserve">
+    <value>Імена відправників, що відправляли посилки з тих же поштоматів що й відправник @Value</value>
+  </data>
+  <data name="Запит з множинним порівнянням 2Code" xml:space="preserve">
+    <value>SELECT Name
+FROM Clients
+WHERE NOT Clients.Id = @Value AND NOT EXISTS(
+	SELECT *
+	FROM PostalFacilitys
+	WHERE PostalFacilitys.Id IN (
+		SELECT DeparturePointsId
+		FROM Parcels
+		WHERE Parcels.SenderId = @Value
+	) AND FacilityTypeId = (
+		SELECT Id
+		FROM FacilityTypes
+		WHERE FacilityTypes.Type = 'Поштомат'
+	) AND Id NOT IN (
+		SELECT Id
+		FROM PostalFacilitys X
+		WHERE X.Id IN (
+			SELECT DeparturePointsId
+			FROM Parcels Y
+			WHERE Y.SenderId = Clients.Id
+			) AND X.FacilityTypeId = (
+			SELECT Id
+			FROM FacilityTypes Z
+			WHERE Z.Type = 'Поштомат'
+		)
+	)
+)</value>
+  </data>
+  <data name="Запит з множинним порівнянням 3About" xml:space="preserve">
+    <value>Id посилок та їх вага, таких що можуть перебувати у тих же поштових приміщень, що й посилка з Id @Value та обов'язково ще в якихось, беручи до уваги вагові обмеження приміщень.</value>
+  </data>
+  <data name="Запит з множинним порівнянням 3Code" xml:space="preserve">
+    <value>SELECT Id, Weight
+FROM Parcels
+WHERE Parcels.Weight &lt; (
+	SELECT Weight
+	FROM Parcels X
+	WHERE X.Id = @Value
+	) AND EXISTS (
+		SELECT *
+		FROM PostalFacilitys
+		WHERE PostalFacilitys.WeightRestrictions &gt;= Parcels.Weight AND PostalFacilitys.Id NOT IN (
+			SELECT Id
+			FROM PostalFacilitys Y
+			WHERE Y.WeightRestrictions &gt;= (
+				SELECT Weight
+				FROM Parcels Z
+				WHERE Z.Id = @Value
+				)
+		)
+)</value>
+  </data>
+  <data name="Параметризований запит 1About" xml:space="preserve">
+    <value>Імена відправників, що відправляли хоча б 1 посилку користувачеві з контактним номером  @Value.</value>
+  </data>
+  <data name="Параметризований запит 1Code" xml:space="preserve">
+    <value>SELECT Name
+FROM Clients
+WHERE Id IN (
+	SELECT SenderId
+	FROM Parcels
+	WHERE ReciverId IN (
+		SELECT Id
+		FROM Clients
+		WHERE ContactNumber = @Value
+	)
+)</value>
+  </data>
+  <data name="Параметризований запит 2About" xml:space="preserve">
+    <value>Назви та адреси приймальних відділень та поштоматів, у яких обмеження на вагу посилок не менше ніж @Value.</value>
+  </data>
+  <data name="Параметризований запит 2Code" xml:space="preserve">
+    <value>SELECT Name, Address
+FROM PostalFacilitys
+WHERE WeightRestrictions &gt;= @Value AND FacilityTypeId IN (
+	SELECT Id
+	FROM FacilityTypes
+	WHERE Type = 'Приймальне відділення' OR Type = 'Поштомат'
+)</value>
+  </data>
+  <data name="Параметризований запит 3About" xml:space="preserve">
+    <value>Імена отримувачів, які мають посилки зі статусом не @Value.</value>
+  </data>
+  <data name="Параметризований запит 3Code" xml:space="preserve">
+    <value>SELECT Name
+FROM Clients
+WHERE Id IN (
+	SELECT ReciverId
+	FROM Parcels
+	WHERE StatusId IN (
+		SELECT Id
+		FROM ParcelStatuses
+		WHERE NOT Status = @Value
+	)
+)</value>
+  </data>
+  <data name="Параметризований запит 4About" xml:space="preserve">
+    <value>Імена отримувачів, які не мають посилки зі статусом @Value.</value>
+  </data>
+  <data name="Параметризований запит 4Code" xml:space="preserve">
+    <value>SELECT Name
+FROM Clients
+WHERE Id NOT IN (
+	SELECT ReciverId
+	FROM Parcels
+	WHERE StatusId IN (
+		SELECT Id
+		FROM ParcelStatuses
+		WHERE Status = @Value
+	)
+)</value>
+  </data>
+  <data name="Параметризований запит 5About" xml:space="preserve">
+    <value>Назви, адреси та обмеження на вагу посилки всіх поштових приміщень, які відповідають ваговим обмеженням для посилки @Value.</value>
+  </data>
+  <data name="Параметризований запит 5Code" xml:space="preserve">
+    <value>SELECT Name, Address, WeightRestrictions
+FROM PostalFacilitys
+WHERE WeightRestrictions &gt;= (
+	SELECT Weight
+	FROM Parcels
+	WHERE Id = @Value
+)</value>
+  </data>
+</root>

@@ -27,5 +27,6 @@ namespace Repository
 		void Update(Table table, Entity^ obj);
 		void Delete(Table table, long Id);
 		SqlDataAdapter^ GetTableAdapter(Table table);
+		SqlDataAdapter^ GetAdapterByQuery(String^ query, List<KeyValuePair<String^, Object^>>^ params);
 	};
 }

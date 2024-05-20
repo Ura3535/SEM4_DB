@@ -158,7 +158,7 @@ void SQLRepository::Update(Table table, Entity^ obj)
             + "DeparturePointsId = @DeparturePointsId, "
             + "DeliveryPointsId = @DeliveryPointsId, "
             + "Price = @Price, "
-            + "StatusId = '@StatusId', "
+            + "StatusId = @StatusId, "
             + "CurrentLocationId = @CurrentLocationId, "
             + "DeliveryAddress = @DeliveryAddress "
             + "WHERE Id = @Id";
@@ -190,7 +190,7 @@ void SQLRepository::Delete(Table table, long Id)
     {
     case Table::Clients:
     {
-        text = "SELECT Id From dbo.Parcels WHERE CenderId = @Id or ReciverId = @Id";
+        text = "SELECT Id From dbo.Parcels WHERE SenderId = @Id or ReciverId = @Id";
         for each (long DeleteById in GetIdsByQuery(text, params))
             Delete(Table::Parcels, DeleteById);
         text = "DELETE FROM dbo.Clients WHERE Id = @Id";
@@ -267,6 +267,14 @@ SqlDataAdapter^ SQLRepository::GetTableAdapter(Table table)
     return gcnew SqlDataAdapter(text, connection);
 }
 
+SqlDataAdapter^ SQLRepository::GetAdapterByQuery(String^ query, List<KeyValuePair<String^, Object^>>^ params)
+{
+    command = gcnew SqlCommand(query, connection);
+    for each (auto param in params)
+        command->Parameters->AddWithValue(param.Key, param.Value);
+    return gcnew SqlDataAdapter(command);
+}
+
 void SQLRepository::Validate(Table table, Entity^ obj)
 {
     switch (table)
@@ -275,7 +283,7 @@ void SQLRepository::Validate(Table table, Entity^ obj)
         Client^ client = (Client^)obj;
         if (client->Name->Length >= 50)
             throw gcnew Exception("Ім'я повинно бути завдовжки менше 50");
-        if ((gcnew Text::RegularExpressions::Regex("^\\+?[0-9]{1,3}?[- .]?\\(?[0-9]{1,4}?\\)?[- .]?[0-9]{1,4}[- .]?[0-9]{1,9}$"))->IsMatch(client->ContactNumber))
+        if (!(gcnew Text::RegularExpressions::Regex("^\\+?[0-9]{1,3}?[- .]?\\(?[0-9]{1,4}?\\)?[- .]?[0-9]{1,4}[- .]?[0-9]{1,9}$"))->IsMatch(client->ContactNumber))
             throw gcnew Exception("Не коректний номер телефону");
         if (client->Email->Length >= 50)
             throw gcnew Exception("Email повинен бути завдовжки менше 50");
@@ -394,7 +402,7 @@ Entity^ SQLRepository::ReadFromReader(Table table, SqlDataReader^ reader)
         case Table::Clients: {
             Client^ client = gcnew Client();
             client->Id = Convert::ToInt64(reader["Id"]);
-            client->Name = reader["Id"]->ToString();
+            client->Name = reader["Name"]->ToString();
             client->ContactNumber = reader["ContactNumber"]->ToString();
             client->Email = reader["Email"]->ToString();
             res = client;
@@ -403,7 +411,7 @@ Entity^ SQLRepository::ReadFromReader(Table table, SqlDataReader^ reader)
         case Table::Couriers: {
             Courier^ courier = gcnew Courier();
             courier->Id = Convert::ToInt64(reader["Id"]);
-            courier->Name = reader["Id"]->ToString();
+            courier->Name = reader["Name"]->ToString();
             courier->City = reader["City"]->ToString();
             courier->ParcelId = Convert::ToInt64(reader["ParcelId"]);
             res = courier;

@@ -134,6 +134,7 @@
     <ClCompile Include="ParcelController.cpp" />
     <ClCompile Include="ParcelStatusController.cpp" />
     <ClCompile Include="PostalFacilityController.cpp" />
+    <ClCompile Include="QueryController.cpp" />
     <ClCompile Include="SQLRepository.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +149,7 @@
       <DependentUpon>Lab2Form.h</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Query.resx" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
