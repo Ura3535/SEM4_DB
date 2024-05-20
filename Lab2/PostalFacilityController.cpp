@@ -18,6 +18,9 @@ Void Lab2Form::PF_ButtonAdd_Click(Object^ sender, EventArgs^ e)
         PF_Update();
         PF_LabelAddError->Text = "";
     }
+    catch (FormatException^ exep) {
+        PF_LabelAddError->Text = "Обмеження по вазі повинно бути числом";
+    }
     catch (Exception^ exep) {
         PF_LabelAddError->Text = exep->Message;
     }
@@ -37,6 +40,9 @@ Void Lab2Form::PF_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
         PF_DataGridViewUpdate();
         PF_LabelUPDELError->Text = "";
     }
+    catch (FormatException^ exep) {
+        PF_LabelUPDELError->Text = "Обмеження по вазі повинно бути числом";
+    }
     catch (Exception^ exep) {
         PF_LabelUPDELError->Text = exep->Message;
     }
@@ -52,6 +58,7 @@ Void Lab2Form::PF_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)
         PF_TextBoxUPDELAddress->Text = tmp->Address;
         PF_TextBoxUPDELWorkSchedule->Text = tmp->WorkSchedule;
         PF_TextBoxUPDELWeightRestrictions->Text = tmp->WeightRestrictions.ToString();
+        PF_LabelUPDELError->Text = "";
     }
     catch (...) {}
 }
@@ -61,6 +68,7 @@ Void Lab2Form::PF_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
     try
     {
         rep->Delete(Table::PostalFacilitys, Convert::ToInt64(PF_ComboBoxUPDELId->Text));
+        PF_LabelUPDELError->Text = "";
         PF_Update();
         Pa_Update();
         Co_Update();

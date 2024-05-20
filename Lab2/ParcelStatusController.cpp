@@ -41,6 +41,7 @@ Void Lab2Form::PS_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)
     {
         ParcelStatus^ tmp = (ParcelStatus^)rep->Get(Table::ParcelStatuses, Convert::ToInt64(PS_ComboBoxUPDELId->Text));
         PS_TextBoxUPDELStatus->Text = tmp->Status;
+        PS_LabelUPDELError->Text = "";
     }
     catch (...) {}
 }
@@ -50,6 +51,7 @@ Void Lab2Form::PS_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
     try
     {
         rep->Delete(Table::ParcelStatuses, Convert::ToInt64(PS_ComboBoxUPDELId->Text));
+        PS_LabelUPDELError->Text = "";
         PS_Update();
         Pa_Update();
         Co_Update();

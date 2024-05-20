@@ -39,6 +39,7 @@ Void Lab2Form::FT_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)
     try
     {
         FacilityType^ tmp = (FacilityType^)rep->Get(Table::FacilityTypes, Convert::ToInt64(FT_ComboBoxUPDELId->Text));
+        FT_LabelUPDELError->Text = "";
         FT_TextBoxUPDELType->Text = tmp->Type;
     }
     catch (...) {}
@@ -47,6 +48,7 @@ Void Lab2Form::FT_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)
 Void Lab2Form::FT_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
 {
     rep->Delete(Table::FacilityTypes, Convert::ToInt64(FT_ComboBoxUPDELId->Text));
+    FT_LabelUPDELError->Text = "";
     FT_Update();
     PF_Update();
     Pa_Update();

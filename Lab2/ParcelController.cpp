@@ -23,6 +23,9 @@ Void Lab2Form::Pa_ButtonAdd_Click(Object^ sender, EventArgs^ e)
         Pa_Update();
         Pa_LabelAddError->Text = "";
     }
+    catch (FormatException^ exep) {
+        Pa_LabelAddError->Text = "Вага та вартість повинні бути числом";
+    }
     catch (Exception^ exep) {
         Pa_LabelAddError->Text = exep->Message;
     }
@@ -48,6 +51,9 @@ Void Lab2Form::Pa_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
         Pa_DataGridViewUpdate();
         Pa_LabelUPDELError->Text = "";
     }
+    catch (FormatException^ exep) {
+        Pa_LabelUPDELError->Text = "Вага та вартість повинні бути числом";
+    }
     catch (Exception^ exep) {
         Pa_LabelUPDELError->Text = exep->Message;
     }
@@ -68,6 +74,7 @@ Void Lab2Form::Pa_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)
         Pa_ComboBoxUPDELPSId->Text = tmp->StatusId.ToString();
         Pa_ComboBoxUPDELCurId->Text = tmp->CurrentLocationId.ToString();
         Pa_TextBoxUPDELDeliveryAddress->Text = tmp->DeliveryAddress;
+        Pa_LabelUPDELError->Text = "";
     }
     catch (...) {}
 }
@@ -77,6 +84,7 @@ Void Lab2Form::Pa_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
     try
     {
         rep->Delete(Table::Parcels, Convert::ToInt64(Pa_ComboBoxUPDELId->Text));
+        Pa_LabelUPDELError->Text = "";
         Pa_Update();
         Co_Update();
     }

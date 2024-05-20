@@ -287,6 +287,7 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->FT_DataGridView = (gcnew System::Windows::Forms::DataGridView());
 			this->FT_LabelList = (gcnew System::Windows::Forms::Label());
 			this->FT_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
+			this->FT_LabelUPDELError = (gcnew System::Windows::Forms::Label());
 			this->FT_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
 			this->FT_ButtonUPDELRollBack = (gcnew System::Windows::Forms::Button());
 			this->FT_ButtonUPDELSave = (gcnew System::Windows::Forms::Button());
@@ -296,6 +297,7 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->FT_LabelUPDELId = (gcnew System::Windows::Forms::Label());
 			this->FT_LabelUPDEL = (gcnew System::Windows::Forms::Label());
 			this->FT_PanelAdd = (gcnew System::Windows::Forms::Panel());
+			this->FT_LabelAddError = (gcnew System::Windows::Forms::Label());
 			this->FT_ButtonAdd = (gcnew System::Windows::Forms::Button());
 			this->FT_TextBoxAddType = (gcnew System::Windows::Forms::TextBox());
 			this->FT_LableAddType = (gcnew System::Windows::Forms::Label());
@@ -305,6 +307,7 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->PF_DataGridView = (gcnew System::Windows::Forms::DataGridView());
 			this->PF_LabelList = (gcnew System::Windows::Forms::Label());
 			this->PF_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
+			this->PF_LabelUPDELError = (gcnew System::Windows::Forms::Label());
 			this->PF_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
 			this->PF_ButtonUPDELRollBack = (gcnew System::Windows::Forms::Button());
 			this->PF_ButtonUPDELSave = (gcnew System::Windows::Forms::Button());
@@ -322,6 +325,7 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->PF_LableUPDELName = (gcnew System::Windows::Forms::Label());
 			this->PF_LabelUPDEL = (gcnew System::Windows::Forms::Label());
 			this->PF_PanelAdd = (gcnew System::Windows::Forms::Panel());
+			this->PF_LabelAddError = (gcnew System::Windows::Forms::Label());
 			this->PF_LableAddWeightRestrictions = (gcnew System::Windows::Forms::Label());
 			this->PF_TextBoxAddWeightRestrictions = (gcnew System::Windows::Forms::TextBox());
 			this->PF_TextBoxAddWorkSchedule = (gcnew System::Windows::Forms::TextBox());
@@ -339,6 +343,7 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->PS_DataGridView = (gcnew System::Windows::Forms::DataGridView());
 			this->PS_LabelList = (gcnew System::Windows::Forms::Label());
 			this->PS_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
+			this->PS_LabelUPDELError = (gcnew System::Windows::Forms::Label());
 			this->PS_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
 			this->PS_ButtonUPDELRollBack = (gcnew System::Windows::Forms::Button());
 			this->PS_ButtonUPDELSave = (gcnew System::Windows::Forms::Button());
@@ -348,6 +353,7 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->PS_LabelUPDELId = (gcnew System::Windows::Forms::Label());
 			this->PS_LabelUPDEL = (gcnew System::Windows::Forms::Label());
 			this->PS_PanelAdd = (gcnew System::Windows::Forms::Panel());
+			this->PS_LabelAddError = (gcnew System::Windows::Forms::Label());
 			this->PS_ButtonAdd = (gcnew System::Windows::Forms::Button());
 			this->PS_TextBoxAddStatus = (gcnew System::Windows::Forms::TextBox());
 			this->PS_LableAddStatus = (gcnew System::Windows::Forms::Label());
@@ -357,6 +363,7 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Co_DataGridView = (gcnew System::Windows::Forms::DataGridView());
 			this->Co_LabelList = (gcnew System::Windows::Forms::Label());
 			this->Co_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
+			this->Co_LabelUPDELError = (gcnew System::Windows::Forms::Label());
 			this->Co_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
 			this->Co_ButtonUPDELRollBack = (gcnew System::Windows::Forms::Button());
 			this->Co_ButtonUPDELSave = (gcnew System::Windows::Forms::Button());
@@ -370,6 +377,7 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Co_LableUPDELName = (gcnew System::Windows::Forms::Label());
 			this->Co_LabelUPDEL = (gcnew System::Windows::Forms::Label());
 			this->Co_PanelAdd = (gcnew System::Windows::Forms::Panel());
+			this->Co_LabelAddError = (gcnew System::Windows::Forms::Label());
 			this->Co_TextBoxAddCity = (gcnew System::Windows::Forms::TextBox());
 			this->Co_LableAddPaId = (gcnew System::Windows::Forms::Label());
 			this->Co_ComboBoxAddPaId = (gcnew System::Windows::Forms::ComboBox());
@@ -383,6 +391,7 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Cl_DataGridView = (gcnew System::Windows::Forms::DataGridView());
 			this->Cl_LabelList = (gcnew System::Windows::Forms::Label());
 			this->Cl_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
+			this->Cl_LabelUPDELError = (gcnew System::Windows::Forms::Label());
 			this->Cl_TextBoxUPDELEmail = (gcnew System::Windows::Forms::TextBox());
 			this->Cl_ButtonUPDELDelete = (gcnew System::Windows::Forms::Button());
 			this->Cl_ButtonUPDELRollBack = (gcnew System::Windows::Forms::Button());
@@ -396,6 +405,7 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Cl_LableUPDELName = (gcnew System::Windows::Forms::Label());
 			this->Cl_LabelUPDEL = (gcnew System::Windows::Forms::Label());
 			this->Cl_PanelAdd = (gcnew System::Windows::Forms::Panel());
+			this->Cl_LabelAddError = (gcnew System::Windows::Forms::Label());
 			this->Cl_TextBoxAddEmail = (gcnew System::Windows::Forms::TextBox());
 			this->Cl_TextBoxAddContactNumber = (gcnew System::Windows::Forms::TextBox());
 			this->Cl_LableAddEmail = (gcnew System::Windows::Forms::Label());
@@ -409,6 +419,7 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Pa_DataGridView = (gcnew System::Windows::Forms::DataGridView());
 			this->Pa_LabelList = (gcnew System::Windows::Forms::Label());
 			this->Pa_PanelUPDEL = (gcnew System::Windows::Forms::Panel());
+			this->Pa_LabelUPDELError = (gcnew System::Windows::Forms::Label());
 			this->Pa_TextBoxUPDELDeliveryAddress = (gcnew System::Windows::Forms::TextBox());
 			this->Pa_LableUPDELDeliveryAddress = (gcnew System::Windows::Forms::Label());
 			this->Pa_LableUPDELCurId = (gcnew System::Windows::Forms::Label());
@@ -436,6 +447,7 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Pa_LableUPDELId = (gcnew System::Windows::Forms::Label());
 			this->Pa_LabelUPDEL = (gcnew System::Windows::Forms::Label());
 			this->Pa_PanelAdd = (gcnew System::Windows::Forms::Panel());
+			this->Pa_LabelAddError = (gcnew System::Windows::Forms::Label());
 			this->Pa_TextBoxAddDeliveryAddress = (gcnew System::Windows::Forms::TextBox());
 			this->Pa_LableAddDeliveryAddress = (gcnew System::Windows::Forms::Label());
 			this->Pa_LableAddCurId = (gcnew System::Windows::Forms::Label());
@@ -460,18 +472,6 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Pa_LabelAdd = (gcnew System::Windows::Forms::Label());
 			this->QueryPage = (gcnew System::Windows::Forms::TabPage());
 			this->InfoPage = (gcnew System::Windows::Forms::TabPage());
-			this->FT_LabelAddError = (gcnew System::Windows::Forms::Label());
-			this->FT_LabelUPDELError = (gcnew System::Windows::Forms::Label());
-			this->PF_LabelAddError = (gcnew System::Windows::Forms::Label());
-			this->PF_LabelUPDELError = (gcnew System::Windows::Forms::Label());
-			this->PS_LabelAddError = (gcnew System::Windows::Forms::Label());
-			this->PS_LabelUPDELError = (gcnew System::Windows::Forms::Label());
-			this->Co_LabelAddError = (gcnew System::Windows::Forms::Label());
-			this->Co_LabelUPDELError = (gcnew System::Windows::Forms::Label());
-			this->Cl_LabelAddError = (gcnew System::Windows::Forms::Label());
-			this->Cl_LabelUPDELError = (gcnew System::Windows::Forms::Label());
-			this->Pa_LabelAddError = (gcnew System::Windows::Forms::Label());
-			this->Pa_LabelUPDELError = (gcnew System::Windows::Forms::Label());
 			this->MainTabControl->SuspendLayout();
 			this->TablePage->SuspendLayout();
 			this->TableTabControl->SuspendLayout();
@@ -617,6 +617,16 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->FT_PanelUPDEL->Size = System::Drawing::Size(1120, 135);
 			this->FT_PanelUPDEL->TabIndex = 1;
 			// 
+			// FT_LabelUPDELError
+			// 
+			this->FT_LabelUPDELError->AutoSize = true;
+			this->FT_LabelUPDELError->ForeColor = System::Drawing::Color::Red;
+			this->FT_LabelUPDELError->Location = System::Drawing::Point(330, 99);
+			this->FT_LabelUPDELError->Name = L"FT_LabelUPDELError";
+			this->FT_LabelUPDELError->Size = System::Drawing::Size(10, 16);
+			this->FT_LabelUPDELError->TabIndex = 9;
+			this->FT_LabelUPDELError->Text = L" ";
+			// 
 			// FT_ButtonUPDELDelete
 			// 
 			this->FT_ButtonUPDELDelete->Location = System::Drawing::Point(224, 95);
@@ -706,6 +716,16 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->FT_PanelAdd->Name = L"FT_PanelAdd";
 			this->FT_PanelAdd->Size = System::Drawing::Size(1120, 135);
 			this->FT_PanelAdd->TabIndex = 0;
+			// 
+			// FT_LabelAddError
+			// 
+			this->FT_LabelAddError->AutoSize = true;
+			this->FT_LabelAddError->ForeColor = System::Drawing::Color::Red;
+			this->FT_LabelAddError->Location = System::Drawing::Point(116, 104);
+			this->FT_LabelAddError->Name = L"FT_LabelAddError";
+			this->FT_LabelAddError->Size = System::Drawing::Size(10, 16);
+			this->FT_LabelAddError->TabIndex = 4;
+			this->FT_LabelAddError->Text = L" ";
 			// 
 			// FT_ButtonAdd
 			// 
@@ -816,6 +836,16 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->PF_PanelUPDEL->Name = L"PF_PanelUPDEL";
 			this->PF_PanelUPDEL->Size = System::Drawing::Size(1120, 135);
 			this->PF_PanelUPDEL->TabIndex = 12;
+			// 
+			// PF_LabelUPDELError
+			// 
+			this->PF_LabelUPDELError->AutoSize = true;
+			this->PF_LabelUPDELError->ForeColor = System::Drawing::Color::Red;
+			this->PF_LabelUPDELError->Location = System::Drawing::Point(330, 99);
+			this->PF_LabelUPDELError->Name = L"PF_LabelUPDELError";
+			this->PF_LabelUPDELError->Size = System::Drawing::Size(10, 16);
+			this->PF_LabelUPDELError->TabIndex = 17;
+			this->PF_LabelUPDELError->Text = L" ";
 			// 
 			// PF_ButtonUPDELDelete
 			// 
@@ -979,6 +1009,16 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->PF_PanelAdd->Size = System::Drawing::Size(1120, 135);
 			this->PF_PanelAdd->TabIndex = 1;
 			// 
+			// PF_LabelAddError
+			// 
+			this->PF_LabelAddError->AutoSize = true;
+			this->PF_LabelAddError->ForeColor = System::Drawing::Color::Red;
+			this->PF_LabelAddError->Location = System::Drawing::Point(116, 105);
+			this->PF_LabelAddError->Name = L"PF_LabelAddError";
+			this->PF_LabelAddError->Size = System::Drawing::Size(10, 16);
+			this->PF_LabelAddError->TabIndex = 12;
+			this->PF_LabelAddError->Text = L" ";
+			// 
 			// PF_LableAddWeightRestrictions
 			// 
 			this->PF_LableAddWeightRestrictions->Location = System::Drawing::Point(474, 40);
@@ -1141,6 +1181,16 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->PS_PanelUPDEL->Size = System::Drawing::Size(1120, 135);
 			this->PS_PanelUPDEL->TabIndex = 4;
 			// 
+			// PS_LabelUPDELError
+			// 
+			this->PS_LabelUPDELError->AutoSize = true;
+			this->PS_LabelUPDELError->ForeColor = System::Drawing::Color::Red;
+			this->PS_LabelUPDELError->Location = System::Drawing::Point(330, 99);
+			this->PS_LabelUPDELError->Name = L"PS_LabelUPDELError";
+			this->PS_LabelUPDELError->Size = System::Drawing::Size(10, 16);
+			this->PS_LabelUPDELError->TabIndex = 13;
+			this->PS_LabelUPDELError->Text = L" ";
+			// 
 			// PS_ButtonUPDELDelete
 			// 
 			this->PS_ButtonUPDELDelete->Location = System::Drawing::Point(224, 95);
@@ -1230,6 +1280,16 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->PS_PanelAdd->Name = L"PS_PanelAdd";
 			this->PS_PanelAdd->Size = System::Drawing::Size(1120, 135);
 			this->PS_PanelAdd->TabIndex = 3;
+			// 
+			// PS_LabelAddError
+			// 
+			this->PS_LabelAddError->AutoSize = true;
+			this->PS_LabelAddError->ForeColor = System::Drawing::Color::Red;
+			this->PS_LabelAddError->Location = System::Drawing::Point(116, 104);
+			this->PS_LabelAddError->Name = L"PS_LabelAddError";
+			this->PS_LabelAddError->Size = System::Drawing::Size(10, 16);
+			this->PS_LabelAddError->TabIndex = 13;
+			this->PS_LabelAddError->Text = L" ";
 			// 
 			// PS_ButtonAdd
 			// 
@@ -1336,6 +1396,16 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Co_PanelUPDEL->Name = L"Co_PanelUPDEL";
 			this->Co_PanelUPDEL->Size = System::Drawing::Size(1120, 135);
 			this->Co_PanelUPDEL->TabIndex = 15;
+			// 
+			// Co_LabelUPDELError
+			// 
+			this->Co_LabelUPDELError->AutoSize = true;
+			this->Co_LabelUPDELError->ForeColor = System::Drawing::Color::Red;
+			this->Co_LabelUPDELError->Location = System::Drawing::Point(330, 99);
+			this->Co_LabelUPDELError->Name = L"Co_LabelUPDELError";
+			this->Co_LabelUPDELError->Size = System::Drawing::Size(10, 16);
+			this->Co_LabelUPDELError->TabIndex = 17;
+			this->Co_LabelUPDELError->Text = L" ";
 			// 
 			// Co_ButtonUPDELDelete
 			// 
@@ -1464,6 +1534,16 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Co_PanelAdd->Name = L"Co_PanelAdd";
 			this->Co_PanelAdd->Size = System::Drawing::Size(1120, 135);
 			this->Co_PanelAdd->TabIndex = 14;
+			// 
+			// Co_LabelAddError
+			// 
+			this->Co_LabelAddError->AutoSize = true;
+			this->Co_LabelAddError->ForeColor = System::Drawing::Color::Red;
+			this->Co_LabelAddError->Location = System::Drawing::Point(116, 105);
+			this->Co_LabelAddError->Name = L"Co_LabelAddError";
+			this->Co_LabelAddError->Size = System::Drawing::Size(10, 16);
+			this->Co_LabelAddError->TabIndex = 14;
+			this->Co_LabelAddError->Text = L" ";
 			// 
 			// Co_TextBoxAddCity
 			// 
@@ -1603,6 +1683,16 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Cl_PanelUPDEL->Size = System::Drawing::Size(1120, 135);
 			this->Cl_PanelUPDEL->TabIndex = 18;
 			// 
+			// Cl_LabelUPDELError
+			// 
+			this->Cl_LabelUPDELError->AutoSize = true;
+			this->Cl_LabelUPDELError->ForeColor = System::Drawing::Color::Red;
+			this->Cl_LabelUPDELError->Location = System::Drawing::Point(330, 99);
+			this->Cl_LabelUPDELError->Name = L"Cl_LabelUPDELError";
+			this->Cl_LabelUPDELError->Size = System::Drawing::Size(10, 16);
+			this->Cl_LabelUPDELError->TabIndex = 18;
+			this->Cl_LabelUPDELError->Text = L" ";
+			// 
 			// Cl_TextBoxUPDELEmail
 			// 
 			this->Cl_TextBoxUPDELEmail->Location = System::Drawing::Point(323, 64);
@@ -1728,6 +1818,16 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Cl_PanelAdd->Name = L"Cl_PanelAdd";
 			this->Cl_PanelAdd->Size = System::Drawing::Size(1120, 135);
 			this->Cl_PanelAdd->TabIndex = 17;
+			// 
+			// Cl_LabelAddError
+			// 
+			this->Cl_LabelAddError->AutoSize = true;
+			this->Cl_LabelAddError->ForeColor = System::Drawing::Color::Red;
+			this->Cl_LabelAddError->Location = System::Drawing::Point(116, 105);
+			this->Cl_LabelAddError->Name = L"Cl_LabelAddError";
+			this->Cl_LabelAddError->Size = System::Drawing::Size(10, 16);
+			this->Cl_LabelAddError->TabIndex = 18;
+			this->Cl_LabelAddError->Text = L" ";
 			// 
 			// Cl_TextBoxAddEmail
 			// 
@@ -1876,6 +1976,16 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Pa_PanelUPDEL->Name = L"Pa_PanelUPDEL";
 			this->Pa_PanelUPDEL->Size = System::Drawing::Size(1120, 135);
 			this->Pa_PanelUPDEL->TabIndex = 4;
+			// 
+			// Pa_LabelUPDELError
+			// 
+			this->Pa_LabelUPDELError->AutoSize = true;
+			this->Pa_LabelUPDELError->ForeColor = System::Drawing::Color::Red;
+			this->Pa_LabelUPDELError->Location = System::Drawing::Point(330, 99);
+			this->Pa_LabelUPDELError->Name = L"Pa_LabelUPDELError";
+			this->Pa_LabelUPDELError->Size = System::Drawing::Size(10, 16);
+			this->Pa_LabelUPDELError->TabIndex = 42;
+			this->Pa_LabelUPDELError->Text = L" ";
 			// 
 			// Pa_TextBoxUPDELDeliveryAddress
 			// 
@@ -2152,6 +2262,16 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->Pa_PanelAdd->Size = System::Drawing::Size(1120, 135);
 			this->Pa_PanelAdd->TabIndex = 3;
 			// 
+			// Pa_LabelAddError
+			// 
+			this->Pa_LabelAddError->AutoSize = true;
+			this->Pa_LabelAddError->ForeColor = System::Drawing::Color::Red;
+			this->Pa_LabelAddError->Location = System::Drawing::Point(116, 104);
+			this->Pa_LabelAddError->Name = L"Pa_LabelAddError";
+			this->Pa_LabelAddError->Size = System::Drawing::Size(10, 16);
+			this->Pa_LabelAddError->TabIndex = 22;
+			this->Pa_LabelAddError->Text = L" ";
+			// 
 			// Pa_TextBoxAddDeliveryAddress
 			// 
 			this->Pa_TextBoxAddDeliveryAddress->Location = System::Drawing::Point(904, 63);
@@ -2373,114 +2493,6 @@ private: System::Windows::Forms::Label^ Pa_LabelAddError;
 			this->InfoPage->TabIndex = 3;
 			this->InfoPage->Text = L"Інфо";
 			this->InfoPage->UseVisualStyleBackColor = true;
-			// 
-			// FT_LabelAddError
-			// 
-			this->FT_LabelAddError->AutoSize = true;
-			this->FT_LabelAddError->Location = System::Drawing::Point(116, 104);
-			this->FT_LabelAddError->Name = L"FT_LabelAddError";
-			this->FT_LabelAddError->Size = System::Drawing::Size(44, 16);
-			this->FT_LabelAddError->TabIndex = 4;
-			this->FT_LabelAddError->Text = L"label1";
-			// 
-			// FT_LabelUPDELError
-			// 
-			this->FT_LabelUPDELError->AutoSize = true;
-			this->FT_LabelUPDELError->Location = System::Drawing::Point(330, 99);
-			this->FT_LabelUPDELError->Name = L"FT_LabelUPDELError";
-			this->FT_LabelUPDELError->Size = System::Drawing::Size(44, 16);
-			this->FT_LabelUPDELError->TabIndex = 9;
-			this->FT_LabelUPDELError->Text = L"label1";
-			// 
-			// PF_LabelAddError
-			// 
-			this->PF_LabelAddError->AutoSize = true;
-			this->PF_LabelAddError->Location = System::Drawing::Point(116, 105);
-			this->PF_LabelAddError->Name = L"PF_LabelAddError";
-			this->PF_LabelAddError->Size = System::Drawing::Size(44, 16);
-			this->PF_LabelAddError->TabIndex = 12;
-			this->PF_LabelAddError->Text = L"label1";
-			// 
-			// PF_LabelUPDELError
-			// 
-			this->PF_LabelUPDELError->AutoSize = true;
-			this->PF_LabelUPDELError->Location = System::Drawing::Point(330, 99);
-			this->PF_LabelUPDELError->Name = L"PF_LabelUPDELError";
-			this->PF_LabelUPDELError->Size = System::Drawing::Size(44, 16);
-			this->PF_LabelUPDELError->TabIndex = 17;
-			this->PF_LabelUPDELError->Text = L"label1";
-			// 
-			// PS_LabelAddError
-			// 
-			this->PS_LabelAddError->AutoSize = true;
-			this->PS_LabelAddError->Location = System::Drawing::Point(116, 104);
-			this->PS_LabelAddError->Name = L"PS_LabelAddError";
-			this->PS_LabelAddError->Size = System::Drawing::Size(44, 16);
-			this->PS_LabelAddError->TabIndex = 13;
-			this->PS_LabelAddError->Text = L"label1";
-			// 
-			// PS_LabelUPDELError
-			// 
-			this->PS_LabelUPDELError->AutoSize = true;
-			this->PS_LabelUPDELError->Location = System::Drawing::Point(330, 99);
-			this->PS_LabelUPDELError->Name = L"PS_LabelUPDELError";
-			this->PS_LabelUPDELError->Size = System::Drawing::Size(44, 16);
-			this->PS_LabelUPDELError->TabIndex = 13;
-			this->PS_LabelUPDELError->Text = L"label1";
-			// 
-			// Co_LabelAddError
-			// 
-			this->Co_LabelAddError->AutoSize = true;
-			this->Co_LabelAddError->Location = System::Drawing::Point(116, 105);
-			this->Co_LabelAddError->Name = L"Co_LabelAddError";
-			this->Co_LabelAddError->Size = System::Drawing::Size(44, 16);
-			this->Co_LabelAddError->TabIndex = 14;
-			this->Co_LabelAddError->Text = L"label1";
-			// 
-			// Co_LabelUPDELError
-			// 
-			this->Co_LabelUPDELError->AutoSize = true;
-			this->Co_LabelUPDELError->Location = System::Drawing::Point(330, 99);
-			this->Co_LabelUPDELError->Name = L"Co_LabelUPDELError";
-			this->Co_LabelUPDELError->Size = System::Drawing::Size(44, 16);
-			this->Co_LabelUPDELError->TabIndex = 17;
-			this->Co_LabelUPDELError->Text = L"label1";
-			// 
-			// Cl_LabelAddError
-			// 
-			this->Cl_LabelAddError->AutoSize = true;
-			this->Cl_LabelAddError->Location = System::Drawing::Point(116, 105);
-			this->Cl_LabelAddError->Name = L"Cl_LabelAddError";
-			this->Cl_LabelAddError->Size = System::Drawing::Size(44, 16);
-			this->Cl_LabelAddError->TabIndex = 18;
-			this->Cl_LabelAddError->Text = L"label1";
-			// 
-			// Cl_LabelUPDELError
-			// 
-			this->Cl_LabelUPDELError->AutoSize = true;
-			this->Cl_LabelUPDELError->Location = System::Drawing::Point(330, 99);
-			this->Cl_LabelUPDELError->Name = L"Cl_LabelUPDELError";
-			this->Cl_LabelUPDELError->Size = System::Drawing::Size(44, 16);
-			this->Cl_LabelUPDELError->TabIndex = 18;
-			this->Cl_LabelUPDELError->Text = L"label1";
-			// 
-			// Pa_LabelAddError
-			// 
-			this->Pa_LabelAddError->AutoSize = true;
-			this->Pa_LabelAddError->Location = System::Drawing::Point(116, 104);
-			this->Pa_LabelAddError->Name = L"Pa_LabelAddError";
-			this->Pa_LabelAddError->Size = System::Drawing::Size(44, 16);
-			this->Pa_LabelAddError->TabIndex = 22;
-			this->Pa_LabelAddError->Text = L"label1";
-			// 
-			// Pa_LabelUPDELError
-			// 
-			this->Pa_LabelUPDELError->AutoSize = true;
-			this->Pa_LabelUPDELError->Location = System::Drawing::Point(330, 99);
-			this->Pa_LabelUPDELError->Name = L"Pa_LabelUPDELError";
-			this->Pa_LabelUPDELError->Size = System::Drawing::Size(44, 16);
-			this->Pa_LabelUPDELError->TabIndex = 42;
-			this->Pa_LabelUPDELError->Text = L"label1";
 			// 
 			// Lab2Form
 			// 

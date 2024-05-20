@@ -47,6 +47,7 @@ Void Lab2Form::Co_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)
         Co_TextBoxUPDELName->Text = tmp->Name;
         Co_TextBoxUPDELCity->Text = tmp->City;
         Co_ComboBoxUPDELPaId->Text = tmp->ParcelId.ToString();
+        Co_LabelUPDELError->Text = "";
     }
     catch (...) {}
 }
@@ -55,6 +56,7 @@ Void Lab2Form::Co_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
 {
     try
     {
+        Co_LabelUPDELError->Text = "";
         rep->Delete(Table::Couriers, Convert::ToInt64(Co_ComboBoxUPDELId->Text));
         Co_Update();
     }

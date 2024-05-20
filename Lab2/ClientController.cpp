@@ -47,6 +47,7 @@ Void Lab2Form::Cl_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)
         Cl_TextBoxUPDELName->Text = tmp->Name;
         Cl_TextBoxUPDELContactNumber->Text = tmp->ContactNumber;
         Cl_TextBoxUPDELEmail->Text = tmp->Email;
+        Cl_LabelUPDELError->Text = "";
     }
     catch (...) {}
 }
@@ -56,6 +57,7 @@ Void Lab2Form::Cl_ButtonUPDELDelete_Click(Object^ sender, EventArgs^ e)
     try
     {
         rep->Delete(Table::Clients, Convert::ToInt64(Cl_ComboBoxUPDELId->Text));
+        Cl_LabelUPDELError->Text = "";
         Cl_Update();
         Pa_Update();
         Co_Update();
