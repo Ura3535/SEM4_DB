@@ -21,8 +21,11 @@ Void Lab2Form::Pa_ButtonAdd_Click(Object^ sender, EventArgs^ e)
         tmp->DeliveryAddress = Pa_TextBoxAddDeliveryAddress->Text;
         rep->Add(Table::Parcels, tmp);
         Pa_Update();
+        Pa_LabelAddError->Text = "";
     }
-    catch (...) {}
+    catch (Exception^ exep) {
+        Pa_LabelAddError->Text = exep->Message;
+    }
 }
 
 Void Lab2Form::Pa_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
@@ -43,8 +46,11 @@ Void Lab2Form::Pa_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
         tmp->DeliveryAddress = Pa_TextBoxUPDELDeliveryAddress->Text;
         rep->Update(Table::Parcels, tmp);
         Pa_DataGridViewUpdate();
+        Pa_LabelUPDELError->Text = "";
     }
-    catch (...) {}
+    catch (Exception^ exep) {
+        Pa_LabelUPDELError->Text = exep->Message;
+    }
 }
 
 Void Lab2Form::Pa_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)

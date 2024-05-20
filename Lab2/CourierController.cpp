@@ -14,8 +14,11 @@ Void Lab2Form::Co_ButtonAdd_Click(Object^ sender, EventArgs^ e)
         tmp->ParcelId = Convert::ToInt64(Co_ComboBoxAddPaId->Text);
         rep->Add(Table::Couriers, tmp);
         Co_Update();
+        Co_LabelAddError->Text = "";
     }
-    catch (...) {}
+    catch (Exception^ exep) {
+        Co_LabelAddError->Text = exep->Message;
+    }
 }
 
 Void Lab2Form::Co_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
@@ -29,8 +32,11 @@ Void Lab2Form::Co_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
         tmp->ParcelId = Convert::ToInt64(Co_ComboBoxUPDELPaId->Text);
         rep->Update(Table::Couriers, tmp);
         Co_DataGridViewUpdate();
+        Co_LabelUPDELError->Text = "";
     }
-    catch (...) {}
+    catch (Exception^ exep) {
+        Co_LabelUPDELError->Text = exep->Message;
+    }
 }
 
 Void Lab2Form::Co_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)

@@ -6,10 +6,16 @@ using namespace Repository;
 
 Void Lab2Form::FT_ButtonAdd_Click(Object^ sender, EventArgs^ e)
 {
-    FacilityType^ tmp = gcnew FacilityType();
-    tmp->Type = FT_TextBoxAddType->Text;
-    rep->Add(Table::FacilityTypes, tmp);
-    FT_Update();
+    try {
+        FacilityType^ tmp = gcnew FacilityType();
+        tmp->Type = FT_TextBoxAddType->Text;
+        rep->Add(Table::FacilityTypes, tmp);
+        FT_Update();
+        FT_LabelAddError->Text = "";
+    }
+    catch (Exception^ exep) {
+        FT_LabelAddError->Text = exep->Message;
+    }
 }
 
 Void Lab2Form::FT_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
@@ -21,8 +27,11 @@ Void Lab2Form::FT_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
         tmp->Type = FT_TextBoxUPDELType->Text;
         rep->Update(Table::FacilityTypes, tmp);
         FT_DataGridViewUpdate();
+        FT_LabelUPDELError->Text = "";
     }
-    catch (...) {}
+    catch (Exception^ exep) {
+        FT_LabelUPDELError->Text = exep->Message;
+    }
 }
 
 Void Lab2Form::FT_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)

@@ -14,8 +14,11 @@ Void Lab2Form::Cl_ButtonAdd_Click(Object^ sender, EventArgs^ e)
         tmp->Email = Cl_TextBoxAddEmail->Text;
         rep->Add(Table::Clients, tmp);
         Cl_Update();
+        Cl_LabelAddError->Text = "";
     }
-    catch (...) {}
+    catch (Exception^ exep) {
+        Cl_LabelAddError->Text = exep->Message;
+    }
 }
 
 Void Lab2Form::Cl_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
@@ -29,8 +32,11 @@ Void Lab2Form::Cl_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
         tmp->Email = Cl_TextBoxUPDELEmail->Text;
         rep->Update(Table::Clients, tmp);
         Cl_DataGridViewUpdate();
+        Cl_LabelUPDELError->Text = "";
     }
-    catch (...) {}
+    catch (Exception^ exep) {
+        Cl_LabelUPDELError->Text = exep->Message;
+    }
 }
 
 Void Lab2Form::Cl_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)

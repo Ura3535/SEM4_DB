@@ -16,12 +16,16 @@ Void Lab2Form::PF_ButtonAdd_Click(Object^ sender, EventArgs^ e)
         tmp->WeightRestrictions = Convert::ToDouble(PF_TextBoxAddWeightRestrictions->Text);
         rep->Add(Table::PostalFacilitys, tmp);
         PF_Update();
+        PF_LabelAddError->Text = "";
     }
-    catch (...) {}
+    catch (Exception^ exep) {
+        PF_LabelAddError->Text = exep->Message;
+    }
 }
 
 Void Lab2Form::PF_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
 {
+    try {
         PostalFacility^ tmp = gcnew PostalFacility();
         tmp->Id = Convert::ToInt64(PF_ComboBoxUPDELId->Text);
         tmp->Name = PF_TextBoxUPDELName->Text;
@@ -31,6 +35,11 @@ Void Lab2Form::PF_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
         tmp->WeightRestrictions = Convert::ToDouble(PF_TextBoxUPDELWeightRestrictions->Text);
         rep->Update(Table::PostalFacilitys, tmp);
         PF_DataGridViewUpdate();
+        PF_LabelUPDELError->Text = "";
+    }
+    catch (Exception^ exep) {
+        PF_LabelUPDELError->Text = exep->Message;
+    }
 }
 
 Void Lab2Form::PF_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)

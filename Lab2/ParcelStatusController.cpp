@@ -12,8 +12,11 @@ Void Lab2Form::PS_ButtonAdd_Click(Object^ sender, EventArgs^ e)
         tmp->Status = PS_TextBoxAddStatus->Text;
         rep->Add(Table::ParcelStatuses, tmp);
         PS_Update();
+        PS_LabelAddError->Text = "";
     }
-    catch (...) {}
+    catch (Exception^ exep) {
+        PS_LabelAddError->Text = exep->Message;
+    }
 }
 
 Void Lab2Form::PS_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
@@ -25,8 +28,11 @@ Void Lab2Form::PS_ButtonUPDELSave_Click(Object^ sender, EventArgs^ e)
         tmp->Status = PS_TextBoxUPDELStatus->Text;
         rep->Update(Table::ParcelStatuses, tmp);
         PS_DataGridViewUpdate();
+        PS_LabelUPDELError->Text = "";
     }
-    catch (...) {}
+    catch (Exception^ exep) {
+        PS_LabelUPDELError->Text = exep->Message;
+    }
 }
 
 Void Lab2Form::PS_ButtonUPDELRollBack_Click(Object^ sender, EventArgs^ e)

@@ -17,6 +17,7 @@ SQLRepository::SQLRepository()
 
 void SQLRepository::Add(Table table, Entity^ obj)
 {
+    Validate(table, obj);
     switch (table)
     {
     case Table::Clients:
@@ -126,6 +127,7 @@ List<Entity^>^ SQLRepository::GetAll(Table table)
 
 void SQLRepository::Update(Table table, Entity^ obj)
 {
+    Validate(table, obj);
     switch (table)
     {
     case Table::Clients:
