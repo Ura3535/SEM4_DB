@@ -235,7 +235,7 @@ void SQLRepository::Delete(Table table, long Id)
     }
     default: break;
     }
-    Loggers::FileLog->LogMessage(text + " [Id = " + Id.ToString() + "]");
+    //Loggers::FileLog->LogMessage(text + " [Id = " + Id.ToString() + "]");
     Execute(text, params);
 }
 

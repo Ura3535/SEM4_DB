@@ -151,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Query.resx" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="DB_PostOffice_Diagram.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

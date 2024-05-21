@@ -27,6 +27,7 @@ namespace Lab2 {
 			PS_Update();
 			PF_Update();
 			Query_Update();
+			Diagram_PictureBox->Image = Image::FromFile("DB_PostOffice_Diagram.png");
 		}
 
 	protected:
@@ -45,7 +46,7 @@ namespace Lab2 {
 	private: System::Windows::Forms::TabPage^ MainPage;
 	private: System::Windows::Forms::TabPage^ TablePage;
 	private: System::Windows::Forms::TabPage^ QueryPage;
-	private: System::Windows::Forms::TabPage^ InfoPage;
+
 	private: System::Windows::Forms::TabControl^ TableTabControl;
 	private: System::Windows::Forms::TabPage^ FT_Page;
 	private: System::Windows::Forms::Panel^ FT_PanelList;
@@ -285,6 +286,10 @@ private: System::Windows::Forms::Button^ Query_ButtonComplete;
 private: System::Windows::Forms::DataGridView^ Query_DataGridView;
 
 private: System::Windows::Forms::Label^ Query_LabelError;
+private: System::Windows::Forms::Label^ Main_Label;
+
+private: System::Windows::Forms::PictureBox^ Diagram_PictureBox;
+
 	private:
 		/// <summary>
 		/// Required designer variable.
@@ -300,6 +305,8 @@ private: System::Windows::Forms::Label^ Query_LabelError;
 		{
 			this->MainTabControl = (gcnew System::Windows::Forms::TabControl());
 			this->MainPage = (gcnew System::Windows::Forms::TabPage());
+			this->Diagram_PictureBox = (gcnew System::Windows::Forms::PictureBox());
+			this->Main_Label = (gcnew System::Windows::Forms::Label());
 			this->TablePage = (gcnew System::Windows::Forms::TabPage());
 			this->TableTabControl = (gcnew System::Windows::Forms::TabControl());
 			this->FT_Page = (gcnew System::Windows::Forms::TabPage());
@@ -491,6 +498,7 @@ private: System::Windows::Forms::Label^ Query_LabelError;
 			this->Pa_LableAddInfo = (gcnew System::Windows::Forms::Label());
 			this->Pa_LabelAdd = (gcnew System::Windows::Forms::Label());
 			this->QueryPage = (gcnew System::Windows::Forms::TabPage());
+			this->Query_LabelError = (gcnew System::Windows::Forms::Label());
 			this->Query_ButtonComplete = (gcnew System::Windows::Forms::Button());
 			this->Query_DataGridView = (gcnew System::Windows::Forms::DataGridView());
 			this->Query_TextBoxCode = (gcnew System::Windows::Forms::TextBox());
@@ -501,9 +509,9 @@ private: System::Windows::Forms::Label^ Query_LabelError;
 			this->Query_LabelValue = (gcnew System::Windows::Forms::Label());
 			this->Query_ComboBoxChose = (gcnew System::Windows::Forms::ComboBox());
 			this->Query_LabelChose = (gcnew System::Windows::Forms::Label());
-			this->InfoPage = (gcnew System::Windows::Forms::TabPage());
-			this->Query_LabelError = (gcnew System::Windows::Forms::Label());
 			this->MainTabControl->SuspendLayout();
+			this->MainPage->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Diagram_PictureBox))->BeginInit();
 			this->TablePage->SuspendLayout();
 			this->TableTabControl->SuspendLayout();
 			this->FT_Page->SuspendLayout();
@@ -545,7 +553,6 @@ private: System::Windows::Forms::Label^ Query_LabelError;
 			this->MainTabControl->Controls->Add(this->MainPage);
 			this->MainTabControl->Controls->Add(this->TablePage);
 			this->MainTabControl->Controls->Add(this->QueryPage);
-			this->MainTabControl->Controls->Add(this->InfoPage);
 			this->MainTabControl->Location = System::Drawing::Point(12, 12);
 			this->MainTabControl->Name = L"MainTabControl";
 			this->MainTabControl->SelectedIndex = 0;
@@ -554,13 +561,35 @@ private: System::Windows::Forms::Label^ Query_LabelError;
 			// 
 			// MainPage
 			// 
+			this->MainPage->BackColor = System::Drawing::Color::LightGray;
+			this->MainPage->Controls->Add(this->Diagram_PictureBox);
+			this->MainPage->Controls->Add(this->Main_Label);
 			this->MainPage->Location = System::Drawing::Point(4, 22);
 			this->MainPage->Name = L"MainPage";
 			this->MainPage->Padding = System::Windows::Forms::Padding(3);
 			this->MainPage->Size = System::Drawing::Size(1152, 711);
 			this->MainPage->TabIndex = 0;
 			this->MainPage->Text = L"Головна";
-			this->MainPage->UseVisualStyleBackColor = true;
+			// 
+			// Diagram_PictureBox
+			// 
+			this->Diagram_PictureBox->Location = System::Drawing::Point(25, 207);
+			this->Diagram_PictureBox->Name = L"Diagram_PictureBox";
+			this->Diagram_PictureBox->Size = System::Drawing::Size(1102, 480);
+			this->Diagram_PictureBox->TabIndex = 1;
+			this->Diagram_PictureBox->TabStop = false;
+			// 
+			// Main_Label
+			// 
+			this->Main_Label->BackColor = System::Drawing::Color::LightGray;
+			this->Main_Label->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 15.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(204)));
+			this->Main_Label->Location = System::Drawing::Point(20, 20);
+			this->Main_Label->Name = L"Main_Label";
+			this->Main_Label->Size = System::Drawing::Size(1126, 183);
+			this->Main_Label->TabIndex = 0;
+			this->Main_Label->Text = L"Лабораторна робота з БД №2\r\n\r\nАвтор: Ковальчук Юрій\r\nСУБД: SSMS\r\nФорма: WinForms "
+				L"(Мова програмування С++/CLI)\r\nПредметна область: Поштова контора";
 			// 
 			// TablePage
 			// 
@@ -2528,6 +2557,17 @@ private: System::Windows::Forms::Label^ Query_LabelError;
 			this->QueryPage->Text = L"Запити";
 			this->QueryPage->UseVisualStyleBackColor = true;
 			// 
+			// Query_LabelError
+			// 
+			this->Query_LabelError->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
+				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
+			this->Query_LabelError->ForeColor = System::Drawing::Color::Red;
+			this->Query_LabelError->Location = System::Drawing::Point(534, 54);
+			this->Query_LabelError->Name = L"Query_LabelError";
+			this->Query_LabelError->Size = System::Drawing::Size(596, 23);
+			this->Query_LabelError->TabIndex = 10;
+			this->Query_LabelError->Text = L" ";
+			// 
 			// Query_ButtonComplete
 			// 
 			this->Query_ButtonComplete->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
@@ -2630,36 +2670,18 @@ private: System::Windows::Forms::Label^ Query_LabelError;
 			this->Query_LabelChose->TabIndex = 0;
 			this->Query_LabelChose->Text = L"Обрати запит";
 			// 
-			// InfoPage
-			// 
-			this->InfoPage->Location = System::Drawing::Point(4, 22);
-			this->InfoPage->Name = L"InfoPage";
-			this->InfoPage->Padding = System::Windows::Forms::Padding(3);
-			this->InfoPage->Size = System::Drawing::Size(1152, 711);
-			this->InfoPage->TabIndex = 3;
-			this->InfoPage->Text = L"Інфо";
-			this->InfoPage->UseVisualStyleBackColor = true;
-			// 
-			// Query_LabelError
-			// 
-			this->Query_LabelError->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9.75F, System::Drawing::FontStyle::Regular,
-				System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(204)));
-			this->Query_LabelError->ForeColor = System::Drawing::Color::Red;
-			this->Query_LabelError->Location = System::Drawing::Point(534, 54);
-			this->Query_LabelError->Name = L"Query_LabelError";
-			this->Query_LabelError->Size = System::Drawing::Size(596, 23);
-			this->Query_LabelError->TabIndex = 10;
-			this->Query_LabelError->Text = L" ";
-			// 
 			// Lab2Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1184, 761);
 			this->Controls->Add(this->MainTabControl);
+			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
 			this->Name = L"Lab2Form";
-			this->Text = L"MyForm";
+			this->Text = L"Бази Даних. Лабораторна робота №2";
 			this->MainTabControl->ResumeLayout(false);
+			this->MainPage->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Diagram_PictureBox))->EndInit();
 			this->TablePage->ResumeLayout(false);
 			this->TableTabControl->ResumeLayout(false);
 			this->FT_Page->ResumeLayout(false);
