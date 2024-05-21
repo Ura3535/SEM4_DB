@@ -48,4 +48,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="DataBase\FacilityType.fl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="DataBase\FacilityType.ind">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="DataBase\PostalFacility.fl">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="DataBase\PostalFacility.ind">
+      <Filter>Resource Files</Filter>
+    </None>
+  </ItemGroup>
 </Project>

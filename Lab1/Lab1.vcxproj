@@ -144,6 +144,12 @@
       <DependentUpon>Lab1Form.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="DataBase\FacilityType.fl" />
+    <None Include="DataBase\FacilityType.ind" />
+    <None Include="DataBase\PostalFacility.fl" />
+    <None Include="DataBase\PostalFacility.ind" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
