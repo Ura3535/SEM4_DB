@@ -82,6 +82,8 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -110,18 +112,29 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies />
+      <SubSystem>Windows</SubSystem>
+      <EntryPointSymbol>main</EntryPointSymbol>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="Model.h" />
-    <ClInclude Include="MyForm.h">
+    <ClInclude Include="Lab2Form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Repository.h" />
     <ClInclude Include="SQLRepository.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Model.cpp" />
-    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="ClientController.cpp" />
+    <ClCompile Include="CourierController.cpp" />
+    <ClCompile Include="FacilityTypeController.cpp" />
+    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="ParcelController.cpp" />
+    <ClCompile Include="ParcelStatusController.cpp" />
+    <ClCompile Include="PostalFacilityController.cpp" />
+    <ClCompile Include="QueryController.cpp" />
     <ClCompile Include="SQLRepository.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -130,6 +143,16 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Lab2Form.resx">
+      <DependentUpon>Lab2Form.h</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Query.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="DB_PostOffice_Diagram.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -119,7 +119,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="MyForm.h">
+    <ClInclude Include="Lab1Form.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Repository.h" />
@@ -128,7 +128,7 @@
   <ItemGroup>
     <ClCompile Include="FacilityTypeRepository.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Lab1Form.cpp" />
     <ClCompile Include="PostalFacilityRepository.cpp" />
     <ClCompile Include="Repository.cpp" />
   </ItemGroup>
@@ -140,8 +140,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="MyForm.resx">
-      <DependentUpon>MyForm.h</DependentUpon>
+    <EmbeddedResource Include="Lab1Form.resx">
+      <DependentUpon>Lab1Form.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

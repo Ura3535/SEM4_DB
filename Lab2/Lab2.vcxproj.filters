@@ -13,27 +13,76 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Repository">
+      <UniqueIdentifier>{92db9d22-ec4d-4d4a-98c1-b832d6833361}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Model">
+      <UniqueIdentifier>{8f9852d8-8594-4289-bd44-c8547a3680eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Controllers">
+      <UniqueIdentifier>{098c4d78-cfbc-49c1-ba85-a8700f3a16d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Loger">
+      <UniqueIdentifier>{4371a79d-ad1a-4989-857f-64b066dfe60b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SQLRepository.h">
+    <ClInclude Include="Lab2Form.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SQLRepository.h">
+      <Filter>Repository</Filter>
+    </ClInclude>
+    <ClInclude Include="Repository.h">
+      <Filter>Repository</Filter>
     </ClInclude>
     <ClInclude Include="Model.h">
-      <Filter>Header Files</Filter>
+      <Filter>Model</Filter>
     </ClInclude>
-    <ClInclude Include="MyForm.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="Logger.h">
+      <Filter>Loger</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="SQLRepository.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Repository</Filter>
     </ClCompile>
-    <ClCompile Include="Model.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="FacilityTypeController.cpp">
+      <Filter>Controllers</Filter>
     </ClCompile>
-    <ClCompile Include="MyForm.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="PostalFacilityController.cpp">
+      <Filter>Controllers</Filter>
     </ClCompile>
+    <ClCompile Include="ParcelStatusController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="CourierController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="ParcelController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Logger.cpp">
+      <Filter>Loger</Filter>
+    </ClCompile>
+    <ClCompile Include="QueryController.cpp">
+      <Filter>Controllers</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Query.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="DB_PostOffice_Diagram.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

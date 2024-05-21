@@ -1,13 +1,13 @@
-#include "Lab1Form.h"
+#include "Lab2Form.h"
+#include "SQLRepository.h"
 
-using namespace Lab1;
+using namespace Lab2;
 
 [STAThreadAttribute]
 int main(array<String^>^ args) {
 	Application::SetCompatibleTextRenderingDefault(false);
 	Application::EnableVisualStyles();
-	repository::Repository* rep = new repository::Repository();
-	Lab1Form form(rep);
+	
+	Lab2Form form(gcnew Repository::SQLRepository());
 	Application::Run(% form);
-	delete rep;
 }
