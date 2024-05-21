@@ -779,16 +779,16 @@ namespace Lab1 {
 			this->PF_LabelAdd->Name = L"PF_LabelAdd";
 			this->PF_LabelAdd->Size = System::Drawing::Size(727, 30);
 			this->PF_LabelAdd->TabIndex = 0;
-			this->PF_LabelAdd->Text = L"Додати новий тип відділення";
+			this->PF_LabelAdd->Text = L"Додати нове відділення";
 			// 
-			// MyForm
+			// Lab1Form
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(784, 561);
 			this->Controls->Add(this->tabControl1);
 			this->FormBorderStyle = System::Windows::Forms::FormBorderStyle::FixedSingle;
-			this->Name = L"MyForm";
+			this->Name = L"Lab1Form";
 			this->Text = L"Бази Даних. Лабораторна робота №1";
 			this->tabControl1->ResumeLayout(false);
 			this->FT_Page->ResumeLayout(false);
